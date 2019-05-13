@@ -13,7 +13,8 @@ f) "Ok"
 5. Napišemo .gitignore datoteko s sledečo vsebino:  
 "node_modules   
 client/node_modules     
-config"
+config
+.idea"
 6. V WebStorm priporočam uporabo git bash terminala:    
 a) Setting > Tools > Terminal   
 b) Shell Path, navedemo pot do bash.exe datoteke, najdemo jo v */Git/bin/bash.exe
