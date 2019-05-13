@@ -18,3 +18,6 @@ config
 6. V WebStorm priporočam uporabo git bash terminala:    
 a) Setting > Tools > Terminal   
 b) Shell Path, navedemo pot do bash.exe datoteke, najdemo jo v */Git/bin/bash.exe
+
+# API Guide
+## Endpoints
