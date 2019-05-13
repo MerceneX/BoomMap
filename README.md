@@ -21,3 +21,5 @@ b) Shell Path, navedemo pot do bash.exe datoteke, najdemo jo v */Git/bin/bash.ex
 
 # API Guide
 ## Endpoints
+- GET api/data
+- POST api/data
