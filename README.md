@@ -13,7 +13,7 @@ f) "Ok"
 5. Napišemo .gitignore datoteko s sledečo vsebino:  
 "node_modules   
 client/node_modules     
-config
+config/keys.js    
 .idea"
 6. V WebStorm priporočam uporabo git bash terminala:    
 a) Setting > Tools > Terminal   
