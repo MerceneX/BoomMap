@@ -8,17 +8,21 @@ router.get("/", function(req, res) {
     res.send("This is a default Database Route. Hi!");
 });
 
-router.post("/", bodyParser.json(),(req, res) => {
-    axios.get(req.body.url)
+router.get("/nesrece", function(req, res) {
+    axios.get("http://nesrece.avp-rs.si/geo/wfs/?request=getfeature&version=1.1.0&outputformat=json&service=wfs&resulttype=results&typename=BSM:view_bpn_n&cql_filter=datum%20between%20%2701.01.1994%27and%20%2712.05.2019%27")
         .then(response => {
-            console.log(response.data);
-            res.send("All is well man");
+            res.json(response.data);
         })
         .catch(err => {
             console.log(err);
-            res.send("It's gone to shit")
+            res.json({
+                success:false
+            })
         });
-    console.log(req.body.url);
+});
+
+router.post("/",(req, res) => {
+    res.send("Posr request succeded")
 });
 
 module.exports = router;
