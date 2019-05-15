@@ -24,3 +24,4 @@ config/keys.js
 ## Endpoints
 - GET api/data
 - POST api/data
+- GET api/data/nesrece
