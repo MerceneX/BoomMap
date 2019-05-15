@@ -2,6 +2,9 @@
 1. Kloniranje repozitorija z "git clone https://github.com/MerceneX/Praktikum-II.git"
 2. Odpremo nov projekt v WebStorm "EmptyProject" in kopiramo vsebino kloniranega direktorija
 v ta projekt
+6. V WebStorm priporočam uporabo git bash terminala:    
+a) Setting > Tools > Terminal   
+b) Shell Path, navedemo pot do bash.exe datoteke, najdemo jo v */Git/bin/bash.exe
 3. Zagon skript npm install, npm run client-install in npm i -g nodemon
 4. Dodaja konfiguracije strežnika v WebStorm:   
 a) "Add new configuration"  
@@ -15,9 +18,7 @@ f) "Ok"
 client/node_modules     
 config/keys.js    
 .idea"
-6. V WebStorm priporočam uporabo git bash terminala:    
-a) Setting > Tools > Terminal   
-b) Shell Path, navedemo pot do bash.exe datoteke, najdemo jo v */Git/bin/bash.exe
+
 
 # API Guide
 ## Endpoints
