@@ -4,6 +4,7 @@
   "description": "Zaključni projekt 2. letnika ITK uni.",
   "main": "server.js",
   "dependencies": {
+    "@material-ui/core": "^3.9.3",
     "axios": "^0.18.0",
     "body-parser": "^1.19.0",
     "concurrently": "^4.1.0",
