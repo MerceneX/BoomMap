@@ -4,17 +4,15 @@ const express = require('express'),
     app = express();
 
 const dataRoutes = require("./routes/dataRoutes");
-
-const db = require("./config/keys").mongoURI;
+const configKeys = require("./config/keys");
 
 mongoose
-    .connect(db, {useNewUrlParser: true})
+    .connect(configKeys.mongoURI, {useNewUrlParser: true})
     .then(() => console.log("MongoDB sucessfully connected..."))
     .catch(err => console.log(err));
 
+
 app.use("/api/data", dataRoutes);
-
-
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
