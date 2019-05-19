@@ -1,12 +1,7 @@
 import React from 'react';
 //import { Nav, NavItem, NavLink } from 'reactstrap';
 import {
-    Collapse,
     Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
     NavLink,
     UncontrolledDropdown,
     DropdownToggle,
@@ -25,7 +20,7 @@ class Navigation extends React.Component {
                         <NavLink href="#">Domov</NavLink>
                         <NavLink href="#">Statistika</NavLink>
                         <NavLink href="#">Nekaj</NavLink>
-                        <NavLink disabled href="#">Disabled Link</NavLink>
+
                     <UncontrolledDropdown>
                         <DropdownToggle nav caret>
                             Options
