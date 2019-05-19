@@ -16,8 +16,8 @@ f) "Ok"
 6. Napišemo .gitignore datoteko s sledečo vsebino:  
 "node_modules   
 client/node_modules     
-config/keys.js    
-.idea"
+.idea
+README.md"
 
 
 # API Guide
