@@ -13,7 +13,10 @@ c) "package.json: /path-to-project-folder/package.json"
 d) "Command: run"   
 e) "Scripts: dev"   
 f) "Ok"
-6. Napišemo .gitignore datoteko s sledečo vsebino:  
+6. Za posodobitev vseh paketov/odvisnosti poženemo "npm run update-all"
+7. Potrebujemo tudi bazo MongoDB na portu 27017.
+8. Strežnik poženemo z npm run dev
+9. Napišemo .gitignore datoteko s sledečo vsebino:  
 "node_modules   
 client/node_modules     
 .idea
