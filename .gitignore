@@ -1,6 +1,4 @@
 node_modules
-config
 client/node_modules
 .idea
-config/keys.js
 README.md
