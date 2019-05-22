@@ -3,6 +3,7 @@ import './App.css';
 import Container from "reactstrap/es/Container";
 import Navigation from "./components/layout/Navigation";
 import Album from "./components/layout/Album";
+import MyCard from "./components/MyCard";
 
 function App() {
     return (
@@ -12,7 +13,7 @@ function App() {
             <Album/>
 
             <Container>
-
+                <MyCard/>
             </Container>
 
         </div>
