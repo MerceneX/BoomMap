@@ -15,7 +15,7 @@ class Navigation extends React.Component {
 
             <div>
 
-                <Navbar color="light" expand="md">
+                <Navbar fixed="top" color="light" expand="md">
 
                         <NavLink href="#">Domov</NavLink>
                         <NavLink href="#">Statistika</NavLink>

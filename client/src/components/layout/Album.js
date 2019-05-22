@@ -54,7 +54,7 @@ const styles = theme => ({
     },
 });
 
-const cards = [1, 2];
+const cards = [1, 2, 3];
 
 function Album(props) {
     const { classes } = props;
@@ -83,8 +83,8 @@ function Album(props) {
                     {/* End hero unit */}
                     <Grid container spacing={40}>
                         {cards.map(card => (
-                            <Grid item key={card} sm={6} md={4} lg={3}>
-                            <MyCard2/>
+                            <Grid item key={card} sm={8} md={6} lg={4}>
+                            <MyCard2 style={cardStyle}/>
 
                             </Grid>
                         ))}
@@ -92,16 +92,7 @@ function Album(props) {
                 </div>
             </main>
 
-            {/* Footer */}
-            <footer className={classes.footer}>
-                <Typography variant="h6" align="center" gutterBottom>
-                    Footer
-                </Typography>
-                <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-                    Something here to give the footer a purpose!
-                </Typography>
-            </footer>
-            {/* End footer */}
+
         </React.Fragment>
     );
 }
@@ -109,5 +100,9 @@ function Album(props) {
 Album.propTypes = {
     classes: PropTypes.object.isRequired,
 };
+
+const cardStyle={
+    minWidth:"400px"
+}
 
 export default withStyles(styles)(Album);

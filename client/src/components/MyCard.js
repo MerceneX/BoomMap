@@ -42,7 +42,7 @@ function MyCard(props) {
 
     return (
         <React.Fragment>
-
+<Card.Group>
             <Card className={classes.card}>
                 <CardMedia>
                 <LineChart/>
@@ -66,6 +66,8 @@ function MyCard(props) {
                 </CardActions>
             </Card>
 
+
+</Card.Group>
         </React.Fragment>
     );
 }

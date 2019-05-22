@@ -32,4 +32,13 @@ export default class Example extends PureComponent {
             </PieChart>
         );
     }
+
+
+}
+const chartStyle = {
+    padding: 0,
+    margin: 0,
+    display:"flex",
+    width:"400",
+    height:"400"
 }
