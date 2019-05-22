@@ -4,10 +4,9 @@ import './App.css';
 import Container from "reactstrap/es/Container";
 import Navigation from "./components/layout/Navigation";
 import Album from "./components/layout/Album";
-import Mycard2 from "./components/MyCard2"
 import About from "./pages/About";
 import Footer from "./components/layout/Footer";
-
+import MyCard from "./components/MyCard";
 
 
 
@@ -21,7 +20,7 @@ function App() {
             <Route path="/statistika" component={Album}/>
 
             <Container>
-
+                <MyCard/>
             </Container>
 
             <Route path="/about" component={About}/>
