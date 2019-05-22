@@ -5,7 +5,8 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-import MyCard from '../MyCard';
+import MyCard2 from '../MyCard2';
+import LineChart from '../graphs/LineChart';
 
 const styles = theme => ({
 
@@ -28,7 +29,7 @@ const styles = theme => ({
         marginLeft: theme.spacing.unit * 3,
         marginRight: theme.spacing.unit * 3,
         [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
-            width: 1100,
+            width: 'auto',
             marginLeft: 'auto',
             marginRight: 'auto',
         },
@@ -83,13 +84,14 @@ function Album(props) {
                     <Grid container spacing={40}>
                         {cards.map(card => (
                             <Grid item key={card} sm={6} md={4} lg={3}>
-                            <MyCard/>
+                            <MyCard2/>
 
                             </Grid>
                         ))}
                     </Grid>
                 </div>
             </main>
+
             {/* Footer */}
             <footer className={classes.footer}>
                 <Typography variant="h6" align="center" gutterBottom>

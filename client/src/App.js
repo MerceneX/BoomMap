@@ -5,6 +5,7 @@ import Navigation from "./components/layout/Navigation";
 import Album from "./components/layout/Album";
 import MyCard from "./components/MyCard";
 
+
 function App() {
     return (
         <div className="App">
