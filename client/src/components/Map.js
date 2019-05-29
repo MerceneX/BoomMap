@@ -17,7 +17,7 @@ class Map extends React.Component {
                 easeLinearity={0.35}
             >
                 <TileLayer
-                    url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+                    url='http://tiles.mapc.org/basemap/{z}/{x}/{y}.png'
                 />
                 <Marker position={[50, 10]}>
                     <Popup>
