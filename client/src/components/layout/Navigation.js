@@ -17,27 +17,10 @@ class Navigation extends React.Component {
 
                 <Navbar fixed="top" color="light" expand="md">
 
-                        <NavLink href="#">Domov</NavLink>
-                        <NavLink href="#">Statistika</NavLink>
-                        <NavLink href="#">Nekaj</NavLink>
+                        <NavLink href="/">Domov</NavLink>
+                        <NavLink href="/statistika">Statistika</NavLink>
+                        <NavLink href="/about">O nas</NavLink>
 
-                    <UncontrolledDropdown>
-                        <DropdownToggle nav caret>
-                            Options
-                        </DropdownToggle>
-                        <DropdownMenu right>
-                            <DropdownItem>
-                                Option 1
-                            </DropdownItem>
-                            <DropdownItem>
-                                Option 2
-                            </DropdownItem>
-                            <DropdownItem divider />
-                            <DropdownItem>
-                                Reset
-                            </DropdownItem>
-                        </DropdownMenu>
-                    </UncontrolledDropdown>
                 </Navbar>
             </div>
 

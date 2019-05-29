@@ -64,21 +64,6 @@ function Album(props) {
             <CssBaseline />
 
             <main>
-                {/* Hero unit */}
-                <div className={classes.heroUnit}>
-                    <div className={classes.heroContent}>
-                        <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-                            CrashMap
-                        </Typography>
-                        <Typography variant="h6" align="center" color="textSecondary" paragraph>
-                            Something short and leading about the collection below—its contents, the creator, etc.
-                            Make it short and sweet, but not too short so folks don&apos;t simply skip over it
-                            entirely.
-                        </Typography>
-
-                    </div>
-                </div>
-
                 <div className={classNames(classes.layout, classes.cardGrid)}>
                     {/* End hero unit */}
                     <Grid container spacing={40}>

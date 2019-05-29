@@ -6,7 +6,8 @@ import Navigation from "./components/layout/Navigation";
 import Album from "./components/layout/Album";
 import About from "./pages/About";
 import Footer from "./components/layout/Footer";
-import MyCard from "./components/MyCard";
+import Header from "./components/layout/Header";
+import Home from "./pages/Home";
 
 
 
@@ -14,9 +15,9 @@ function App() {
     return (
         <Router>
         <div className="App">
-
+            <Header/>
             <Navigation/>
-
+            <Route exact path="/" component={Home}/>
             <Route path="/statistika" component={Album}/>
 
             <Container>
