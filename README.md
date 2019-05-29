@@ -28,3 +28,4 @@ README.md"
 - GET api/data
 - POST api/data
 - GET api/data/nesrece
+- GET api/graph/{id}
