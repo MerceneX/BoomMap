@@ -5,6 +5,7 @@ const express = require('express'),
 
 const dataRoutes = require("./routes/dataRoutes");
 const configKeys = require("./config/keys");
+const graphRoutes = require("./routes/graphRoutes");
 
 mongoose
     .connect(configKeys.mongoURI, {useNewUrlParser: true})
@@ -13,6 +14,7 @@ mongoose
 
 
 app.use("/api/data", dataRoutes);
+app.use("/api/graph", graphRoutes);
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
