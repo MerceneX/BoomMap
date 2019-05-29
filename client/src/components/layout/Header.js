@@ -1,9 +1,6 @@
 import React from 'react';
 import Typography from "@material-ui/core/Typography";
 import PropTypes from 'prop-types';
-
-import classNames from 'classnames';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import { withStyles } from '@material-ui/core/styles';
 
 function Header(props){

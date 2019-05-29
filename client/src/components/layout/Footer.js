@@ -1,7 +1,6 @@
 import React from 'react';
 import Typography from "@material-ui/core/Typography";
 import PropTypes from 'prop-types';
-import Album from "./Album";
 import {withStyles} from "@material-ui/core";
 
 function Footer(props){

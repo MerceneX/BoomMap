@@ -1,12 +1,5 @@
 import React from 'react';
-//import { Nav, NavItem, NavLink } from 'reactstrap';
-import {
-    Navbar,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem } from 'reactstrap';
+import {Navbar, NavLink} from 'reactstrap';
 
 
 class Navigation extends React.Component {
