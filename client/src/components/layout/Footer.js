@@ -1,6 +1,7 @@
 import React from 'react';
 import Typography from "@material-ui/core/Typography";
 import PropTypes from 'prop-types';
+import '../design/App.css';
 import {withStyles} from "@material-ui/core";
 
 function Footer(props){
@@ -29,7 +30,7 @@ const styles = theme => ({
         marginRight: theme.spacing.unit * 2,
     },
     heroUnit: {
-        backgroundColor: theme.palette.background.paper,
+        backgroundColor: 'blue',
     },
     heroContent: {
         maxWidth: 600,
@@ -64,7 +65,7 @@ const styles = theme => ({
         flexGrow: 1,
     },
     footer: {
-        backgroundColor: theme.palette.background.paper,
+        backgroundColor: '#d0d6dc',
         padding: theme.spacing.unit * 6,
     },
 });

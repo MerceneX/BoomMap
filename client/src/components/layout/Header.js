@@ -1,6 +1,8 @@
 import React from 'react';
 import Typography from "@material-ui/core/Typography";
 import PropTypes from 'prop-types';
+import logo from '../design/boomLogo.svg';
+import '../design/App.css';
 import { withStyles } from '@material-ui/core/styles';
 
 function Header(props){
@@ -8,12 +10,10 @@ function Header(props){
     return (
         <div className={classes.heroUnit}>
             <div className={classes.heroContent}>
-                <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-                    BoomMap
-                </Typography>
+               <img className="logo" src={logo} alt="Logo" />
                 <Typography variant="h6" align="center" color="textSecondary" paragraph>
                     Predvidevamo kritične regije za možnost nesreče in ozaveščamo voznike, reševalne službe
-                    in tiste, ki se jim mudi, kje povečati potrplenje in zmanjšati hitrost.
+                    in tiste, ki se jim mudi, kje povečati potrpljenje in zmanjšati hitrost.
                 </Typography>
 
             </div>
