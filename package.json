@@ -21,10 +21,10 @@
   },
   "devDependencies": {},
   "scripts": {
-    "client-install": "npm install --prefix client",
+    "client-install": "cd client & npm install",
     "start": "node server.js",
     "server": "nodemon server.js",
-    "client": "npm start --prefix client",
+    "client": "cd client & npm start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "update-all": "npm install & npm run client-install"
   },
