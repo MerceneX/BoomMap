@@ -13,10 +13,10 @@ mongoose
     .then(() => console.log("MongoDB sucessfully connected..."))
     .catch(err => console.log(err));
 
+app.use(cors());
 
 app.use("/api/data", dataRoutes);
 app.use("/api/graph", graphRoutes);
-app.use(cors());
 
 const port = process.env.PORT || 5000;
 

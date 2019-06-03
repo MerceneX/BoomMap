@@ -6,7 +6,25 @@
     color: white;
 }
 
+.nav-link:hover{
+    color: black;
+}
+
 .person{
-    width: 50%;
     height: 70%;
+    width: 60%;
+    position: center;
+}
+
+.theteam{
+    color: #258e8a;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.teamdescription{
+    color: gray();
+    font-size: 14px;
+    text-align: center;
 }
