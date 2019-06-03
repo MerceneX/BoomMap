@@ -7,8 +7,8 @@ import Album from "./components/layout/Album";
 import About from "./pages/About";
 import Footer from "./components/layout/Footer";
 import Header from "./components/layout/Header";
-import Home from "./pages/Home";
-
+import Home from "./pages/Home"
+import Test from '../src/components/graphs/BarChart'
 
 
 function App() {
@@ -17,11 +17,12 @@ function App() {
         <div className="App">
             <Header/>
             <Navigation/>
+
             <Route exact path="/" component={Home}/>
             <Route path="/statistika" component={Album}/>
 
             <Container>
-
+                <Test/>
             </Container>
 
             <Route path="/about" component={About}/>
