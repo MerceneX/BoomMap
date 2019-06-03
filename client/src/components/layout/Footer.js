@@ -50,20 +50,7 @@ const styles = theme => ({
             marginRight: 'auto',
         },
     },
-    cardGrid: {
-        padding: `${theme.spacing.unit * 8}px 0`,
-    },
-    card: {
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-    },
-    cardMedia: {
-        paddingTop: '56.25%', // 16:9
-    },
-    cardContent: {
-        flexGrow: 1,
-    },
+
     footer: {
         backgroundColor: '#d0d6dc',
         padding: theme.spacing.unit * 6,
