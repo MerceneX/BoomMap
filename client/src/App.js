@@ -11,12 +11,14 @@ import Home from "./pages/Home";
 
 
 
+
 function App() {
     return (
         <Router>
         <div className="App">
             <Header/>
             <Navigation/>
+
             <Route exact path="/" component={Home}/>
             <Route path="/statistika" component={Album}/>
 
