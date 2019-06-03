@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import Card from "@material-ui/core/Card";
 import CardMedia from "@material-ui/core/CardMedia";
-import LineChart from "./graphs/LineChart";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import CardActions from "@material-ui/core/CardActions";
 import Button from "@material-ui/core/Button";
+import PieChart from '../components/graphs/PieChart';
 class MyCard2 extends React.Component {
 
 
@@ -18,7 +18,7 @@ class MyCard2 extends React.Component {
 
                 <Card>
                     <CardMedia>
-                        <LineChart/>
+                        <PieChart/>
                     </CardMedia>
 
                     <CardContent>

@@ -7,20 +7,27 @@ function About() {
     return (
         <React.Fragment>
             <div class="container">
-                <h3> Ekipa </h3>
+                <h4> Ekipa: </h4>
                 <Container>
                     <Row className="theteam">
-                        <Col><h1>Marko Gluhak</h1>
+                        <Col>
                             <img className="person" src={person} alt="person"/>
-                        <p>Nekaj nekaj nekaj </p></Col>
-                        <Col><h1>Maruša Konečnik </h1>
-                            <img className="person" src={person} alt="person"/></Col>
-                        <Col><h1>Pina Gornik</h1>
-                            <img className="person" src={person} alt="person"/></Col>
-                        <Col><h1>Nataša Feher</h1>
-                            <img className="person" src={person} alt="person"/></Col>
+                            <p>Marko Gluhak</p></Col>
+                        <Col>
+                            <img className="person" src={person} alt="person"/>
+                            <p>Maruša Konečnik </p></Col>
+                        <Col>
+                            <img className="person" src={person} alt="person"/>
+                            <p>Pina Gornik</p></Col>
+                        <Col>
+                            <img className="person" src={person} alt="person"/>
+                            <p>Nataša Feher</p></Col>
                     </Row>
                     <Row className="teamdescription">
+                        <Col><p> Back-end developer </p></Col>
+                        <Col><p> Machine learning master </p></Col>
+                        <Col><p> Front-end developer </p></Col>
+                        <Col><p> Front-end developer </p></Col>
                     </Row>
                 </Container>
             </div>
