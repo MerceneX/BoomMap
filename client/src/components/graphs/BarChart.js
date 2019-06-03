@@ -6,9 +6,6 @@ import {
 
 
 var data = [
-    {
-
-    }
 ];
 
 
