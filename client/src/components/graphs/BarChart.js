@@ -40,6 +40,10 @@ export default class Test extends PureComponent {
         axios.get('http://localhost:5000/api/graph/23').then(res => {
             this.setState({datag: res.data});
             console.log(res.data);
+            for(var key in data) {
+                data.push(data[key]);
+                console.log(data[key]);
+            }
         });
     }
 
