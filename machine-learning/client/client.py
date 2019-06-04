@@ -1,108 +1,99 @@
-import requests
+import requests, data_processer as dp
 import json
 import pandas as pd
 import json
 import csv
+import datetime
 import codecs
 from pandas.io.json import json_normalize
 from efficient_apriori import apriori
-import collections
+import numpy as nm
+import holidays as h
 
 
-def add_legend(splittedLine):
-    key = ""
-    for i in range(len(splittedLine)):
-        key = str(i) + ":"
-        splittedLine[i] = key + splittedLine[i]
-
-    return splittedLine
-
-
-def get_columns(filename):
-    csvData = pd.read_csv(filename)
-    col = ""
-    for column in csvData.columns:
-        col = col + column + ","
-    return col[:-1]
-
-
-def data_generator2(filename):
-    def data_gen():
-        with codecs.open(filename, encoding="UTF8", errors='replace') as csvfile:
-            for line in csvfile:
-                splitted = line.split(',')
-                add_legend(splitted)
-                yield tuple(k.strip() for k in splitted)
-
-    return data_gen
-
-
-def get_data():
-    url = 'http://localhost:5000/api/data/nesrece'
-    response = requests.get(url, stream=True)
-
-    json_data = json.loads(response.text)
-    goodData = json_data['features']
-    jD = json_normalize(goodData)
-    jsonD = pd.DataFrame.from_dict(jD, orient='columns')
-    return jsonD
-
-
-def connect_day_hour_section(data):
-    data_to_observe = data[['dan', 'promet']]
+# testing purposes
+def test(data):
+    data_to_observe = data[['stevilka_odseka', 'regija']]
+    #data_to_observe = data_to_observe.loc[data['PRVR_Vreme']!='J']
     data_to_observe.to_csv("clean_data.csv", encoding='utf-8', index=False)
-    itemsets, rules = apriori(data_generator2('clean_data.csv'), min_support=0.1, min_confidence=0.2)
-
+    itemsets, rules = apriori(dp.data_generator('clean_data.csv'), min_support=0.2, min_confidence=0.3)
+    print('o')
     return itemsets, rules
 
 
-def get_road_data(data):
-    df = pd.DataFrame(data)
-    column = df['odsek']
-    sections = df['odsek'].value_counts()
-    sections_json = json.loads(sections.to_json())
-
-    road = df['cesta'].value_counts()
-    road_json = json.loads(road.to_json())
-
-    return sections_json, road_json
-
-
+# data to send
 def post_data(data):
-    sections, road = get_road_data(data)
-    itemsets,rules = create_rules('data.csv')
+    sections, sections_numbers, town = dp.get_road_data(data)
+    itemsets, rules = create_rules()
     url = ''
     jsonData = {
         'critical_sections': sections,
-        'road': road,
-        'common-sets': itemsets
+        'critical_sections_number': sections_numbers,
+        'common-sets': itemsets,
+        'town': town,
+        'legend': {
+            '0': 'poskodbe',
+            '1': 'datum',
+            '2': 'cas',
+            '3': 'naselje/zunaj_naselja',
+            '4': 'vzrok',
+            '5': 'tip_nesrece',
+            '6': 'vreme',
+            '7': 'promet',
+            '8': 'vozisce',
+            '9': 'povrsje',
+            '10': 'vrsta_ceste',
+            '11': 'ime_ceste',
+            '12': 'ulica_odseka',
+            '13': 'stevilka_odseka',
+            '14': 'vrsta_avta',
+            '15': 'kraj',
+            '16': 'vrsta_vozila',
+            '17': 'regija',
+            '18': 'mesec',
+            '19': 'dan_v_tednu'
+
+        }
     }
     print(jsonData)
     # requests.post(url,)
     return 0
 
 
-def create_rules(filename):
-    file = clear_data(csvData, ['dc', 'lovc', 'stac', 'osebe', 'key', 'FID', 'ishs', 'priority', 'nas', 'the_geom'])
-    file = pd.DataFrame(file)
-    file.to_csv("clean_data.csv", encoding='utf-8', index=False)
-    itemsets, rules = apriori(data_generator2('clean_data.csv'), min_support=0.2, min_confidence=1)
+# use of apriori algorithm
+def create_rules():
+    joined = read_join_data()
+    joined.to_csv("clean_data.csv", encoding='utf-8', index=False)
+    itemsets, rules = apriori(dp.data_generator('clean_data.csv'), min_support=0.2, min_confidence=0.5)
 
     return itemsets, rules
 
 
-def clear_data(data, columns_to_delete):
-    newdata = csvData.drop(columns_to_delete, axis=1)
-    return newdata
+# reads data and joins,filters it and joins it to a single dataframe
+def read_join_data():
+    dataframes = []
+    year = 14
+    codes = pd.read_csv('../../podatki/MPSIFR.CSV', delimiter=";")
+    car_type_codes = codes.loc[codes['besedna_sifra'] == 'LVZN']
+
+    for i in range(5):
+        path = '../../podatki/MPDOGOD20' + str(year) + '.CSV'
+        dataframes.append(pd.read_csv(path, delimiter=";"))
+        year += 1
+    joined = pd.concat(dataframes, ignore_index=True, sort=False)
+    months, days, weekdays, holidays = dp.split_date(joined['Datum_Nesrece'])
+    joined['mesec'] = pd.Series(nm.array(months))
+    joined['dan'] = pd.Series(nm.array(days))
+    joined['dan_v_tednu'] = pd.Series(nm.array(weekdays))
+    joined['je_praznik'] = pd.Series(nm.array(holidays))
+    joined2 = joined.loc[joined['PRPV_Povrsje']!='SU']
+
+    return joined2[['PRPO_poskodbe', 'Datum_Nesrece', 'Cas_Nesrece', 'Naselje_ali_ne', 'PRVZ_vzrok',
+                   'PRPV_Tip_Nesrece', 'PRVR_Vreme', 'PRSP_Promet', 'PRSV_vozisce', 'PRPV_Povrsje',
+                   'LOVC_vrsta_ceste', 'ime_ceste', 'ulica_odseka', 'stevilka_odseka', 'LVZN_vrsta_avta', 'kraj',
+                   'LVVN_vrsta_vozila', 'regija', 'mesec', 'dan', 'dan_v_tednu']]
 
 
-csvData = pd.read_csv('data.csv')
-
-post_data(csvData)
-filename = 'data.csv'
-itemsets, rules = create_rules('data.csv')
+test(read_join_data())
+itemsets, rules = create_rules()
 print(rules)
-
-ri, r = connect_day_hour_section(csvData)
-
-print(r)

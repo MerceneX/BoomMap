@@ -8,7 +8,6 @@ import {
 var data = [
 ];
 
-
 export default class Test extends PureComponent {
 
     state = {
@@ -23,9 +22,7 @@ export default class Test extends PureComponent {
                 data.push(this.state[key]);
                // console.log(this.state[key]);
                 //this.setState({datag: data[key]});
-
             }
-
         });
     }
 

@@ -6,21 +6,17 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import CardActions from "@material-ui/core/CardActions";
 import Button from "@material-ui/core/Button";
-import PieChart from '../components/graphs/PieChart';
+import BarChart from '../components/graphs/BarChart';
 class MyCard2 extends React.Component {
 
 
     render() {
-
-
         return (
             <React.Fragment>
-
                 <Card>
                     <CardMedia>
-                        <PieChart/>
+                        <BarChart/>
                     </CardMedia>
-
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="h2">
                             Heading
