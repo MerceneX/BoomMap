@@ -8,7 +8,6 @@ import {
 var data = [
 ];
 
-
 export default class Test extends PureComponent {
 
     state = {
@@ -23,9 +22,7 @@ export default class Test extends PureComponent {
                 data.push(this.state[key]);
                 console.log(this.state[key]);
                 //this.setState({datag: data[key]});
-
             }
-
         });
     }
 
@@ -40,11 +37,11 @@ export default class Test extends PureComponent {
                 }}
             >
                 <CartesianGrid strokeDasharray="3 3"/>
-                <XAxis dataKey="year"/>
+                <XAxis dataKey="leto"/>
                 <YAxis/>
                 <Tooltip/>
                 <Legend/>
-                <Bar dataKey="accidents" fill="#8884d8"/>
+                <Bar dataKey="nesrece" fill="#8884d8"/>
 
             </BarChart>
         );

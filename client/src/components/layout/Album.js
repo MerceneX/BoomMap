@@ -61,7 +61,6 @@ function Album(props) {
     return (
         <React.Fragment>
             <CssBaseline />
-
             <main>
                 <div className={classNames(classes.layout, classes.cardGrid)}>
                     {/* End hero unit */}

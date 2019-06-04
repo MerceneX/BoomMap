@@ -22,7 +22,6 @@ function App() {
             <Route path="/statistika" component={Album}/>
 
             <Container>
-                <Test/>
             </Container>
 
             <Route path="/about" component={About}/>
@@ -31,5 +30,4 @@ function App() {
         </Router>
     );
 }
-
 export default App;
