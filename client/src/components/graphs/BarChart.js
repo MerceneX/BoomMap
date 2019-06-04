@@ -18,10 +18,10 @@ export default class Test extends PureComponent {
     componentDidMount() {
         axios.get('http://localhost:5000/api/graph/23').then(res => {
             this.setState({datag: res.data});
-            //console.log(res.data);
+            console.log(res.data);
             for(var key in this.state) {
                 data.push(this.state[key]);
-                console.log(this.state[key]);
+               // console.log(this.state[key]);
                 //this.setState({datag: data[key]});
 
             }
@@ -34,17 +34,17 @@ export default class Test extends PureComponent {
             <BarChart
                 width={500}
                 height={300}
-                data={this.state.datag.data}
+                data={this.state.datag.podatki}
                 margin={{
                     top: 5, right: 30, left: 20, bottom: 5,
                 }}
             >
                 <CartesianGrid strokeDasharray="3 3"/>
-                <XAxis dataKey="year"/>
+                <XAxis dataKey="leto"/>
                 <YAxis/>
                 <Tooltip/>
                 <Legend/>
-                <Bar dataKey="accidents" fill="#8884d8"/>
+                <Bar dataKey="nesrece" fill="#8884d8"/>
 
             </BarChart>
         );
