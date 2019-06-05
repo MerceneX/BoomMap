@@ -1,46 +1,22 @@
-var util = require('util');
 const express = require("express"),
     router = express.Router({mergeParams: true}),
-    bodyParser = require('body-parser'),
-    axios = require('axios'),
-    db = require("../config/database");
+    db = require("../config/database"),
+    QueryMan = require("../lib/queries");
 
-    router.get("/test", async (req, res) => {
-    const result = {
-        naslov: "Nesreče skozi leta",
-        podatki: []
-    };
-    for (let i = 4; i < 9; i++) {
-        const queryString = `201${i}`;
-        const query = new RegExp(queryString);
-        const numOf = await db.getDB().collection("nesrece").find({"Datum_Nesrece": {$regex: query}}).count();
-        const entry = {
-            leto: queryString,
-            nesrece: numOf
-        };
-        result.podatki.push(entry);
-        console.log(query + "\n" + numOf);
-    }
-    res.json(result);
-});
+
+const accidentsCollection = "nesrece",
+    peopleCollection = "osebe";
+
 
 router.get("/23", async (req, res) => {
-    const result = {
-        naslov: "Nesreče skozi leta",
-        podatki: []
-    };
-    for (let i = 4; i < 9; i++) {
-        const queryString = `201${i}`;
-        const query = new RegExp(queryString);
-        const numOf = await db.getDB().collection("nesrece").find({"Datum_Nesrece": {$regex: query}}).count();
-        const entry = {
-            leto: queryString,
-            nesrece: numOf
-        };
-        result.podatki.push(entry);
-        console.log(query + "\n" + numOf);
+    const values = [2014,2015,2016,2017,2018];
+    const keys = ["leto","nesrece"];
+    const queryMan = QueryMan.getQueryMan(23);
+    if(queryMan)res.json(queryMan.data);
+    else {
+        const queryMan = new QueryMan(23,"Nesreče glede na leto", values, [], accidentsCollection, "Datum_Nesrece", true);
+        res.json(await queryMan.queryData(keys));
     }
-    res.json(result);
 });
 
 router.get("/24", (req, res) => {
@@ -80,29 +56,18 @@ router.get("/24", (req, res) => {
 });
 
 router.get("/25", async (req, res) => {
-    const result = {
-        naslov: "Nesreče glede na vreme",
-        podatki: []
-    };
-    const values = ['JASNO', 'OBLAČNO', 'DEŽEVNO', 'NEZNANO', 'MEGLA', 'SNEG', 'VETER', 'TOČA'];
-    const valNum = values.length;
-    for (let i = 0; i < valNum; i++) {
-        const value = values[i];
-        const numOf = await db.getDB().collection("nesrece").find({"PRVR_Vreme": value[0]}).count();
-        const entry = {
-            vreme: value,
-            nesrece: numOf
-        };
-        result.podatki.push(entry);
+    const values = ['J', 'O', 'D', 'N', 'M', 'S', 'V', 'T'];
+    const decodedValues = ['JASNO', 'OBLAČNO', 'DEŽEVNO', 'NEZNANO', 'MEGLA', 'SNEG', 'VETER', 'TOČA'];
+    const keys = ["vreme","nesrece"];
+    const queryMan = QueryMan.getQueryMan(25);
+    if(queryMan) res.json(queryMan.data);
+    else {
+        const queryMan = new QueryMan(25,"Nesreče glede na vreme", values, decodedValues, accidentsCollection, "PRVR_Vreme", false);
+        res.json(await queryMan.queryData(keys));
     }
-    res.json(result);
 });
 
 router.get("/26", async (req, res) => {
-    const result = {
-        naslov: "Nesreče glede na vzrok",
-        podatki: []
-    };
     const values = ['NP', 'SV', 'PV', 'OS', 'HI', 'PD', 'PR', 'VR', 'TO', 'CE', 'VO'];
     const decodedValues = [
         'Nepravilnost pešca',
@@ -117,25 +82,16 @@ router.get("/26", async (req, res) => {
         'Nepravilnost na cesti',
         'Neustrezna varnostna razdalja'
     ];
-    const valNum = values.length;
-    for (let i = 0; i < valNum; i++) {
-        const value = values[i];
-        const numOf = await db.getDB().collection("nesrece").find({"PRVZ_vzrok": value}).count();
-        const entry = {
-            vzrok: decodedValues[i],
-            nesrece: numOf
-        };
-        result.podatki.push(entry);
+    const keys = ["vzrok","nesrece"];
+    const queryMan = QueryMan.getQueryMan(26);
+    if(queryMan){
+        console.log("QueryMan is alive!");
+        res.json(queryMan.data);
+    } else {
+        const queryMan = new QueryMan(26,"Nesreče glede na vzroke", values, decodedValues, accidentsCollection, "PRVZ_vzrok", false);
+        res.json(await queryMan.queryData(keys));
     }
-    res.json(result);
-
-    /*{
-        title: "Nesreče glede na vzrok",
-        data: [
-            {
-                vzrok: "nepravilnost na cesti",
-                nesrece: "21398"
-            },*/
 });
+
 
 module.exports = router;
