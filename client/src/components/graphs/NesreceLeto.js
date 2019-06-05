@@ -1,8 +1,10 @@
-import React, {PureComponent} from 'react';
-import axios from 'axios';
+import React, { PureComponent } from 'react';
 import {
-    BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+    AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend
 } from 'recharts';
+import MyCard2 from '../MyCard2';
+
+import axios from 'axios';
 
 
 var data = [
@@ -11,39 +13,38 @@ var data = [
 export default class Test extends PureComponent {
 
     state = {
-        datag: [],
+        dataLeto: [],
     }
 
     componentDidMount() {
         axios.get('http://localhost:5000/api/graph/23').then(res => {
-            this.setState({datag: res.data});
+            this.setState({dataLeto: res.data});
             console.log(res.data);
             for(var key in this.state) {
                 data.push(this.state[key]);
                // console.log(this.state[key]);
-                //this.setState({datag: data[key]});
+                //this.setState({dataLeto: LData[key]});
             }
         });
     }
 
     render() {
         return (
-            <BarChart
+            <AreaChart
                 width={500}
                 height={300}
-                data={this.state.datag.podatki}
+                data={this.state.dataLeto.podatki}
                 margin={{
-                    top: 5, right: 30, left: 20, bottom: 5,
+                    top: 10, right: 30, left: 0, bottom: 0,
                 }}
             >
-                <CartesianGrid strokeDasharray="3 3"/>
-                <XAxis dataKey="leto"/>
-                <YAxis/>
-                <Tooltip/>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="leto" />
+                <YAxis />
+                <Tooltip />
                 <Legend/>
-                <Bar dataKey="nesrece" fill="#7fbd87"/>
-
-            </BarChart>
+                <Area type="monotone" dataKey="nesrece" stroke="#7fbd87" fill="#7fbd87" />
+            </AreaChart>
         );
     }
 }

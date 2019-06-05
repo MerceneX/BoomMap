@@ -9,25 +9,26 @@ function Statistics() {
     return (
         <React.Fragment>
             <div>
-                <Container>
+                <Container className="graphs">
                     <Row>
                         <Col>
+                            <h6> Število nesreč v posameznem letu </h6>
                             <NesreceLeto/>
                         </Col>
                         <Col>
+                            <h6> Število nesreč glede na posamezen dan v tednu </h6>
                             <DneviChart/>
                         </Col>
                     </Row>
                 </Container>
             </div>
             <div>
-                <Container>
+                <Container className="graphs">
                     <Row>
                         <Col>
-                            <VremeChart/>
+                        <NesreceVzrok/>
                         </Col>
                         <Col>
-                            <NesreceVzrok/>
                         </Col>
                     </Row>
                 </Container>

@@ -1,4 +1,5 @@
 import React, {PureComponent} from 'react';
+import ResponsiveContainter, {ResponsiveContainer} from "recharts";
 import axios from 'axios';
 import {
     BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
@@ -21,7 +22,7 @@ export default class DneviChart extends PureComponent {
             for(var key in this.state) {
                 data.push(this.state[key]);
                 // console.log(this.state[key]);
-                //this.setState({datag: data[key]});
+                //this.setState({dataLeto: data[key]});
             }
         });
     }
@@ -38,11 +39,10 @@ export default class DneviChart extends PureComponent {
             >
                 <CartesianGrid strokeDasharray="3 3"/>
                 <XAxis dataKey="dan"/>
-                <YAxis/>
+                <YAxis domain={[0, 56000]}/>
                 <Tooltip/>
                 <Legend/>
-                <Bar dataKey="nesrece" fill="#7ca6b0"/>
-
+                <Bar layout="horizontal" dataKey="nesrece" fill="#7ca6b0" fillOpacity="0.7"/>
             </BarChart>
         );
     }
