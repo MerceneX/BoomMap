@@ -22,6 +22,7 @@ function App() {
             <Route path="/statistika" component={Album}/>
 
             <Container>
+
             </Container>
 
             <Route path="/about" component={About}/>
