@@ -41,7 +41,7 @@ export default class Test extends PureComponent {
                 <YAxis/>
                 <Tooltip/>
                 <Legend/>
-                <Bar dataKey="nesrece" fill="#8884d8"/>
+                <Bar dataKey="nesrece" fill="#7fbd87"/>
 
             </BarChart>
         );

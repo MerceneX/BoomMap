@@ -14,7 +14,7 @@ function About() {
                 <Container>
                     <p> ...  </p></Container>
             </div>
-            <div class="container">
+            <div className="container">
                 <h4 className="headers"> Ekipa </h4>
                 <Container>
                     <Row className="theteam">

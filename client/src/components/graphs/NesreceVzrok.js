@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import {
-    PieChart, Pie, Legend, Tooltip,
+    BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
 
 import axios from 'axios';
@@ -29,12 +29,21 @@ export default class NesreceVzrok extends PureComponent {
 
     render() {
         return (
-            <PieChart width={400} height={400}>
-                <Pie dataKey="nesrece" isAnimationActive={false} data={this.state.datag.data} cx={200} cy={200} outerRadius={80} fill="#8884d8" label />
-                <Pie dataKey="nesrece" data={this.state.datag.data} cx={500} cy={200} innerRadius={40} outerRadius={80} fill="#82ca9d" />
+            <BarChart
+                width={500}
+                height={300}
+                data={this.state.datag.podatki}
+                margin={{
+                    top: 5, right: 30, left: 20, bottom: 5,
+                }}
+            >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="vzrok" />
+                <YAxis />
                 <Tooltip />
-            </PieChart>
+                <Legend />
+                <Bar dataKey="nesrece" fill="#5dbcbb" />
+            </BarChart>
         );
     }
 }
-
