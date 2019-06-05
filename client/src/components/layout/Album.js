@@ -5,7 +5,9 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 import MyCard2 from '../MyCard2';
+import DneviChart from "../graphs/DneviChart";
 
+import VremeChart from "../graphs/VremeChart";
 
 const styles = theme => ({
 
@@ -69,9 +71,13 @@ function Album(props) {
                             <Grid item key={card} sm={8} md={6} lg={4}>
                             <MyCard2 style={cardStyle}/>
 
+
                             </Grid>
+
                         ))}
                     </Grid>
+                    <DneviChart/>
+                    <VremeChart/>
                 </div>
             </main>
 
