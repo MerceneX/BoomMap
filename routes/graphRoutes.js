@@ -6,10 +6,10 @@ const express = require("express"),
     db = require("../config/database");
 
     router.get("/test", async (req, res) => {
-    result = {
+    const result = {
         naslov: "Nesreče skozi leta",
         podatki: []
-    }
+    };
     for (let i = 4; i < 9; i++) {
         const queryString = `201${i}`;
         const query = new RegExp(queryString);
@@ -25,7 +25,7 @@ const express = require("express"),
 });
 
 router.get("/23", async (req, res) => {
-    result = {
+    const result = {
         naslov: "Nesreče skozi leta",
         podatki: []
     };
@@ -80,7 +80,7 @@ router.get("/24", (req, res) => {
 });
 
 router.get("/25", async (req, res) => {
-    result = {
+    const result = {
         naslov: "Nesreče glede na vreme",
         podatki: []
     };
@@ -99,7 +99,7 @@ router.get("/25", async (req, res) => {
 });
 
 router.get("/26", async (req, res) => {
-    result = {
+    const result = {
         naslov: "Nesreče glede na vzrok",
         podatki: []
     };
@@ -116,7 +116,7 @@ router.get("/26", async (req, res) => {
         'Nepravilnost na tovoru',
         'Nepravilnost na cesti',
         'Neustrezna varnostna razdalja'
-    ]
+    ];
     const valNum = values.length;
     for (let i = 0; i < valNum; i++) {
         const value = values[i];
