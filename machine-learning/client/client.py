@@ -74,7 +74,7 @@ def refresh_data_to_send():
     save_output(pd.read_csv(filename), itemsets)
 
 def main():
-    #refresh_data_to_send()
+    refresh_data_to_send()
     sections = pd.read_csv('odseki.csv')
 
 

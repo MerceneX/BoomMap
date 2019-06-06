@@ -32,3 +32,9 @@
 .graphs{
     text-align: center;
 }
+
+.map{
+    height: 800px;
+    width: 1500px;
+
+}
