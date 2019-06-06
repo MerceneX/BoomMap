@@ -1,4 +1,4 @@
-import codecs, json, requests, pandas as pd, numpy as nm, holidays as h,datetime,csv
+import codecs, json, requests, pandas as pd, numpy as nm, holidays as h,datetime,csv, pyproj
 from pandas.io.json import json_normalize
 
 # from url
@@ -63,13 +63,15 @@ def get_road_data(data):
     region = df['regija'].value_counts()
     region_json = json.loads(region.to_json())
 
-    return sections_json, sections_number_json, town_json,region_json
+    time = df['Cas_Nesrece'].value_counts()
+
+    return sections_json, sections_number_json, town_json,region_json,json.loads(time.to_json())
 
 def strip_white_spaces(path):
     reader = csv.DictReader(
         open(path),
     )
-    first_row =next(reader)
+    next(reader)
     reader = (
         dict((k, v.strip()) for k, v in row.items() if v) for row in reader)
 
@@ -77,8 +79,9 @@ def strip_white_spaces(path):
     for row in reader:
         output_rows.append(row)
     reader.close()
-    with open(path, 'w') as f:  # Just use 'w' mode in 3.x
+    with open(path, 'w') as f:
         w = csv.writer(f)
-        w.writerow(first_row)
+        w.writerow(output_rows[0].keys())
         for line in output_rows:
             w.writerow(line.values())
+
