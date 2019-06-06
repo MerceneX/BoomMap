@@ -1,6 +1,5 @@
 const express = require("express"),
     router = express.Router({mergeParams: true}),
-    db = require("../config/database"),
     QueryMan = require("../lib/queries");
 
 
