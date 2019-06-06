@@ -9,6 +9,7 @@ const accidentsCollection = "nesrece",
 
 
 router.get("/23", async (req, res) => {
+    // N/A
     const values = [2014,2015,2016,2017,2018];
     const keys = ["leto","nesrece"];
     const queryMan = QueryMan.getQueryMan(23);
@@ -20,6 +21,7 @@ router.get("/23", async (req, res) => {
 });
 
 router.get("/24", async (req, res) => {
+    // N/A
     const values = ['0w', '1w', '2w', '3w', '4w','5w' , '6w'];
     const decodedValues = ['ponedeljek', 'torek', 'sreda', 'četrtek', 'petek', 'sobota', 'nedelja'];
     const keys = ["dan","nesrece"];
@@ -32,6 +34,7 @@ router.get("/24", async (req, res) => {
 });
 
 router.get("/25", async (req, res) => {
+    //PRVR
     const values = ['J', 'O', 'D', 'N', 'M', 'S', 'V', 'T'];
     const decodedValues = ['JASNO', 'OBLAČNO', 'DEŽEVNO', 'NEZNANO', 'MEGLA', 'SNEG', 'VETER', 'TOČA'];
     const keys = ["vreme","nesrece"];
@@ -44,6 +47,7 @@ router.get("/25", async (req, res) => {
 });
 
 router.get("/26", async (req, res) => {
+    //PRVZ
     const values = ['NP', 'SV', 'PV', 'OS', 'HI', 'PD', 'PR', 'VR', 'TO', 'CE', 'VO'];
     const decodedValues = [
         'Nepravilnost pešca',
@@ -71,6 +75,7 @@ router.get("/26", async (req, res) => {
 
 
 router.get("/27", async (req, res) => {
+    //LVVN
     const values = [ 7, 11, 5, 12, 8, 10, 2, 4, 9, 3, 6, 1];
     const decodedValues = ['tovorno vozilo','delovno vozilo','avtobus','tovorno vozilo','tovorno vozilo', 'vlečno vozilo', 'osebni avtomobil', 'avtobus', 'tovorno vozilo', 'avtobus', 'avtobus', 'osebni avtomobil'];
     const keys = ["vozilo","nesrece"];
@@ -83,6 +88,7 @@ router.get("/27", async (req, res) => {
 });
 
 router.get("/28", async (req, res) => {
+    //PRVU
     const values = ['AV', 'DS', 'K1', 'KM', 'KO', 'KR', 'KV', 'LK', 'LV', 'M1', 'MK', 'MO', 'OA', 'OD', 'OS', 'PE', 'PO', 'PT', 'SD', 'SK', 'SM', 'SP', 'SV', 'TK', 'TR', 'TV', 'UC', 'KO', 'MK', 'OA', 'PE', 'PT', 'XX'];
     const decodedValues = ['VOZNIK AVTOBUSA', 'VOZNIK DELOVNEGA STROJA', 'VOZNIK KOLESA S POMOŽNIM ELEKTRIČNIM MOTORJEM', 'VOZNIK KOLESA Z MOTORJEM', 'KOLESAR', 'X-KRŠITELJ - JRM', 'VOZNIK KOMBINIRANEGA VOZILA', 'VOZNIK LAHKEGA ŠTIRIKOLESA', 'LASTNIK VOZILA', 'VOZNIK MOPEDA DO 25 KM/H', 'VOZNIK MOTORNEGA KOLESA', 'VOZNIK MOPEDA', 'VOZNIK OSEBNEGA AVTOMOBILA', 'ODGOVORNA OSEBA', 'OSTALO', 'PEŠEC', 'PRAVNA OSEBA', 'POTNIK', 'POSAMEZNIK, S.P., KI SAMOSTOJNO OPRAVLJA DEJAVNOST IN ZAPOSLUJE DRUGE', 'VOZNIK ŠTIRIKOLESA', 'SKRBNIK MLADOLETNIKA', 'SAMOSTOJNI PODJETNIK', 'VOZNIK SPECIALNEGA VOZILA', 'VOZNIK TRIKOLESA', 'VOZNIK TRAKTORJA', 'VOZNIK TOVORNEGA VOZILA', 'UČITELJ VOŽNJE MED USPOSABLJANJEM KANDIDATA ZA VOZNIKA MV', 'KOLESARJI', 'VOZNIKI MOTORNIH KOLES', 'VOZNIKI OSEBNIH AVTOMOBILOV', 'PEŠCI', 'POTNIKI', 'DRUGI UDELEŽENCI'];
     const keys = ["udelezenec","nesrece"];
