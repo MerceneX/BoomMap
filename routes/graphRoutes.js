@@ -19,40 +19,16 @@ router.get("/23", async (req, res) => {
     }
 });
 
-router.get("/24", (req, res) => {
-    res.json({
-        title: "Nesreče po dnevih leta",
-        data: [
-            {
-                dan: "pon",
-                nesrece: "10271"
-            },
-            {
-                dan: "tor",
-                nesrece: "8251"
-            },
-            {
-                dan: "sre",
-                nesrece: "7514"
-            },
-            {
-                dan: "čet",
-                nesrece: "8132"
-            },
-            {
-                dan: "pet",
-                nesrece: "55172"
-            },
-            {
-                dan: "sob",
-                nesrece: "32183"
-            },
-            {
-                dan: "ned",
-                nesrece: "13714"
-            }
-        ]
-    })
+router.get("/24", async (req, res) => {
+    const values = ['0w', '1w', '2w', '3w', '4w','5w' , '6w'];
+    const decodedValues = ['ponedeljek', 'torek', 'sreda', 'četrtek', 'petek', 'sobota', 'nedelja'];
+    const keys = ["dan","nesrece"];
+    const queryMan = QueryMan.getQueryMan(24);
+    if(queryMan)res.json(queryMan.data);
+    else {
+        const queryMan = new QueryMan(24,"Nesreče glede na dan", values, decodedValues, accidentsCollection, "dan_v_tednu", false);
+        res.json(await queryMan.queryData(keys));
+    }
 });
 
 router.get("/25", async (req, res) => {
