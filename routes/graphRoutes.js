@@ -70,4 +70,29 @@ router.get("/26", async (req, res) => {
 });
 
 
+router.get("/27", async (req, res) => {
+    const values = [ 7, 11, 5, 12, 8, 10, 2, 4, 9, 3, 6, 1];
+    const decodedValues = ['tovorno vozilo','delovno vozilo','avtobus','tovorno vozilo','tovorno vozilo', 'vlečno vozilo', 'osebni avtomobil', 'avtobus', 'tovorno vozilo', 'avtobus', 'avtobus', 'osebni avtomobil'];
+    const keys = ["vozilo","nesrece"];
+    const queryMan = QueryMan.getQueryMan(27);
+    if(queryMan) res.json(queryMan.data);
+    else {
+        const queryMan = new QueryMan(27,"Nesreče glede na vozilo", values, decodedValues, accidentsCollection, "LVVN_vrsta_vozila", true);
+        res.json(await queryMan.queryData(keys));
+    }
+});
+
+router.get("/28", async (req, res) => {
+    const values = ['AV', 'DS', 'K1', 'KM', 'KO', 'KR', 'KV', 'LK', 'LV', 'M1', 'MK', 'MO', 'OA', 'OD', 'OS', 'PE', 'PO', 'PT', 'SD', 'SK', 'SM', 'SP', 'SV', 'TK', 'TR', 'TV', 'UC', 'KO', 'MK', 'OA', 'PE', 'PT', 'XX'];
+    const decodedValues = ['VOZNIK AVTOBUSA', 'VOZNIK DELOVNEGA STROJA', 'VOZNIK KOLESA S POMOŽNIM ELEKTRIČNIM MOTORJEM', 'VOZNIK KOLESA Z MOTORJEM', 'KOLESAR', 'X-KRŠITELJ - JRM', 'VOZNIK KOMBINIRANEGA VOZILA', 'VOZNIK LAHKEGA ŠTIRIKOLESA', 'LASTNIK VOZILA', 'VOZNIK MOPEDA DO 25 KM/H', 'VOZNIK MOTORNEGA KOLESA', 'VOZNIK MOPEDA', 'VOZNIK OSEBNEGA AVTOMOBILA', 'ODGOVORNA OSEBA', 'OSTALO', 'PEŠEC', 'PRAVNA OSEBA', 'POTNIK', 'POSAMEZNIK, S.P., KI SAMOSTOJNO OPRAVLJA DEJAVNOST IN ZAPOSLUJE DRUGE', 'VOZNIK ŠTIRIKOLESA', 'SKRBNIK MLADOLETNIKA', 'SAMOSTOJNI PODJETNIK', 'VOZNIK SPECIALNEGA VOZILA', 'VOZNIK TRIKOLESA', 'VOZNIK TRAKTORJA', 'VOZNIK TOVORNEGA VOZILA', 'UČITELJ VOŽNJE MED USPOSABLJANJEM KANDIDATA ZA VOZNIKA MV', 'KOLESARJI', 'VOZNIKI MOTORNIH KOLES', 'VOZNIKI OSEBNIH AVTOMOBILOV', 'PEŠCI', 'POTNIKI', 'DRUGI UDELEŽENCI'];
+    const keys = ["udelezenec","nesrece"];
+    const queryMan = QueryMan.getQueryMan(28);
+    if(queryMan) res.json(queryMan.data);
+    else {
+        const queryMan = new QueryMan(28,"Nesreče glede na udelezence", values, decodedValues, peopleCollection, "PRVO_vloga_udelezenca", false);
+        res.json(await queryMan.queryData(keys));
+    }
+});
+
+
 module.exports = router;
