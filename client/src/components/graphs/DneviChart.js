@@ -32,14 +32,14 @@ export default class DneviChart extends PureComponent {
             <BarChart
                 width={500}
                 height={300}
-                data={this.state.datag.data}
+                data={this.state.datag.podatki}
                 margin={{
                     top: 5, right: 30, left: 20, bottom: 5,
                 }}
             >
                 <CartesianGrid strokeDasharray="3 3"/>
-                <XAxis dataKey="dan"/>
-                <YAxis domain={[0, 56000]}/>
+                <XAxis dataKey="dan" interval={0} fontSize={12}/>
+                <YAxis domain={[0, 25000]}/>
                 <Tooltip/>
                 <Legend/>
                 <Bar layout="horizontal" dataKey="nesrece" fill="#7ca6b0" fillOpacity="0.7" label={{ fill: 'white', fontSize: 10 }}/>
