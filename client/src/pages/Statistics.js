@@ -4,6 +4,7 @@ import DneviChart from '../components/graphs/DneviChart'
 import VremeChart from '../components/graphs/VremeChart'
 import NesreceVzrok from '../components/graphs/NesreceVzrok'
 import {Col, Container, Row} from "reactstrap";
+import Text from "recharts/es6/component/Text";
 
 function Statistics() {
     return (
@@ -20,15 +21,10 @@ function Statistics() {
                             <DneviChart/>
                         </Col>
                     </Row>
-                </Container>
-            </div>
-            <div>
-                <Container className="graphs">
                     <Row>
                         <Col>
-                        <NesreceVzrok/>
-                        </Col>
-                        <Col>
+                            <h6> Število nesreč glede na vzrok </h6>
+                            <NesreceVzrok/>
                         </Col>
                     </Row>
                 </Container>
