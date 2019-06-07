@@ -31,4 +31,6 @@
 
 .graphs{
     text-align: center;
+    align-content: space-between;
+    align-items: stretch;
 }

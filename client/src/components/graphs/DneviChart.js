@@ -42,7 +42,7 @@ export default class DneviChart extends PureComponent {
                 <YAxis domain={[0, 56000]}/>
                 <Tooltip/>
                 <Legend/>
-                <Bar layout="horizontal" dataKey="nesrece" fill="#7ca6b0" fillOpacity="0.7"/>
+                <Bar layout="horizontal" dataKey="nesrece" fill="#7ca6b0" fillOpacity="0.7" label={{ fill: 'white', fontSize: 10 }}/>
             </BarChart>
         );
     }

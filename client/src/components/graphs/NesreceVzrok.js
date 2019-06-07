@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import {
-    BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+    BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Label
 } from 'recharts';
 
 import axios from 'axios';
@@ -30,7 +30,7 @@ export default class NesreceVzrok extends PureComponent {
     render() {
         return (
             <BarChart
-                width={500}
+                width={1200}
                 height={300}
                 data={this.state.datac.podatki}
                 margin={{
@@ -38,8 +38,8 @@ export default class NesreceVzrok extends PureComponent {
                 }}
             >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="vzrok" />
-                <YAxis />
+                <XAxis dataKey="vzrok" interval={0} fontSize={8}/>
+                <YAxis/>
                 <Tooltip />
                 <Legend />
                 <Bar dataKey="nesrece" fill="#8884d8" />
