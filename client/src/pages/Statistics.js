@@ -4,6 +4,7 @@ import DneviChart from '../components/graphs/DneviChart'
 import NesreceSpol from '../components/graphs/NesreceSpol'
 import NesreceVzrok from '../components/graphs/NesreceVzrok'
 import NesrecePraznik from '../components/graphs/NesrecePraznik'
+import NesreceStanjePrometa from '../components/graphs/NesreceStanjePrometa'
 import {Col, Container, Row} from "reactstrap";
 import NesreceVozilo from "../components/graphs/NesreceVozilo";
 
@@ -44,8 +45,8 @@ function Statistics() {
                                 <NesrecePraznik/>
                             </Col>
                             <Col>
-                                <h6> </h6>
-
+                                <h6> Glede na stanje prometa </h6>
+                                <NesreceStanjePrometa/>
                             </Col>
                         </Row>
 

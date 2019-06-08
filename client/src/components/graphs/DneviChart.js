@@ -20,8 +20,6 @@ export default class DneviChart extends PureComponent {
             console.log(res.data);
             for(var key in this.state) {
                 data.push(this.state[key]);
-                // console.log(this.state[key]);
-                //this.setState({dataLeto: data[key]});
             }
         });
     }

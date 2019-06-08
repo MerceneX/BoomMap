@@ -6,7 +6,6 @@ import {Pie, PieChart, Sector} from "recharts";
 var data = [
 ];
 
-
 const renderActiveShape = (props) => {
     const RADIAN = Math.PI / 180;
     const {
@@ -66,8 +65,6 @@ export default class NesrecePraznik extends PureComponent {
             console.log(res.data);
             for (var key in this.state) {
                 data.push(this.state[key]);
-                // console.log(this.state[key]);
-                //this.setState({dataLeto: data[key]});
             }
         });
     }
