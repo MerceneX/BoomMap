@@ -43,7 +43,7 @@ export default class Test extends PureComponent {
                 <YAxis />
                 <Tooltip />
                 <Legend/>
-                <Area type="monotone" dataKey="nesrece" stroke="#7fbd87" fill="#7fbd87" />
+                <Area type="monotone" dataKey="nesrece" stroke="#66b2b2" fill="#66b2b2" />
             </AreaChart>
         );
     }

@@ -31,8 +31,8 @@
 
 .graphs{
     text-align: center;
-    align-content: space-between;
-    align-items: stretch;
+    align-content: center;
+    align-items: center;
 }
 
 .map{
