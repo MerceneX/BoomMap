@@ -1,84 +1,78 @@
-import requests, data_processer as dp, json, csv,IO
+import requests, data_processer as dp, json, csv, IO, location
 import pandas as pd
 from efficient_apriori import apriori
 import numpy as nm
 
 pd.set_option('precision', 0)
-# testing purposes
-dnevi_v_tednu = {
-    '0': 'ponedeljek',
-    '1': 'torek',
-    '2': 'sreda',
-    '3': 'cetrtek',
-    '4': 'petek',
-    '5': 'sobota',
-    '6': 'nedelja'
-}
+result_json = {}
 
 
-def test(data):
-    data_to_observe = data[['dan_v_tednu', 'Cas_Nesrece']]
-    # data_to_observe = data_to_observe.loc[data['PRVR_Vreme']!='J']
-    data_to_observe.to_csv("test_data.csv", encoding='utf-8', index=False)
-    itemsets, rules = apriori(dp.data_generator('test_data.csv'), min_support=0.1, min_confidence=0.1)
-    return itemsets, rules
+def create_json_element_surface(itemsets, columns, section, surface):
+    result_json[section]['povrsje'][surface] = {}
+    for column in columns:
+        array_of_values = []
+        for element in itemsets[0]:
+            element = str(element).translate({ord(i): None for i in "',()/\\"})  # remove extra elements
+            splitted = str(element).split(":")
+            if columns.get_loc(column) == int(splitted[0]):
+                array_of_values.append(splitted[1])
+        result_json[section]['povrsje'][surface][column] = array_of_values
 
 
-def save_output(data, itemsets):
+def itemsets_to_list(itemsets):
     common_itemsets = list()
     for i in range(len(itemsets)):
         common_itemsets.append(list(itemsets[i + 1].keys()))
-    sections, sections_numbers, town, region, time = dp.get_road_data(data)
-    json_data = {
-        'critical_sections': sections,
-        'critical_sections_number': sections_numbers,
-        'itemsets': common_itemsets,
-        'town': town,
-        'region': region,
-        'time': time,
-        'legend': {
-            '0': 'poskodbe',
-            '1': 'datum',
-            '2': 'cas',
-            '3': 'naselje/zunaj_naselja',
-            '4': 'vzrok',
-            '5': 'tip_nesrece',
-            '6': 'vreme',
-            '7': 'promet',
-            '8': 'vozisce',
-            '9': 'povrsje',
-            '10': 'vrsta_ceste',
-            '11': 'ime_ceste',
-            '12': 'ulica_odseka',
-            '13': 'stevilka_odseka',
-            '14': 'vrsta_avta',
-            '15': 'kraj',
-            '16': 'vrsta_vozila',
-            '17': 'regija',
-            '18': 'mesec',
-            '19': 'dan_v_tednu'
 
-        }
-    }
-    with open('output.json', 'w') as outfile:
-        json.dump(json_data, outfile)
+    return common_itemsets
 
-filename = 'data.csv'
+
+def create_result(data, itemsets_dry, itemsets_not_dry, section, sections_df):
+    section_name = sections_df.loc[sections_df['odsek'] == section]
+    day_of_a_week = dp.get_road_data(data)
+    keys = list(day_of_a_week.keys())
+    result_json[section] = {}
+    result_json[section]['povrsje'] = {}
+    result_json[section]['dan_teden']=keys
+    result_json[section]['kraj'] = section_name.values.tolist()
+    result_json[section]['koordinate'] = [location.geocode(str(section_name.iloc[0]['ime_odseka']))]
+    create_json_element_surface(itemsets_to_list(itemsets_not_dry), data.columns, section, 'ne_suho')
+    create_json_element_surface(itemsets_to_list(itemsets_dry), data.columns, section, 'suho')
+
+
 # use of apriori algorithm
-def create_rules():
-    itemsets, rules = apriori(dp.data_generator(filename), min_support=0.2, min_confidence=0.5)
+def create_rules(filename):
+    itemsets, rules = apriori(dp.data_generator(filename), min_support=0.07, min_confidence=0.5)
     return itemsets, rules
 
-def refresh_data_to_send():
-    itemsets, rules = create_rules()
-    save_output(pd.read_csv(filename), itemsets)
+
+def save_output(data, sections_df):
+    sections_unique = sections_df['odsek'].unique()
+    data = data.loc[data['stevilka_odseka'].isin(sections_unique)]
+    counts = data['stevilka_odseka'].value_counts()
+    data = data[data['stevilka_odseka'].isin(counts[counts > 100].index)]
+    sections = pd.Series(nm.array(data['stevilka_odseka'].unique()))
+
+    for section in sections:
+        dry = data.loc[
+            (data['stevilka_odseka'] == section) & (data['PRPV_Povrsje'] == "SU") & (data['PRSP_Promet'] != 'E')]
+        not_dry = data.loc[
+            (data['stevilka_odseka'] == section) & (data['PRPV_Povrsje'] != "SU") & (data['PRSP_Promet'] != 'E')]
+        dry.to_csv('data/dry.csv', encoding='utf8', index=False)
+        not_dry.to_csv('data/not_dry.csv', encoding='utf8', index=False)
+        itemsets_dry, rules_dry = create_rules('data/dry.csv')
+        itemsets_not_dry, rules_not_dry = create_rules('data/not_dry.csv')
+        create_result(data, itemsets_dry, itemsets_not_dry, section, sections_df)
+
+    with open('json/results.json', 'w') as outfile:
+        json.dump(result_json, outfile)
+
 
 def main():
-    refresh_data_to_send()
-    sections = pd.read_csv('odseki.csv')
-
+    sections = pd.read_csv('data/odseki.csv')
+    data = pd.read_csv('data/data.csv')
+    save_output(data, sections)
 
 
 if __name__ == "__main__":
     main()
-
