@@ -1,3 +1,20 @@
+<p align="center"><img src="boomLogo.svg" alt="boomMap" title="boomMap" width="500" height="130"/></p>
+
+Projekt je bil izveden v sklopu predmeta Praktikum 2, FERI ITK UN.
+Mentor: doc. dr. Luka Pavlič
+
+## Kdo smo 
+[<img alt="GluhakMarko" src="https://avatars3.githubusercontent.com/u/36963174?s=400&v=4" width="100">](https://github.com/MerceneX) |[<img alt="KonecnikMarusa" src="https://avatars1.githubusercontent.com/u/33929107?s=400&v=4" width="100">](https://github.com/marusakonecnik) |[<img alt="GornikPina" src="https://avatars3.githubusercontent.com/u/33715956?s=400&v=4" width="100">](https://github.com/Gornikpina) |[<img alt="FeherNatasa" src="https://avatars3.githubusercontent.com/u/33715956?s=400&v=4" width="100">](https://github.com/FeherNatasa) |
+:---: |:---: |:---: |:---: |
+[GluhakMarko](https://github.com/MerceneX) |[KonecnikMarusa](https://github.com/FeherNatasa) |[Gornikpina](https://github.com/Gornikpina) |[FeherNatasa](https://github.com/FeherNatasa) |
+
+
+## O projektu
+Naša rešitev zajema:
+* pregled statistike prometnih nesreč iz preteklih let
+* zemljevid s prikazom kritičnih točk (najpogostejše nevarnosti)
+Namen rešitve je ozaveščanje voznikov, reševalnih služb in tistih, ki se jim mudi, kje povečati potrplenje in zmanjšati hitrost.
+
 # Priprava okolja
 1. Kloniranje repozitorija z "git clone https://github.com/MerceneX/Praktikum-II.git"
 2. Odpremo nov projekt v WebStorm "EmptyProject" in kopiramo vsebino kloniranega direktorija
@@ -21,7 +38,6 @@ f) "Ok"
 client/node_modules     
 .idea
 README.md"
-
 
 # API Guide
 ## Endpoints
