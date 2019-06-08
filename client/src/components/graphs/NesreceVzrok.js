@@ -42,7 +42,7 @@ export default class NesreceVzrok extends PureComponent {
                 <YAxis/>
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="nesrece" fill="#8884d8" />
+                <Bar dataKey="nesrece" fill="#419873" />
             </BarChart>
         );
     }

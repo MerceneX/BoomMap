@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-    BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+    LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
 
 import axios from "axios";
@@ -28,8 +28,7 @@ export default class NesreceVozilo extends Component {
 
     render() {
         return (
-            <BarChart
-                layout="vertical"
+            <LineChart
                 width={500}
                 height={300}
                 data={this.state.datag.podatki}
@@ -38,13 +37,12 @@ export default class NesreceVozilo extends Component {
                 }}
             >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="vozilo" index={0}/>
+                <XAxis dataKey="vozilo" interval={0} fontSize={10}  />
                 <YAxis />
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="nesrece" fill="#8884d8" />
-
-            </BarChart>
+                <Line type="monotone" dataKey="nesrece" stroke="#317256" dot={{ stroke: '#52bf90', strokeWidth: 2 }} />
+            </LineChart>
         );
     }
 }
