@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
-import { PieChart, Pie, Sector, Legend} from 'recharts';
+import React, {PureComponent} from 'react';
+import axios from 'axios';
+import {Pie, PieChart, Sector} from "recharts";
 
 
-import axios from "axios";
+var data = [
+];
 
-var data = [];
 
 const renderActiveShape = (props) => {
     const RADIAN = Math.PI / 180;
@@ -24,7 +25,7 @@ const renderActiveShape = (props) => {
 
     return (
         <g>
-            <text x={cx} y={cy} dy={8} textAnchor="middle" fill={fill}>{payload.spol}</text>
+            <text x={cx} y={cy} dy={8} textAnchor="middle" fill={fill}>{payload.dan}</text>
             <Sector
                 cx={cx}
                 cy={cy}
@@ -53,16 +54,14 @@ const renderActiveShape = (props) => {
     );
 };
 
-
-export default class NesreceSpol extends Component {
+export default class NesrecePraznik extends PureComponent {
 
     state = {
         datag: [],
-        activeIndex: 0
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/api/graph/33').then(res => {
+        axios.get('http://localhost:5000/api/graph/29').then(res => {
             this.setState({datag: res.data});
             console.log(res.data);
             for (var key in this.state) {
@@ -81,17 +80,17 @@ export default class NesreceSpol extends Component {
 
     render() {
         return (
-            <PieChart width={500} height={400}>
+            <PieChart width={500} height={300}>
                 <Pie
                     activeIndex={this.state.activeIndex}
                     activeShape={renderActiveShape}
                     data={this.state.datag.podatki}
-                    cx={230}
-                    cy={150}
+                    cx={200}
+                    cy={90}
                     innerRadius={60}
                     outerRadius={80}
                     paddingAngle={5}
-                    fill="#008080"
+                    fill="#20b2aa"
                     dataKey="nesrece"
                     onMouseEnter={this.onPieEnter}
                 />

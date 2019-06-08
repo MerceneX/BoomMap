@@ -1,5 +1,4 @@
 import React, {PureComponent} from 'react';
-import ResponsiveContainter, {ResponsiveContainer} from "recharts";
 import axios from 'axios';
 import {
     BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,

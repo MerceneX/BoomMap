@@ -1,11 +1,10 @@
 import React from "react";
 import NesreceLeto from '../components/graphs/NesreceLeto'
 import DneviChart from '../components/graphs/DneviChart'
-import VremeChart from '../components/graphs/VremeChart'
 import NesreceSpol from '../components/graphs/NesreceSpol'
 import NesreceVzrok from '../components/graphs/NesreceVzrok'
+import NesrecePraznik from '../components/graphs/NesrecePraznik'
 import {Col, Container, Row} from "reactstrap";
-import Text from "recharts/es6/component/Text";
 import NesreceVozilo from "../components/graphs/NesreceVozilo";
 
 function Statistics() {
@@ -39,6 +38,17 @@ function Statistics() {
                             <NesreceSpol/>
                         </Col>
                     </Row>
+                        <Row>
+                            <Col>
+                                <h6> Glede na praznike </h6>
+                                <NesrecePraznik/>
+                            </Col>
+                            <Col>
+                                <h6> </h6>
+
+                            </Col>
+                        </Row>
+
                 </Container>
             </div>
         </React.Fragment>

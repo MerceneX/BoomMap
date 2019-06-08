@@ -403,7 +403,7 @@ router.get("/32", async (req, res) => {
 router.get("/33", async (req, res) => {
 	//LVZN
 	const values = ["M", "Z"];
-	const decodedValues = ["MOSKI", "ZENSKA"];
+	const decodedValues = ["Moški", "Ženske"];
 	const keys = ["spol", "nesrece"];
 	const queryMan = QueryMan.getQueryMan(33);
 	if (queryMan) res.json(queryMan.data);
