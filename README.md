@@ -1,4 +1,4 @@
-<p align="center"><img src="boomLogo.svg" alt="boomMap" title="boomMap" width="500" height="130"/></p>
+<p align="center"><img src="client/src/components/design/boomLogo.svg" alt="boomMap" title="boomMap" width="500" height="130"/></p>
 
 Projekt je bil izveden v sklopu predmeta Praktikum 2, FERI ITK UN.
 Mentor: doc. dr. Luka Pavlič
