@@ -29,6 +29,7 @@ function Statistics() {
                         <NesreceVzrok/>
                         </Col>
                         <Col>
+                            <VremeChart/>
                         </Col>
                     </Row>
                 </Container>
