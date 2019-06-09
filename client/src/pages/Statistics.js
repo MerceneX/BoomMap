@@ -7,11 +7,13 @@ import NesrecePraznik from '../components/graphs/NesrecePraznik'
 import NesreceStanjePrometa from '../components/graphs/NesreceStanjePrometa'
 import {Col, Container, Row} from "reactstrap";
 import NesreceVozilo from "../components/graphs/NesreceVozilo";
+import { Button } from 'reactstrap';
 
 function Statistics() {
     return (
         <React.Fragment>
             <div>
+                <Button color="primary">primary</Button>{' '}
                 <Container className="graphs">
                     <Row>
                         <Col>
@@ -36,7 +38,7 @@ function Statistics() {
                         </Col>
                         <Col>
 
-                            <VremeChart/>
+
 
                             <h6> Nesreče glede na spol povzročitelja</h6>
                             <NesreceSpol/>
@@ -61,3 +63,5 @@ function Statistics() {
 }
 
 export default Statistics;
+
+
