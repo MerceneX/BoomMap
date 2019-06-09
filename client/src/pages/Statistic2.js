@@ -16,8 +16,6 @@ class Statistic2 extends React.Component {
         this.toggle = this.toggle.bind(this);
 		this.state = {
             dropdownOpen: false,
-			isHidden: false,
-            isHiddenDan: false,
             show: [true, true, false, false, false, false, false]
 
 		};
@@ -29,11 +27,7 @@ class Statistic2 extends React.Component {
         });
     }
 
-	toggleHidden() {
-		this.setState({
-			isHidden: !this.state.isHidden,
-		});
-	}
+
 
     showHide(num) {
         this.setState((prevState) => {
@@ -46,11 +40,11 @@ class Statistic2 extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				<div>
+				<div className="container">
 
 
                     <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-                        <DropdownToggle caret size="sm">
+                        <DropdownToggle caret >
                             Grafi
                         </DropdownToggle>
                         <DropdownMenu>
