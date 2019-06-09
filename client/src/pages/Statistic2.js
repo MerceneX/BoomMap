@@ -7,66 +7,103 @@ import NesrecePraznik from "../components/graphs/NesrecePraznik";
 import NesreceStanjePrometa from "../components/graphs/NesreceStanjePrometa";
 import { Col, Container, Row } from "reactstrap";
 import NesreceVozilo from "../components/graphs/NesreceVozilo";
-import { Button } from "reactstrap";
+import { Button, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
 
 class Statistic2 extends React.Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
+
+        this.toggle = this.toggle.bind(this);
 		this.state = {
-			isHidden: true
+            dropdownOpen: false,
+			isHidden: false,
+            isHiddenDan: false,
+            show: [true, true, false, false, false, false, false]
+
 		};
 	}
 
+    toggle() {
+        this.setState({
+            dropdownOpen: !this.state.dropdownOpen
+        });
+    }
+
 	toggleHidden() {
 		this.setState({
-			isHidden: !this.state.isHidden
+			isHidden: !this.state.isHidden,
 		});
 	}
+
+    showHide(num) {
+        this.setState((prevState) => {
+            const newItems = [...prevState.show];
+            newItems[num] = !newItems[num];
+            return {show: newItems};
+        });
+    }
 
 	render() {
 		return (
 			<React.Fragment>
 				<div>
-					<Button color="primary" onClick={this.toggleHidden.bind(this)}>
-						Large Button
-					</Button>
+
+
+                    <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+                        <DropdownToggle caret size="sm">
+                            Grafi
+                        </DropdownToggle>
+                        <DropdownMenu>
+                            <DropdownItem onClick={() => this.showHide(0)}>Število nesreč v posameznem letu</DropdownItem>
+                            <DropdownItem onClick={() => this.showHide(1)}>Število nesreč glede na posamezen dan v tednu</DropdownItem>
+                            <DropdownItem onClick={() => this.showHide(2)}>Število nesreč glede na vzrok</DropdownItem>
+                            <DropdownItem onClick={() => this.showHide(3)}>Število nesreč glede na tip vozila</DropdownItem>
+                            <DropdownItem onClick={() => this.showHide(4)}>Nesreče glede na spol povzročitelja</DropdownItem>
+                            <DropdownItem onClick={() => this.showHide(5)}>Glede na praznike</DropdownItem>
+                            <DropdownItem onClick={() => this.showHide(6)}>Glede na stanje prometa</DropdownItem>
+
+                        </DropdownMenu>
+                    </ButtonDropdown>
 
 					<Container className="graphs">
 						<Row>
-							<Col>
-								<h6> Število nesreč v posameznem letu </h6>
-								{!this.state.isHidden && <NesreceLeto />}
-							</Col>
-							<Col>
-								<h6> Število nesreč glede na posamezen dan v tednu </h6>
-								<DneviChart />
-							</Col>
+							<div>
+
+                                {this.state.show[0] && <h6> Število nesreč v posameznem letu </h6>}
+								{this.state.show[0] && <NesreceLeto />}
+							</div>
+							<div>
+
+
+                                {this.state.show[1] && <h6> Število nesreč glede na posamezen dan v tednu </h6>}
+                                {this.state.show[1] && <DneviChart />}
+							</div>
 						</Row>
 						<Row>
-							<Col>
-								<h6> Število nesreč glede na vzrok </h6>
-								<NesreceVzrok />
-							</Col>
+							<div>
+                                {this.state.show[2] &&<h6> Število nesreč glede na vzrok </h6>}
+                                {this.state.show[2] && <NesreceVzrok />}
+							</div>
 						</Row>
 						<Row>
-							<Col>
-								<h6> Število nesreč glede na tip vozila </h6>
-								<NesreceVozilo />
-							</Col>
-							<Col>
-								<h6> Nesreče glede na spol povzročitelja</h6>
-								<NesreceSpol />
-							</Col>
+							<div>
+								{this.state.show[3] && <h6> Število nesreč glede na tip vozila </h6>}
+								{this.state.show[3] && <NesreceVozilo />}
+							</div>
+							<div>
+								{this.state.show[4] && <h6> Nesreče glede na spol povzročitelja</h6>}
+								{this.state.show[4] && <NesreceSpol />}
+							</div>
 						</Row>
 						<Row>
-							<Col>
-								<h6> Glede na praznike </h6>
-								<NesrecePraznik />
-							</Col>
-							<Col>
-								<h6> Glede na stanje prometa </h6>
-								<NesreceStanjePrometa />
-							</Col>
+							<div>
+								{this.state.show[5] && <h6> Glede na praznike </h6>}
+								{this.state.show[5] && <NesrecePraznik />}
+							</div>
+							<div>
+								{this.state.show[6] && <h6> Glede na stanje prometa </h6>}
+								{this.state.show[6] && <NesreceStanjePrometa />}
+							</div>
 						</Row>
 					</Container>
 				</div>

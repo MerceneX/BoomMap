@@ -13,7 +13,7 @@ var data = [
 export default class NesreceLeto extends PureComponent {
 
     state = {
-        dataLeto: [],
+        dataLeto: []
     }
 
     componentDidMount() {
