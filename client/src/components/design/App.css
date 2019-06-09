@@ -31,4 +31,12 @@
 
 .graphs{
     text-align: center;
+    align-content: center;
+    align-items: center;
+}
+
+.map{
+    height: 800px;
+    width: 1500px;
+
 }

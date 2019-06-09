@@ -1,4 +1,4 @@
-import codecs, json, requests, pandas as pd, numpy as nm, holidays as h,datetime,csv
+import codecs, json, requests, pandas as pd, numpy as nm, holidays as h,datetime,csv, pyproj
 from pandas.io.json import json_normalize
 
 # from url
@@ -44,32 +44,21 @@ def split_date(column):
         d = datetime.datetime.strptime(value, "%d.%m.%Y")
         months.append(str(d.month))
         days.append(str(d.day) + 'd')
-        weekdays.append(str(d.weekday()) + 'w')
+        weekdays.append(str(d.weekday()))
         holidays.append(value in slo_holidays)
     return months, days, weekdays, holidays
 
 #statistic
 def get_road_data(data):
     df = pd.DataFrame(data)
-    sections = df['ulica_odseka'].value_counts()
-    sections_json = json.loads(sections.to_json())
 
-    sections_number = df['stevilka_odseka'].value_counts()
-    sections_number_json = json.loads(sections_number.to_json())
-
-    town = df['kraj'].value_counts()
-    town_json = json.loads(town.to_json())
-
-    region = df['regija'].value_counts()
-    region_json = json.loads(region.to_json())
-
-    return sections_json, sections_number_json, town_json,region_json
-
+    day_of_a_week = df['dan_v_tednu'].value_counts()
+    return day_of_a_week.nlargest(n=3,keep='all')
 def strip_white_spaces(path):
     reader = csv.DictReader(
         open(path),
     )
-    first_row =next(reader)
+    next(reader)
     reader = (
         dict((k, v.strip()) for k, v in row.items() if v) for row in reader)
 
@@ -77,8 +66,9 @@ def strip_white_spaces(path):
     for row in reader:
         output_rows.append(row)
     reader.close()
-    with open(path, 'w') as f:  # Just use 'w' mode in 3.x
+    with open(path, 'w') as f:
         w = csv.writer(f)
-        w.writerow(first_row)
+        w.writerow(output_rows[0].keys())
         for line in output_rows:
             w.writerow(line.values())
+

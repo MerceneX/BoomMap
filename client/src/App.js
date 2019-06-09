@@ -8,6 +8,8 @@ import About from "./pages/About";
 import Footer from "./components/layout/Footer";
 import Header from "./components/layout/Header";
 import Home from "./pages/Home";
+import 'leaflet/dist/leaflet.css'
+import Map from "./components/Map"
 
 
 function App() {

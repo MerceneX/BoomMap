@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import {
     AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend
 } from 'recharts';
-import MyCard2 from '../MyCard2';
 
 import axios from 'axios';
 
@@ -17,13 +16,11 @@ export default class Test extends PureComponent {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/api/graph/23').then(res => {
+        axios.get('http://localhost:5000/api/graph/31').then(res => {
             this.setState({dataLeto: res.data});
             console.log(res.data);
             for(var key in this.state) {
                 data.push(this.state[key]);
-               // console.log(this.state[key]);
-                //this.setState({dataLeto: LData[key]});
             }
         });
     }
@@ -39,11 +36,11 @@ export default class Test extends PureComponent {
                 }}
             >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="leto" />
-                <YAxis />
+                <XAxis dataKey="promet" text-transform="uppercase" />
+                <YAxis domain={[0, 70000]}/>
                 <Tooltip />
                 <Legend/>
-                <Area type="monotone" dataKey="nesrece" stroke="#66b2b2" fill="#66b2b2" />
+                <Area type="monotone" dataKey="nesrece" stroke="#66b2b2" fill="#66b2b2" dot={{ fill: '#008080', strokeWidth: 1 }} />
             </AreaChart>
         );
     }
