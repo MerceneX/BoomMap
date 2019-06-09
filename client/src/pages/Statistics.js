@@ -1,8 +1,10 @@
 import React from "react";
 import NesreceLeto from '../components/graphs/NesreceLeto'
-import DneviChart from '../components/graphs/DneviChart'
+import NesreceDnevi from '../components/graphs/NesreceDnevi'
 import NesreceSpol from '../components/graphs/NesreceSpol'
 import NesreceVzrok from '../components/graphs/NesreceVzrok'
+import NesreceVreme from '../components/graphs/NesreceVreme'
+import NesreceTip from '../components/graphs/NesreceTip'
 import NesrecePraznik from '../components/graphs/NesrecePraznik'
 import NesreceStanjePrometa from '../components/graphs/NesreceStanjePrometa'
 import {Col, Container, Row} from "reactstrap";
@@ -20,7 +22,7 @@ function Statistics() {
                         </Col>
                         <Col>
                             <h6> Število nesreč glede na posamezen dan v tednu </h6>
-                            <DneviChart/>
+                            <NesreceDnevi/>
                         </Col>
                     </Row>
                     <Row>
@@ -39,16 +41,32 @@ function Statistics() {
                             <NesreceSpol/>
                         </Col>
                     </Row>
-                        <Row>
-                            <Col>
-                                <h6> Glede na praznike </h6>
-                                <NesrecePraznik/>
-                            </Col>
-                            <Col>
-                                <h6> Glede na stanje prometa </h6>
-                                <NesreceStanjePrometa/>
-                            </Col>
-                        </Row>
+                    <Row>
+                        <Col>
+                            <h6> Glede na praznike </h6>
+                            <NesrecePraznik/>
+                        </Col>
+                        <Col>
+                            <h6> Glede na stanje prometa </h6>
+                            <NesreceStanjePrometa/>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                            <h6> Glede na vreme </h6>
+                            <NesreceVreme/>
+                        </Col>
+                        <Col>
+                            <h6>  </h6>
+
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                            <h6> Glede na tip trčenja </h6>
+                            <NesreceTip/>
+                        </Col>
+                    </Row>
 
                 </Container>
             </div>
