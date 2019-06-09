@@ -40,7 +40,7 @@ export default class NesreceVzrok extends PureComponent {
                 <YAxis/>
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="nesrece" fill="#419873" />
+                <Bar dataKey="nesrece" fill="#419873" label={{ fill: 'white', fontSize: 12 }}/>
             </BarChart>
         );
     }

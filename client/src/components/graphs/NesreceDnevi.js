@@ -8,7 +8,7 @@ import {
 var data = [
 ];
 
-export default class DneviChart extends PureComponent {
+export default class NesreceDnevi extends PureComponent {
 
     state = {
         datag: [],
