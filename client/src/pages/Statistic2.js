@@ -58,6 +58,9 @@ class Statistic2 extends React.Component {
 
                         </DropdownMenu>
                     </ButtonDropdown>
+                    <br/><br/><br/>
+
+
 
 					<Container className="graphs">
 						<Row>
