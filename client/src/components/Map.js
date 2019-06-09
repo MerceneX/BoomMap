@@ -18,28 +18,70 @@ const myIcon = L.icon({
 var string = JSON.stringify(myData)
 var jsObjects= JSON.parse(string)
 var lat = myData["1"].koordinate
-console.log("lat"+lat)
-console.log(myData["1"].kraj[0][3])
+
 var marker = {
     coords: [46.1491664,14.9860106],
     locText: "test"
 }
+var current_state = {
+    weather: "",
+    time: "",
+    day_of_a_week: "",
+    month: ""
+}
 class StreetMap extends React.Component {
-    state = {
-        lat: 46.1491664 ,
-        lng: 14.9860106,
-        zoom: 9,
-        show:null,
-        markers: [],
+    constructor(props) {
+        super(props);
+        this.state = {
+            lat: 46.1491664 ,
+            lng: 14.9860106,
+            zoom: 9,
+            selectedOption:"ne_suho",
+            markers: [],
+        }
+    }
+    changeOption(newOption){
+        this.state.markers = []
+        this.state.selectedOption = newOption.value
+        this.addMarkers()
+
+    }
+    getCurrentState = ()=>{
+        var date = new Date()
+        let day = date.getDay()!==0 ? date.getDay()+1 : 6;
+        let month = date.getMonth()!==12 ? date.getMonth()+1: 0;
+        var state = {
+            PRVR_Vreme: "D",
+            Cas_Nesrece: date.getHours().toString()+'.0',
+            dan_v_tednu: day.toString(),
+            mesec: month.toString()
+        }
+        return state
+    }
+    isSectionCritical = (section,surfaceType)=>{
+        let state = this.getCurrentState();
+        let count = 0;
+        let section_attributes = myData[section]['povrsje'][surfaceType.toString()];
+        for(let attribute in state){
+            if(section_attributes[attribute].includes(state[attribute]))
+                count++;
+        }
+        return count >= 3
     }
     addMarkers = () => {
         for(let section in myData){
             if(!myData[section].koordinate.includes(null))
                 var coord =myData[section].koordinate.toString().split(',')
-                marker = {coords:[coord[0],coord[1]],locText:myData[section].kraj[0][3].toString()}
+            marker = {coords:[coord[0],coord[1]],locText:myData[section].kraj[0][3].toString()}
+            if(this.state.selectedOption === 'all')
                 this.state.markers.push(marker)
+
+            else {
+                if(this.isSectionCritical(section,this.state.selectedOption)){
+                    this.state.markers.push(marker)
+                }
+            }
         }
-        console.log(this.state.markers)
     }
     render() {
         this.addMarkers()
@@ -61,7 +103,6 @@ class StreetMap extends React.Component {
                 </Marker>
                 )}
             </Map>
-
 
         );
     }

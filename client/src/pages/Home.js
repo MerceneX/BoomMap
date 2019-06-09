@@ -5,16 +5,25 @@ import Select from 'react-select'
 import Map from '../components/Map'
 
 const options = [
-    { value: 'currentState', label: 'Trenutno stanje' },
-    { value: 'critical_sections', label: 'Kritični odseki' },
+    { value: 'suho', label: 'Trenutno stanje-suho površje' },
+    { value: 'ne_suho', label: 'Trenutno stanje-drugo'},
+    { value: 'all', label: 'Kritični odseki' },
 ];
 
 class SimpleMap extends Component {
-    state = {
-        selectedOption: null,
-    };
-    handleChange = selectedOption => {
-        this.setState({ selectedOption });
+    constructor(props){
+        super(props)
+        this.mapElement = React.createRef();
+        this.state = {
+            selectedOption: '',
+        };
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange = (selectedOption) => {
+        this.mapElement.current.changeOption(selectedOption)
+        this.setState({selectedOption: selectedOption });
+
         console.log(`Option selected:`, selectedOption);
     };
 
@@ -32,7 +41,12 @@ class SimpleMap extends Component {
                     />
                 </div>
                 <br/>
-                <Map />
+                <Map
+                  //  handleChange = {this.handleChange}
+                    option = {this.state.selectedOption}
+                    ref={this.mapElement}
+
+                />
             </div>
         );
     }
