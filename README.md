@@ -6,7 +6,7 @@
 ## Kdo smo 
 [<img alt="GluhakMarko" src="https://avatars3.githubusercontent.com/u/36963174?s=400&v=4" width="100">](https://github.com/MerceneX) |[<img alt="KonecnikMarusa" src="https://avatars1.githubusercontent.com/u/33929107?s=400&v=4" width="100">](https://github.com/marusakonecnik) |[<img alt="GornikPina" src="https://avatars3.githubusercontent.com/u/33715956?s=400&v=4" width="100">](https://github.com/Gornikpina) |[<img alt="FeherNatasa" src="https://avatars3.githubusercontent.com/u/33715956?s=400&v=4" width="100">](https://github.com/FeherNatasa) |
 :---: |:---: |:---: |:---: |
-[GluhakMarko](https://github.com/MerceneX) |[KonecnikMarusa](https://github.com/marusakonecnik) |[Gornikpina](https://github.com/Gornikpina) |[FeherNatasa](https://github.com/FeherNatasa) |
+[Marko Gluhak](https://github.com/MerceneX) |[Maruša Konečnik](https://github.com/marusakonecnik) |[Pina Gornik](https://github.com/Gornikpina) |[Nataša Feher](https://github.com/FeherNatasa) |
 
 
 ## O projektu
