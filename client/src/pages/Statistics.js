@@ -37,8 +37,12 @@ function Statistics() {
                             <NesreceVozilo/>
                         </Col>
                         <Col>
+
+                            <VremeChart/>
+
                             <h6> Nesreče glede na spol povzročitelja</h6>
                             <NesreceSpol/>
+
                         </Col>
                     </Row>
                     <Row>
