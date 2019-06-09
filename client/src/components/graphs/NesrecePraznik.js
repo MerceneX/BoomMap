@@ -1,10 +1,10 @@
-import React, {PureComponent} from 'react';
-import axios from 'axios';
-import {Pie, PieChart, Sector} from "recharts";
+import React, { Component } from 'react';
+import { PieChart, Pie, Sector, Legend} from 'recharts';
 
 
-var data = [
-];
+import axios from "axios";
+
+var data = [];
 
 const renderActiveShape = (props) => {
     const RADIAN = Math.PI / 180;
@@ -53,10 +53,12 @@ const renderActiveShape = (props) => {
     );
 };
 
-export default class NesrecePraznik extends PureComponent {
+
+export default class NesrecePraznik extends Component {
 
     state = {
         datag: [],
+        activeIndex: 0
     }
 
     componentDidMount() {
@@ -77,17 +79,17 @@ export default class NesrecePraznik extends PureComponent {
 
     render() {
         return (
-            <PieChart width={500} height={300}>
+            <PieChart width={500} height={400}>
                 <Pie
                     activeIndex={this.state.activeIndex}
                     activeShape={renderActiveShape}
                     data={this.state.datag.podatki}
-                    cx={200}
-                    cy={90}
+                    cx={230}
+                    cy={150}
                     innerRadius={60}
                     outerRadius={80}
                     paddingAngle={5}
-                    fill="#20b2aa"
+                    fill="#008080"
                     dataKey="nesrece"
                     onMouseEnter={this.onPieEnter}
                 />

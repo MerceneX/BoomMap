@@ -1,8 +1,7 @@
 import React, { PureComponent } from 'react';
 import {
-    AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend
+    AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend, BarChart, LineChart
 } from 'recharts';
-import MyCard2 from '../MyCard2';
 
 import axios from 'axios';
 
@@ -10,20 +9,18 @@ import axios from 'axios';
 var data = [
 ];
 
-export default class NesreceLeto extends PureComponent {
+export default class NesreceVreme extends PureComponent {
 
     state = {
-        dataLeto: []
+        datag: [],
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/api/graph/23').then(res => {
-            this.setState({dataLeto: res.data});
+        axios.get('http://localhost:5000/api/graph/25').then(res => {
+            this.setState({datag: res.data});
             console.log(res.data);
             for(var key in this.state) {
                 data.push(this.state[key]);
-               // console.log(this.state[key]);
-                //this.setState({dataLeto: LData[key]});
             }
         });
     }
@@ -33,17 +30,17 @@ export default class NesreceLeto extends PureComponent {
             <AreaChart
                 width={500}
                 height={300}
-                data={this.state.dataLeto.podatki}
+                data={this.state.datag.podatki}
                 margin={{
                     top: 10, right: 30, left: 0, bottom: 0,
                 }}
             >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="leto" />
+                <XAxis dataKey="vreme" interval={0} fontSize={10}/>
                 <YAxis />
                 <Tooltip />
                 <Legend/>
-                <Area type="monotone" dataKey="nesrece" stroke="#66b2b2" fill="#66b2b2" />
+                <Area type="monotone" dataKey="nesrece" stroke="#0091b0" fill="#0091b0" dot={{ fill: '#008080', strokeWidth: 1 }}/>
             </AreaChart>
         );
     }
