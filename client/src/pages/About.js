@@ -32,10 +32,10 @@ function About() {
                             <p>Nataša Feher</p></Col>
                     </Row>
                     <Row className="teamdescription">
-                        <Col><p> Back-end developer </p></Col>
-                        <Col><p> Machine learning master </p></Col>
-                        <Col><p> Front-end developer </p></Col>
-                        <Col><p> Front-end developer </p></Col>
+                        <Col><p> Back-end razvijalec </p></Col>
+                        <Col><p> Strojno učenje </p></Col>
+                        <Col><p> Front-end razvijalka </p></Col>
+                        <Col><p> Front-end razvijalka </p></Col>
                     </Row>
                 </Container>
             </div>
