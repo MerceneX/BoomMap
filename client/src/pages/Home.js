@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import GoogleMapReact from 'google-map-react';
 import 'leaflet/dist/leaflet.css'
 import Select from 'react-select'
 import Map from '../components/Map'
+
+
+import { Container, Row, Col } from 'reactstrap';
 
 const options = [
     { value: 'suho', label: 'Trenutno stanje-suho površje' },
@@ -31,23 +33,29 @@ class SimpleMap extends Component {
         const { selectedOption } = this.state;
         return (
             // Important! Always set the container height explicitly
+            <Container fluid={true}>
+                <Row>
+                    <Col xs="2">
+                        <div align={"left"}>
+                            <Select
+                                defaultValue = {options[2]}
+                                onChange={this.handleChange}
+                                options={options}
+                            />
 
-            <div align={"center"}>
-                <div align={"left"}>
-                    <Select
-                        value={this.state.selectedOption}
-                        onChange={this.handleChange}
-                        options={options}
-                    />
-                </div>
-                <br/>
-                <Map
-                  //  handleChange = {this.handleChange}
-                    option = {this.state.selectedOption}
-                    ref={this.mapElement}
+                        </div>
+                        <br/>
+                    </Col>
+                    <Col xs="10">
+                        <Map
+                            option = {this.state.selectedOption}
+                            ref={this.mapElement}
 
-                />
-            </div>
+                        />
+                    </Col>
+                </Row>
+            </Container>
+
         );
     }
 }
