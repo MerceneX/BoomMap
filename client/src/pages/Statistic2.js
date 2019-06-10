@@ -4,14 +4,13 @@ import DneviChart from "../components/graphs/NesreceDnevi";
 import NesreceSpol from "../components/graphs/NesreceSpol";
 import NesreceVzrok from "../components/graphs/NesreceVzrok";
 import NesrecePraznik from "../components/graphs/NesrecePraznik";
-import NesreceUdelezenci from "../components/graphs/NesreceUdelezenci";
 import NesreceStanjePrometa from "../components/graphs/NesreceStanjePrometa";
 import { Col, Container, Row } from "reactstrap";
 import NesreceVozilo from "../components/graphs/NesreceVozilo";
-<<<<<<< HEAD
 import { Button, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
+import Chip from '@material-ui/core/Chip';
 
-class Statistics extends React.Component {
+class Statistic2 extends React.Component {
 	constructor(props) {
 		super(props);
 
@@ -40,86 +39,15 @@ class Statistics extends React.Component {
     }
 
 	render() {
+		function handleClick() {
+			alert('You clicked the Chip.');
+		}
+		function handleDelete() {
+			alert('You clicked the delete icon.');
+		}
 		return (
 			<React.Fragment>
 				<div className="container">
-=======
-import { Button } from 'reactstrap';
-
-
-function Statistics() {
-    return (
-        <React.Fragment>
-            <div>
-                <Button color="primary">primary</Button>{' '}
-                <Container className="graphs">
-                    <Row>
-                        <Col>
-                            <h6> Število nesreč v posameznem letu </h6>
-                            <NesreceLeto/>
-                        </Col>
-                        <Col>
-                            <h6> Število nesreč glede na posamezen dan v tednu </h6>
-                            <NesreceDnevi/>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <h6> Število nesreč glede na vzrok </h6>
-                            <NesreceVzrok/>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <h6> Število nesreč glede na tip vozila </h6>
-                            <NesreceVozilo/>
-                        </Col>
-                        <Col>
-
-
-
-
-                            <NesreceVreme/>
-
-
-                            <h6> Nesreče glede na spol povzročitelja</h6>
-                            <NesreceSpol/>
-
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <h6> Glede na praznike </h6>
-                            <NesrecePraznik/>
-                        </Col>
-                        <Col>
-                            <h6> Glede na stanje prometa </h6>
-                            <NesreceStanjePrometa/>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <h6> Glede na vreme </h6>
-                            <NesreceVreme/>
-                        </Col>
-                        <Col>
-                            <h6>  </h6>
-
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <h6> Glede na tip trčenja </h6>
-                            <NesreceTip/>
-                        </Col>
-                    </Row>
-
-                </Container>
-            </div>
-        </React.Fragment>
-    )
-}
->>>>>>> 7b115facdf3d498c29503c1272d52e2c05dd4c37
 
 
                     <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
@@ -134,11 +62,20 @@ function Statistics() {
                             <DropdownItem onClick={() => this.showHide(4)}>Nesreče glede na spol povzročitelja</DropdownItem>
                             <DropdownItem onClick={() => this.showHide(5)}>Glede na praznike</DropdownItem>
                             <DropdownItem onClick={() => this.showHide(6)}>Glede na stanje prometa</DropdownItem>
-							<DropdownItem onClick={() => this.showHide(7)}>Glede na tip udeleženca</DropdownItem>
 
                         </DropdownMenu>
                     </ButtonDropdown>
-                    <br/><br/><br/>
+
+					<br/>
+					{this.state.show[0] && <Chip   label="Število nesreč v posameznem letu"  onDelete={() => this.showHide(0)} variant="outlined" />}
+					{this.state.show[1] && <Chip   label="Število nesreč glede na posamezen dan v tednu"  onDelete={() => this.showHide(1)} variant="outlined" />}
+					{this.state.show[2] && <Chip   label="Število nesreč glede na vzrok"  onDelete={() => this.showHide(2)} variant="outlined" />}
+					{this.state.show[3] && <Chip   label="Število nesreč glede na tip vozila"  onDelete={() => this.showHide(3)} variant="outlined" />}
+					{this.state.show[4] && <Chip   label="ŠNesreče glede na spol povzročitelja"  onDelete={() => this.showHide(4)} variant="outlined" />}
+					{this.state.show[5] && <Chip   label="Glede na praznike"  onDelete={() => this.showHide(5)} variant="outlined" />}
+					{this.state.show[6] && <Chip   label="Glede na stanje prometa"  onDelete={() => this.showHide(6)} variant="outlined" />}
+
+					<br/><br/><br/>
 
 
 
@@ -182,15 +119,6 @@ function Statistics() {
 								{this.state.show[6] && <NesreceStanjePrometa />}
 							</div>
 						</Row>
-						<Row>
-							<div>
-								{this.state.show[7] && <h6> Glede na tip udeleženca </h6>}
-								{this.state.show[7] && <NesreceUdelezenci />}
-							</div>
-							<div>
-
-							</div>
-						</Row>
 					</Container>
 				</div>
 			</React.Fragment>
@@ -198,4 +126,4 @@ function Statistics() {
 	}
 }
 
-export default Statistics;
+export default Statistic2;
