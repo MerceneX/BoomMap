@@ -15,7 +15,7 @@ class SimpleMap extends Component {
         super(props)
         this.mapElement = React.createRef();
         this.state = {
-            selectedOption: '',
+            selectedOption: 'all',
         };
         this.handleChange = this.handleChange.bind(this);
     }
@@ -35,7 +35,7 @@ class SimpleMap extends Component {
             <div align={"center"}>
                 <div align={"left"}>
                     <Select
-                        value={selectedOption}
+                        value={this.state.selectedOption}
                         onChange={this.handleChange}
                         options={options}
                     />
