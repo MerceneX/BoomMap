@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-import 'leaflet/dist/leaflet.css'
-import Select from 'react-select'
-import Map from '../components/Map'
+import 'leaflet/dist/leaflet.css';
+import Select from 'react-select';
+import Map from '../components/Map';
 
 const options = [
     { value: 'suho', label: 'Trenutno stanje-suho površje' },

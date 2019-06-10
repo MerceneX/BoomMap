@@ -4,6 +4,7 @@ import DneviChart from "../components/graphs/NesreceDnevi";
 import NesreceSpol from "../components/graphs/NesreceSpol";
 import NesreceVzrok from "../components/graphs/NesreceVzrok";
 import NesrecePraznik from "../components/graphs/NesrecePraznik";
+import NesreceVreme from "../components/graphs/NesreceVreme";
 import NesreceStanjePrometa from "../components/graphs/NesreceStanjePrometa";
 import { Col, Container, Row } from "reactstrap";
 import NesreceVozilo from "../components/graphs/NesreceVozilo";
@@ -17,7 +18,7 @@ class Statistic2 extends React.Component {
         this.toggle = this.toggle.bind(this);
 		this.state = {
             dropdownOpen: false,
-            show: [true, true, false, false, false, false, false]
+            show: [true, true, false, false, false, false, false, false]
 
 		};
 	}
@@ -62,6 +63,7 @@ class Statistic2 extends React.Component {
                             <DropdownItem onClick={() => this.showHide(4)}>Nesreče glede na spol povzročitelja</DropdownItem>
                             <DropdownItem onClick={() => this.showHide(5)}>Glede na praznike</DropdownItem>
                             <DropdownItem onClick={() => this.showHide(6)}>Glede na stanje prometa</DropdownItem>
+							<DropdownItem onClick={() => this.showHide(7)}>Glede na vreme</DropdownItem>
 
                         </DropdownMenu>
                     </ButtonDropdown>
@@ -74,6 +76,7 @@ class Statistic2 extends React.Component {
 					{this.state.show[4] && <Chip   label="Nesreče glede na spol povzročitelja"  onDelete={() => this.showHide(4)} variant="outlined" />}
 					{this.state.show[5] && <Chip   label="Glede na praznike"  onDelete={() => this.showHide(5)} variant="outlined" />}
 					{this.state.show[6] && <Chip   label="Glede na stanje prometa"  onDelete={() => this.showHide(6)} variant="outlined" />}
+					{this.state.show[7] && <Chip   label="Glede na vreme"  onDelete={() => this.showHide(7)} variant="outlined" />}
 
 					<br/><br/><br/>
 
@@ -117,6 +120,15 @@ class Statistic2 extends React.Component {
 							<div>
 								{this.state.show[6] && <h6> Glede na stanje prometa </h6>}
 								{this.state.show[6] && <NesreceStanjePrometa />}
+							</div>
+						</Row>
+						<Row>
+							<div>
+								{this.state.show[7] && <h6> Glede na vreme </h6>}
+								{this.state.show[7] && <NesreceVreme />}
+							</div>
+							<div>
+
 							</div>
 						</Row>
 					</Container>
