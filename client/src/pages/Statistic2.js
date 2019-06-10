@@ -70,12 +70,12 @@ class Statistic2 extends React.Component {
                         </DropdownMenu>
                     </ButtonDropdown>
 
-					<br/>
+					<br/><br/>
 					{this.state.show[0] && <Chip   label="Število nesreč v posameznem letu"  onDelete={() => this.showHide(0)} variant="outlined" />}
 					{this.state.show[1] && <Chip   label="Število nesreč glede na posamezen dan v tednu"  onDelete={() => this.showHide(1)} variant="outlined" />}
 					{this.state.show[2] && <Chip   label="Število nesreč glede na vzrok"  onDelete={() => this.showHide(2)} variant="outlined" />}
 					{this.state.show[3] && <Chip   label="Število nesreč glede na tip vozila"  onDelete={() => this.showHide(3)} variant="outlined" />}
-					{this.state.show[4] && <Chip   label="ŠNesreče glede na spol povzročitelja"  onDelete={() => this.showHide(4)} variant="outlined" />}
+					{this.state.show[4] && <Chip   label="Nesreče glede na spol povzročitelja"  onDelete={() => this.showHide(4)} variant="outlined" />}
 					{this.state.show[5] && <Chip   label="Glede na praznike"  onDelete={() => this.showHide(5)} variant="outlined" />}
 					{this.state.show[6] && <Chip   label="Glede na stanje prometa"  onDelete={() => this.showHide(6)} variant="outlined" />}
 					{this.state.show[7] && <Chip   label="Glede na vreme"  onDelete={() => this.showHide(7)} variant="outlined" />}
