@@ -4,10 +4,13 @@ import DneviChart from "../components/graphs/NesreceDnevi";
 import NesreceSpol from "../components/graphs/NesreceSpol";
 import NesreceVzrok from "../components/graphs/NesreceVzrok";
 import NesrecePraznik from "../components/graphs/NesrecePraznik";
+import NesreceVreme from "../components/graphs/NesreceVreme";
+import NesreceCeste from "../components/graphs/NesreceCeste"
 import NesreceStanjePrometa from "../components/graphs/NesreceStanjePrometa";
 import { Col, Container, Row } from "reactstrap";
 import NesreceVozilo from "../components/graphs/NesreceVozilo";
 import { Button, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
+import Chip from '@material-ui/core/Chip';
 
 class Statistic2 extends React.Component {
 	constructor(props) {
@@ -16,7 +19,7 @@ class Statistic2 extends React.Component {
         this.toggle = this.toggle.bind(this);
 		this.state = {
             dropdownOpen: false,
-            show: [true, true, false, false, false, false, false]
+            show: [true, true, false, false, false, false, false, false, false]
 
 		};
 	}
@@ -38,6 +41,12 @@ class Statistic2 extends React.Component {
     }
 
 	render() {
+		function handleClick() {
+			alert('You clicked the Chip.');
+		}
+		function handleDelete() {
+			alert('You clicked the delete icon.');
+		}
 		return (
 			<React.Fragment>
 				<div className="container">
@@ -55,10 +64,24 @@ class Statistic2 extends React.Component {
                             <DropdownItem onClick={() => this.showHide(4)}>Nesreče glede na spol povzročitelja</DropdownItem>
                             <DropdownItem onClick={() => this.showHide(5)}>Glede na praznike</DropdownItem>
                             <DropdownItem onClick={() => this.showHide(6)}>Glede na stanje prometa</DropdownItem>
+							<DropdownItem onClick={() => this.showHide(7)}>Glede na vreme</DropdownItem>
+							<DropdownItem onClick={() => this.showHide(8)}>Glede na tip ceste</DropdownItem>
 
                         </DropdownMenu>
                     </ButtonDropdown>
-                    <br/><br/><br/>
+
+					<br/><br/>
+					{this.state.show[0] && <Chip   label="Število nesreč v posameznem letu"  onDelete={() => this.showHide(0)} variant="outlined" />}
+					{this.state.show[1] && <Chip   label="Število nesreč glede na posamezen dan v tednu"  onDelete={() => this.showHide(1)} variant="outlined" />}
+					{this.state.show[2] && <Chip   label="Število nesreč glede na vzrok"  onDelete={() => this.showHide(2)} variant="outlined" />}
+					{this.state.show[3] && <Chip   label="Število nesreč glede na tip vozila"  onDelete={() => this.showHide(3)} variant="outlined" />}
+					{this.state.show[4] && <Chip   label="Nesreče glede na spol povzročitelja"  onDelete={() => this.showHide(4)} variant="outlined" />}
+					{this.state.show[5] && <Chip   label="Glede na praznike"  onDelete={() => this.showHide(5)} variant="outlined" />}
+					{this.state.show[6] && <Chip   label="Glede na stanje prometa"  onDelete={() => this.showHide(6)} variant="outlined" />}
+					{this.state.show[7] && <Chip   label="Glede na vreme"  onDelete={() => this.showHide(7)} variant="outlined" />}
+					{this.state.show[8] && <Chip   label="Glede na tip ceste"  onDelete={() => this.showHide(8)} variant="outlined" />}
+
+					<br/><br/><br/>
 
 
 
@@ -100,6 +123,21 @@ class Statistic2 extends React.Component {
 							<div>
 								{this.state.show[6] && <h6> Glede na stanje prometa </h6>}
 								{this.state.show[6] && <NesreceStanjePrometa />}
+							</div>
+						</Row>
+						<Row>
+							<div>
+								{this.state.show[7] && <h6> Glede na vreme </h6>}
+								{this.state.show[7] && <NesreceVreme />}
+							</div>
+							<div>
+
+							</div>
+						</Row>
+						<Row>
+							<div>
+								{this.state.show[8] && <h6> Glede na tip ceste </h6>}
+								{this.state.show[8] && <NesreceCeste />}
 							</div>
 						</Row>
 					</Container>

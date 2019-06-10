@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import 'leaflet/dist/leaflet.css'
 import Select from 'react-select'
 import Map from '../components/Map'
-
-
 import { Container, Row, Col } from 'reactstrap';
 
 const options = [

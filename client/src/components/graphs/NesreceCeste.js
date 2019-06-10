@@ -8,14 +8,14 @@ import {
 var data = [
 ];
 
-export default class NesreceVozilo extends PureComponent {
+export default class NesreceCeste extends PureComponent {
 
     state = {
         datag: [],
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/api/graph/27').then(res => {
+        axios.get('http://localhost:5000/api/graph/32').then(res => {
             this.setState({datag: res.data});
             console.log(res.data);
             for(var key in this.state) {
@@ -35,11 +35,11 @@ export default class NesreceVozilo extends PureComponent {
                 }}
             >
                 <CartesianGrid strokeDasharray="3 3"/>
-                <XAxis dataKey="vozilo" interval={0} fontSize={11}/>
+                <XAxis dataKey="cesta" interval={0} fontSize={7}/>
                 <YAxis domain={[0, 70000]}/>
                 <Tooltip/>
                 <Legend/>
-                <Bar layout="horizontal" dataKey="nesrece" fill="#008080" fillOpacity="0.7" label={{ fill: 'black', fontSize: 10 }}/>
+                <Bar layout="horizontal" dataKey="nesrece" fill="#008080" fillOpacity="0.7" label={{ fill: 'white', fontSize: 10 }}/>
             </BarChart>
         );
     }
