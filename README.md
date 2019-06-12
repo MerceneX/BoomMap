@@ -12,7 +12,7 @@ Namen rešitve je ozaveščanje voznikov, reševalnih služb in tistih, ki se ji
 ## Funkcionalnosti 
 ### Zemljevid 
 
-Zemljevid prikazuje nevarne odseke/kritične točke na slovenskih cestah, kjer se po statističnih podatkih povzroči največ nesreč. 
+Zemljevid prikazuje __nevarne odseke/kritične točke na slovenskih cestah__, kjer se po statističnih podatkih povzroči največ nesreč. 
 Omogočena je tudi možnost filtriranja po tipu kritičnosti (nizka, srednja, visoka), ter dodatni filtri glede na dan v tednu, vreme, površje, mesec v letu in čas. 
 
 ### Statistika
