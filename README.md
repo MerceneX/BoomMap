@@ -40,7 +40,7 @@ Grafi prikazujejo predelane statistične podatke od leta 2014 do 2018. Prikazani
 Smo mlada ekipa zagriženih študentov, ki želimo z našimi produkti prispevati k boljšemu jutri.
 
 ## Priprava okolja
-1. Kloniranje repozitorija z "git clone https://github.com/MerceneX/Praktikum-II.git"
+1. Kloniranje repozitorija z "git clone https://github.com/MerceneX/BoomMap.git"
 2. Odpremo nov projekt v WebStorm "EmptyProject" in kopiramo vsebino kloniranega direktorija
 v ta projekt
 3. V WebStorm priporočam uporabo git bash terminala:    
