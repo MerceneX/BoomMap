@@ -12,6 +12,7 @@ import NesreceVozilo from "../components/graphs/NesreceVozilo";
 import { Button, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
 import Chip from '@material-ui/core/Chip';
 import IntenzivnostPoskodbe from "../components/graphs/IntenzivnostPoskodbe";
+import PoskodbeNedelja from "../components/graphs/PoskodbeNedelja";
 
 class Statistic2 extends React.Component {
 	constructor(props) {
@@ -20,7 +21,7 @@ class Statistic2 extends React.Component {
         this.toggle = this.toggle.bind(this);
 		this.state = {
             dropdownOpen: false,
-            show: [true, true, false, false, false, false, false, false, false, false]
+            show: [true, true, false, false, false, false, false, false, false, false, false]
 
 		};
 	}
@@ -68,7 +69,7 @@ class Statistic2 extends React.Component {
 							<DropdownItem onClick={() => this.showHide(7)}>Glede na vreme</DropdownItem>
 							<DropdownItem onClick={() => this.showHide(8)}>Glede na tip ceste</DropdownItem>
 							<DropdownItem onClick={() => this.showHide(10)}>Glede intenzivnost poškodbe</DropdownItem>
-
+							<DropdownItem onClick={() => this.showHide(11)}>Glede intenzivnost poškodbe v nedeljo</DropdownItem>
                         </DropdownMenu>
                     </ButtonDropdown>
 
@@ -83,6 +84,7 @@ class Statistic2 extends React.Component {
 					{this.state.show[7] && <Chip   label="Glede na vreme"  onDelete={() => this.showHide(7)} variant="outlined" />}
 					{this.state.show[8] && <Chip   label="Glede na tip ceste"  onDelete={() => this.showHide(8)} variant="outlined" />}
 					{this.state.show[10] && <Chip   label="Intenzivnost poškodbe"  onDelete={() => this.showHide(10)} variant="outlined" />}
+					{this.state.show[11] && <Chip   label="Intenzivnost poškodbe v nedeljo"  onDelete={() => this.showHide(11)} variant="outlined" />}
 
 					<br/><br/><br/>
 
@@ -148,6 +150,11 @@ class Statistic2 extends React.Component {
 								{this.state.show[10] && <h6> Intenzivnost poškodb </h6>}
 								{this.state.show[10] && <IntenzivnostPoskodbe />}
 							</div>
+							<div>
+								{this.state.show[11] && <h6> Intenzivnost poškodb v nedeljo</h6>}
+								{this.state.show[11] && <PoskodbeNedelja />}
+							</div>
+
 						</Row>
 
 					</Container>
