@@ -1,49 +1,99 @@
-import React, {PureComponent} from 'react';
-import axios from 'axios';
-import {
-    BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
-} from 'recharts';
+import React, { Component } from 'react';
+import { PieChart, Pie, Sector, Legend} from 'recharts';
 
 
+import axios from "axios";
 
-var data = [
-];
+var data = [];
 
-export default class PoskodbeNedelja extends PureComponent {
+const renderActiveShape = (props) => {
+    const RADIAN = Math.PI / 180;
+    const {
+        cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle,
+        fill, payload, percent, value,
+    } = props;
+    const sin = Math.sin(-RADIAN * midAngle);
+    const cos = Math.cos(-RADIAN * midAngle);
+    const sx = cx + (outerRadius + 10) * cos;
+    const sy = cy + (outerRadius + 10) * sin;
+    const mx = cx + (outerRadius + 30) * cos;
+    const my = cy + (outerRadius + 30) * sin;
+    const ex = mx + (cos >= 0 ? 1 : -1) * 22;
+    const ey = my;
+    const textAnchor = cos >= 0 ? 'start' : 'end';
+
+    return (
+        <g>
+            <text x={cx} y={cy} dy={5} textAnchor="middle" fontSize={11} fill="black">{payload.intenzivnost}</text>
+            <Sector
+                cx={cx}
+                cy={cy}
+                innerRadius={innerRadius}
+                outerRadius={outerRadius}
+                startAngle={startAngle}
+                endAngle={endAngle}
+                fill={fill}
+            />
+            <Sector
+                cx={cx}
+                cy={cy}
+                startAngle={startAngle}
+                endAngle={endAngle}
+                innerRadius={outerRadius + 6}
+                outerRadius={outerRadius + 10}
+                fill={fill}
+            />
+            <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none" />
+            <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none" />
+            <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill="#333">{`${value}`}</text>
+            <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={18} textAnchor={textAnchor} fill="#999">
+                {`(Rate ${(percent * 100).toFixed(2)}%)`}
+            </text>
+        </g>
+    );
+};
+
+
+export default class PoskodbeNedelja extends Component {
 
     state = {
-        dataLeto: []
+        datag: [],
+        activeIndex: 0
     }
 
     componentDidMount() {
         axios.get('http://localhost:5000/api/graph/35').then(res => {
-            this.setState({dataLeto: res.data});
+            this.setState({datag: res.data});
             console.log(res.data);
-            for(var key in this.state) {
+            for (var key in this.state) {
                 data.push(this.state[key]);
-                // console.log(this.state[key]);
-                //this.setState({dataLeto: LData[key]});
             }
         });
     }
 
+    onPieEnter = (data, index) => {
+        this.setState({
+            activeIndex: index,
+        });
+    };
+
     render() {
         return (
-            <BarChart
-                width={500}
-                height={300}
-                data={this.state.dataLeto.podatki}
-                margin={{
-                    top: 5, right: 30, left: 20, bottom: 5,
-                }}
-            >
-                <CartesianGrid strokeDasharray="3 3"/>
-                <XAxis dataKey="intenzivnost" interval={0} fontSize={6.5}/>
-                <YAxis domain={[0, 25000]}/>
-                <Tooltip/>
-                <Legend/>
-                <Bar layout="horizontal" dataKey="nesrece" fill="#008080" fillOpacity="0.7" label={{ fill: 'white', fontSize: 10 }}/>
-            </BarChart>
+            <PieChart width={500} height={400}>
+                <Pie
+                    activeIndex={this.state.activeIndex}
+                    activeShape={renderActiveShape}
+                    data={this.state.datag.podatki}
+                    cx={230}
+                    cy={150}
+                    innerRadius={80}
+                    outerRadius={100}
+                    paddingAngle={5}
+                    fill="#008080"
+                    dataKey="nesrece"
+                    onMouseEnter={this.onPieEnter}
+                />
+            </PieChart>
         );
     }
 }
