@@ -6,6 +6,7 @@
   "dependencies": {
     "@material-ui/core": "^3.9.3",
     "@material-ui/styles": "^4.0.2",
+    "@material/react-button": "^0.13.0",
     "assert": "^2.0.0",
     "axios": "^0.18.1",
     "body-parser": "^1.19.0",
@@ -26,8 +27,10 @@
     "react-dom": "^16.8.6",
     "react-leaflet": "^2.3.0",
     "react-materialize": "^3.3.1",
+    "react-native-check-box": "^2.1.7",
     "react-router-dom": "^5.0.1",
     "react-select": "^3.0.4",
+    "react-simple-checkbox": "^1.2.1",
     "react-weather-app": "^1.0.1",
     "recharts": "^1.6.2",
     "request": "^2.88.0",

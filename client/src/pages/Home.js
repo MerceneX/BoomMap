@@ -2,22 +2,31 @@ import React, { Component } from 'react';
 import 'leaflet/dist/leaflet.css'
 import Select from 'react-select'
 import Map from '../components/Map'
-import { Container, Row, Col } from 'reactstrap';
+import Legend from '../components/Legend'
+import { Container, Row, Col} from 'reactstrap';
+import CustomFilter from '../components/CustomFilter'
+
 
 const options = [
     { value: 'suho', label: 'Trenutno stanje-suho površje' },
     { value: 'ne_suho', label: 'Trenutno stanje-drugo'},
     { value: 'all', label: 'Kritični odseki' },
+    { value: 'custom', label: 'Po meri' }
 ];
+
 
 class SimpleMap extends Component {
     constructor(props){
         super(props)
         this.mapElement = React.createRef();
+        this.legendElement = React.createRef();
         this.state = {
             selectedOption: 'all',
-        };
+        }
+
+        ;
         this.handleChange = this.handleChange.bind(this);
+
     }
 
     handleChange = (selectedOption) => {
@@ -27,6 +36,13 @@ class SimpleMap extends Component {
         console.log(`Option selected:`, selectedOption);
     };
 
+    handleLegendChange = (newLegend) => {
+        this.mapElement.current.changeCriticalLevel(newLegend)
+    }
+
+    handleFilterSubmit = (state) => {
+        this.mapElement.current.changeFilterOptions(state)
+    }
     render() {
         const { selectedOption } = this.state;
         return (
@@ -40,7 +56,14 @@ class SimpleMap extends Component {
                                 onChange={this.handleChange}
                                 options={options}
                             />
-
+                            <br/>
+                            <Legend
+                                ref = {this.legendElement}
+                                change = {this.handleLegendChange}
+                            />
+                            <CustomFilter
+                                change = {this.handleFilterSubmit}
+                            />
                         </div>
                         <br/>
                     </Col>
@@ -48,11 +71,11 @@ class SimpleMap extends Component {
                         <Map
                             option = {this.state.selectedOption}
                             ref={this.mapElement}
-
                         />
                     </Col>
                 </Row>
             </Container>
+
 
         );
     }
