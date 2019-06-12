@@ -5,7 +5,7 @@ Namen rešitve je ozaveščanje voznikov, reševalnih služb in tistih, ki se ji
 
 ## Uporabljene tehnologije 
 * front-end: React
-* back-end: Node.js 
+* back-end: Node.js ft. Express
 * podatkovna baza: MongoDB
 * strojno učenje: Python 
 
@@ -55,7 +55,18 @@ README.md"
 
 ## Uporaba API
 ### Endpoints
-- GET api/data
-- POST api/data
-- GET api/data/nesrece
-- GET api/graph/{id}
+- GET api/graph/{id}  
+id: 23-37   
+Vnaprej pripravljene poizvedbe iz baze podatkov, v obliki JSON. Primer rezultata:   
+{   
+  "naslov":"Nesreče glede na praznik",    
+  "podatki":[   
+    {     
+      "dan":"Praznik",    
+      "nesrece":3222    
+    },    
+    {   
+      "dan":"Delovnik",   
+      "nesrece":119486    
+    }]}   
+Atribut naslov poda kratek opis o tej poizvedbi, podatki vsebujejo polje objektov. Vsak od teh objektov je št. nesreč, ki ustrezajo pogoju poizvedbe, specificirane s prvim atributom objekta.
