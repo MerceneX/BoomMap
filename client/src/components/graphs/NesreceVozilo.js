@@ -27,7 +27,7 @@ export default class NesreceVozilo extends PureComponent {
     render() {
         return (
             <BarChart
-                width={500}
+                width={1250}
                 height={300}
                 data={this.state.datag.podatki}
                 margin={{
@@ -35,11 +35,11 @@ export default class NesreceVozilo extends PureComponent {
                 }}
             >
                 <CartesianGrid strokeDasharray="3 3"/>
-                <XAxis dataKey="vozilo" interval={0} fontSize={11}/>
-                <YAxis domain={[0, 70000]}/>
+                <XAxis dataKey="vozilo" interval={0} fontSize={6}/>
+                <YAxis domain={[0, 9500]}/>
                 <Tooltip/>
                 <Legend/>
-                <Bar layout="horizontal" dataKey="nesrece" fill="#008080" fillOpacity="0.7" label={{ fill: 'black', fontSize: 10 }}/>
+                <Bar layout="horizontal" dataKey="nesrece" fill="#008080" fillOpacity="0.7" label={{ fill: 'white', fontSize: 10 }}/>
             </BarChart>
         );
     }

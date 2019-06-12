@@ -11,6 +11,7 @@ import { Col, Container, Row } from "reactstrap";
 import NesreceVozilo from "../components/graphs/NesreceVozilo";
 import { Button, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
 import Chip from '@material-ui/core/Chip';
+import NesreceIntenzivnostPrazniki from "../components/graphs/NesreceIntenzivnostPrazniki";
 
 class Statistic2 extends React.Component {
 	constructor(props) {
@@ -19,7 +20,7 @@ class Statistic2 extends React.Component {
         this.toggle = this.toggle.bind(this);
 		this.state = {
             dropdownOpen: false,
-            show: [true, true, false, false, false, false, false, false, false]
+            show: [true, true, false, false, false, false, false, false, false, false]
 
 		};
 	}
@@ -66,6 +67,7 @@ class Statistic2 extends React.Component {
                             <DropdownItem onClick={() => this.showHide(6)}>Glede na stanje prometa</DropdownItem>
 							<DropdownItem onClick={() => this.showHide(7)}>Glede na vreme</DropdownItem>
 							<DropdownItem onClick={() => this.showHide(8)}>Glede na tip ceste</DropdownItem>
+							<DropdownItem onClick={() => this.showHide(9)}>Glede na intenzivnost poškodbe med prazniki</DropdownItem>
 
                         </DropdownMenu>
                     </ButtonDropdown>
@@ -80,6 +82,7 @@ class Statistic2 extends React.Component {
 					{this.state.show[6] && <Chip   label="Glede na stanje prometa"  onDelete={() => this.showHide(6)} variant="outlined" />}
 					{this.state.show[7] && <Chip   label="Glede na vreme"  onDelete={() => this.showHide(7)} variant="outlined" />}
 					{this.state.show[8] && <Chip   label="Glede na tip ceste"  onDelete={() => this.showHide(8)} variant="outlined" />}
+					{this.state.show[9] && <Chip   label="Glede na intenzivnost poškodbe med prazniki"  onDelete={() => this.showHide(9)} variant="outlined" />}
 
 					<br/><br/><br/>
 
@@ -110,9 +113,15 @@ class Statistic2 extends React.Component {
 								{this.state.show[3] && <h6> Število nesreč glede na tip vozila </h6>}
 								{this.state.show[3] && <NesreceVozilo />}
 							</div>
+						</Row>
+						<Row>
 							<div>
 								{this.state.show[4] && <h6> Nesreče glede na spol povzročitelja</h6>}
 								{this.state.show[4] && <NesreceSpol />}
+							</div>
+							<div>
+								{this.state.show[7] && <h6> Glede na vreme </h6>}
+								{this.state.show[7] && <NesreceVreme />}
 							</div>
 						</Row>
 						<Row>
@@ -127,17 +136,14 @@ class Statistic2 extends React.Component {
 						</Row>
 						<Row>
 							<div>
-								{this.state.show[7] && <h6> Glede na vreme </h6>}
-								{this.state.show[7] && <NesreceVreme />}
-							</div>
-							<div>
-
+								{this.state.show[8] && <h6> Glede na tip ceste </h6>}
+								{this.state.show[8] && <NesreceCeste />}
 							</div>
 						</Row>
 						<Row>
 							<div>
-								{this.state.show[8] && <h6> Glede na tip ceste </h6>}
-								{this.state.show[8] && <NesreceCeste />}
+								{this.state.show[9] && <h6> Glede na intenzivnost poškodb med prazniki </h6>}
+								{this.state.show[9] && <NesreceIntenzivnostPrazniki />}
 							</div>
 						</Row>
 					</Container>
