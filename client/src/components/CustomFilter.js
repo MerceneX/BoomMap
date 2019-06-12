@@ -66,11 +66,12 @@ export default class CustomFilter extends React.Component {
             selectedMonth: '',
             selectedTime: '',
             selectedWeather:'',
-            v:''
+            surface:''
         }
         this.handleDayChange = this.handleDayChange.bind(this);
         this.handleTimeChange = this.handleTimeChange.bind(this);
         this.handleWeatherChange = this.handleWeatherChange.bind(this);
+        this.handleSurfaceChange = this.handleSurfaceChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     handleDayChange=(selected)=>{
@@ -88,20 +89,22 @@ export default class CustomFilter extends React.Component {
         this.setState({selectedTime: o+'.0'});
 
     }
+    handleSurfaceChange(selected){
+        this.state.surface = selected.value
+        this.setState({surface: selected.value})
+    }
     handleSubmit(event) {
         let state = {
                 PRVR_Vreme: this.state.selectedWeather,
                 Cas_Nesrece: this.state.selectedTime,
                 dan_v_tednu: this.state.selectedDay,
-                mesec: this.state.selectedMonth
+                mesec: this.state.selectedMonth,
+
         }
-        this.props.change(state)
+        this.props.change(state,this.state.surface)
         event.preventDefault();
     }
 
-    handleDelete(){
-        this.props.change({})
-    }
     render(){
         return (
         <div>
@@ -125,6 +128,13 @@ export default class CustomFilter extends React.Component {
                 options = {month_options}
                 onChange = {this.handleMonthChange}
             />
+            <br/>
+            <Select
+                placeholder = "Povrsje..."
+                options = {[{value: 'suho',label: 'Suho'},{value:'ne_suho',label:'Drugo'}]}
+                onChange = {this.handleSurfaceChange}
+            />
+
             <br/>
             <TextField
                 id="time"

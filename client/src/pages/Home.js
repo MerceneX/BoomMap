@@ -10,8 +10,7 @@ import CustomFilter from '../components/CustomFilter'
 const options = [
     { value: 'suho', label: 'Trenutno stanje-suho površje' },
     { value: 'ne_suho', label: 'Trenutno stanje-drugo'},
-    { value: 'all', label: 'Kritični odseki' },
-    { value: 'custom', label: 'Po meri' }
+    { value: 'all', label: 'Kritični odseki' }
 ];
 
 
@@ -40,8 +39,8 @@ class SimpleMap extends Component {
         this.mapElement.current.changeCriticalLevel(newLegend)
     }
 
-    handleFilterSubmit = (state) => {
-        this.mapElement.current.changeFilterOptions(state)
+    handleFilterSubmit = (state,surface) => {
+        this.mapElement.current.changeFilterOptions(state,surface)
     }
     render() {
         const { selectedOption } = this.state;

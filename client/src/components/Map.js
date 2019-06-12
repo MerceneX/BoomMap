@@ -35,6 +35,7 @@ class StreetMap extends React.Component {
             criticalLevelsChecked: {'4': false, '3': false, '2': false},
             filterOptions: {},
             markers: [],
+            surface: ''
         }
     }
     changeOption(newOption){
@@ -48,9 +49,10 @@ class StreetMap extends React.Component {
         this.setState({ criticalLevelsChecked: newLevel })
 
     }
-    changeFilterOptions=(filter)=>{
+    changeFilterOptions=(filter,surface)=>{
         this.state.markers = []
         this.setState({filterOptions: filter})
+        this.state.surface = surface
     }
     getWeatherData = (lat,lon) => {
         let url = 'http://api.openweathermap.org/data/2.5/find?lat='+lat+'&lon='+lon+'&cnt=1&APPID=19117506641d90371c01ce010e35f032';
@@ -75,15 +77,16 @@ class StreetMap extends React.Component {
     };
     isSectionCritical = (section,surfaceType)=>{
         let state = Object.keys(this.state.filterOptions).length !== 0 ? this.state.filterOptions : this.getCurrentState()
-        console.log(state)
         let count = 0;
+        //if(myData[section]["dan_teden"].includes(state['dan_v_tednu']))
+          //  count+=1;
         let section_attributes = myData[section]['povrsje'][surfaceType.toString()];
         for(let attribute in state){
             if(section_attributes[attribute].includes(state[attribute]))
                 count++;
         }
-        console.log(count)
         return count
+
     };
     setMarkerColor = (criticalState)=> {
         let url = 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png';
@@ -98,7 +101,7 @@ class StreetMap extends React.Component {
         let isLegendEmpty = (!Object.values(this.state.criticalLevelsChecked).includes(true))
         let legendKeys = Object.keys(this.state.criticalLevelsChecked);
         marker.iconColor = this.setMarkerColor(criticalState);
-        if(criticalState>2) {
+        if(criticalState>=2) {
             if (isLegendEmpty)
                 this.state.markers.push(marker)
             else {
@@ -117,7 +120,7 @@ class StreetMap extends React.Component {
                 if (this.state.selectedOption === 'all') {
                     if(Object.keys(this.state.filterOptions).length === 0)
                         this.state.markers.push(marker)
-                    else this.setMarkersBasedOnLegend(this.isSectionCritical(section, "ne_suho"),marker)
+                    else this.setMarkersBasedOnLegend(this.isSectionCritical(section, this.state.surface),marker)
                 }
                 else {
                     let criticalState = this.isSectionCritical(section, this.state.selectedOption);
