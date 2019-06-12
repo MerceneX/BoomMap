@@ -1,7 +1,7 @@
 <p align="center"><img src="client/src/components/design/boomLogo.svg" alt="boomMap" title="boomMap" width="500" height="130"/></p>
 
 ## O projektu
-Namen rešitve je ozaveščanje voznikov, reševalnih služb in tistih, ki se jim mudi, kje povečati potrpljenje in zmanjšati hitrost. 
+Namen rešitve je ozaveščanje voznikov, reševalnih služb in tistih, ki se jim mudi, kje povečati potrpljenje in zmanjšati hitrost. V službi reševanja življenj šteje vsaka sekunda, želimo biti del, ki pripomore k reševanju življenj in preprečevanju ogrožanja teh. S pomočjo naše spletne stranih, lahko reševalci preventivno pripravijo enote in proces steče hitreje.
 
 ## Uporabljene tehnologije 
 * front-end: React
@@ -23,11 +23,21 @@ Grafi prikazujejo predelane statistične podatke od leta 2014 do 2018. Prikazani
 * glede na intenzivnost poškodb (posebej tudi za intenzivnost v nedeljo in med prazniki) 
 * po spolu povzročitelja
 
+## Namestitev rešitve
+- Potrebujemo okolje z node.js(v10.15.3), npm(v6.4.1), mongodb(v4.0.9),
+- Namestimo še globalne pakete "npm i -g nodemon" in "npm i -g concurrently"
+- Zagotovimo delovanje MongoDB
+- Postavimo se v direktorij projekta in v terminalu poženemo "npm run dev"
+- Stran se naloži na localhost:3000, strežniški api pa je na voljo na localhost:5000
+
 ## Kdo smo 
 [<img alt="GluhakMarko" src="client/src/components/design/markoG.svg" width="100">](https://github.com/MerceneX) |[<img alt="KonecnikMarusa" src="client/src/components/design/marusaK.svg" width="100">](https://github.com/marusakonecnik) |[<img alt="GornikPina" src="client/src/components/design/pinaG.svg" width="100">](https://github.com/Gornikpina) |[<img alt="FeherNatasa" src="client/src/components/design/natasaF.svg" width="100">](https://github.com/FeherNatasa) 
 |:---: |:---: |:---: |:---: |
 [Marko Gluhak](https://github.com/MerceneX) |[Maruša Konečnik](https://github.com/marusakonecnik) |[Pina Gornik](https://github.com/Gornikpina) |[Nataša Feher](https://github.com/FeherNatasa) |
 |back-end razvijalec|strojno učenje|front-end razvijalka |front-end razvijalka|
+|marko.mx.gluhak@gmail.com|marusa.konecnik@student.um.si|pina.gornik@student.um.si|natasa.feher@student.um.si|
+
+Smo mlada ekipa zagriženih študentov, ki želimo z našimi produkti prispevati k boljšemu jutri.
 
 ## Priprava okolja
 1. Kloniranje repozitorija z "git clone https://github.com/MerceneX/Praktikum-II.git"
@@ -54,7 +64,7 @@ client/node_modules
 README.md"
 
 ## Uporaba API
-### Endpoints
+### Končne Točke
 - GET api/graph/{id}  
 id: 23-37   
 Vnaprej pripravljene poizvedbe iz baze podatkov, v obliki JSON. Primer rezultata:   
