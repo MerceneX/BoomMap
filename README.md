@@ -4,10 +4,10 @@
 Namen rešitve je ozaveščanje voznikov, reševalnih služb in tistih, ki se jim mudi, kje povečati potrpljenje in zmanjšati hitrost. 
 
 ## Uporabljene tehnologije 
-* React
-* Node.js 
-* MongoDB
-* Python 
+* front-end: React
+* back-end: Node.js 
+* podatkovna baza: MongoDB
+* strojno učenje: Python 
 
 ## Funkcionalnosti 
 ### Zemljevid 
