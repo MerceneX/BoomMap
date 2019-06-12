@@ -18,7 +18,7 @@ import NesreceTip from "../components/graphs/NesreceTip";
 import TipTrcenja from "../components/graphs/TipTrcenja";
 
 
-class Statistic2 extends React.Component {
+class Statistics extends React.Component {
 	constructor(props) {
 		super(props);
 
@@ -189,4 +189,4 @@ class Statistic2 extends React.Component {
 	}
 }
 
-export default Statistic2;
+export default Statistics;
