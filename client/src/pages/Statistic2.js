@@ -14,7 +14,8 @@ import Chip from '@material-ui/core/Chip';
 import NesreceIntenzivnostPrazniki from "../components/graphs/NesreceIntenzivnostPrazniki";
 import IntenzivnostPoskodbe from "../components/graphs/IntenzivnostPoskodbe";
 import PoskodbeNedelja from "../components/graphs/PoskodbeNedelja";
-import NesreceTip from "../components/graphs/NesreceTip"
+import NesreceTip from "../components/graphs/NesreceTip";
+import TipTrcenja from "../components/graphs/TipTrcenja";
 
 
 class Statistic2 extends React.Component {
@@ -24,7 +25,7 @@ class Statistic2 extends React.Component {
         this.toggle = this.toggle.bind(this);
 		this.state = {
             dropdownOpen: false,
-            show: [true, true, false, false, false, false, false, false, false, false, false, false]
+            show: [true, true, false, false, false, false, false, false, false, false, false, false, false]
 
 		};
 	}
@@ -74,7 +75,8 @@ class Statistic2 extends React.Component {
 							<DropdownItem onClick={() => this.showHide(9)}>Glede na intenzivnost poškodbe med prazniki</DropdownItem>
 							<DropdownItem onClick={() => this.showHide(10)}>Glede intenzivnost poškodbe</DropdownItem>
 							<DropdownItem onClick={() => this.showHide(11)}>Glede intenzivnost poškodbe v nedeljo</DropdownItem>
-							<DropdownItem onClick={() => this.showHide(12)}>Glede itip nesrece</DropdownItem>
+							<DropdownItem onClick={() => this.showHide(12)}>Glede tip nesreče</DropdownItem>
+							<DropdownItem onClick={() => this.showHide(13)}>Glede tip trčenja (najbolj smrtonosni)</DropdownItem>
                         </DropdownMenu>
                     </ButtonDropdown>
 
@@ -91,7 +93,8 @@ class Statistic2 extends React.Component {
 					{this.state.show[9] && <Chip   label="Glede na intenzivnost poškodbe med prazniki"  onDelete={() => this.showHide(9)} variant="outlined" />}
 					{this.state.show[10] && <Chip   label="Intenzivnost poškodbe"  onDelete={() => this.showHide(10)} variant="outlined" />}
 					{this.state.show[11] && <Chip   label="Intenzivnost poškodbe v nedeljo"  onDelete={() => this.showHide(11)} variant="outlined" />}
-					{this.state.show[12] && <Chip   label="Tip nesrece"  onDelete={() => this.showHide(12)} variant="outlined" />}
+					{this.state.show[12] && <Chip   label="Tip nesreče"  onDelete={() => this.showHide(12)} variant="outlined" />}
+					{this.state.show[13] && <Chip   label="Tip trčenja"  onDelete={() => this.showHide(13)} variant="outlined" />}
 
 					<br/><br/><br/>
 
@@ -173,8 +176,12 @@ class Statistic2 extends React.Component {
 								{this.state.show[12] && <NesreceTip />}
 							</div>
 						</Row>
-
-
+						<Row>
+							<div>
+								{this.state.show[13] && <h6> Glede na tip trčenja (najbolj smrtonosni) </h6>}
+								{this.state.show[13] && <TipTrcenja />}
+							</div>
+						</Row>
 					</Container>
 				</div>
 			</React.Fragment>
