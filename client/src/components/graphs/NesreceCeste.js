@@ -39,7 +39,7 @@ export default class NesreceCeste extends PureComponent {
                 <YAxis domain={[0, 70000]}/>
                 <Tooltip/>
                 <Legend/>
-                <Bar layout="horizontal" dataKey="nesrece" fill="#008080" fillOpacity="0.7" label={{ fill: 'white', fontSize: 10 }}/>
+                <Bar layout="horizontal" dataKey="nesrece" fill="#4ca64c" fillOpacity="0.8" label={{ fill: 'white', fontSize: 10 }}/>
             </BarChart>
         );
     }
