@@ -148,12 +148,6 @@ class Statistic2 extends React.Component {
 						</Row>
 						<Row>
 							<div>
-								{this.state.show[9] && <h6> Glede na intenzivnost poškodb med prazniki </h6>}
-								{this.state.show[9] && <NesreceIntenzivnostPrazniki />}
-							</div>
-						</Row>
-						<Row>
-							<div>
 								{this.state.show[10] && <h6> Intenzivnost poškodb </h6>}
 								{this.state.show[10] && <IntenzivnostPoskodbe />}
 							</div>
@@ -163,6 +157,13 @@ class Statistic2 extends React.Component {
 							</div>
 
 						</Row>
+						<Row>
+							<div>
+								{this.state.show[9] && <h6> Glede na intenzivnost poškodb med prazniki </h6>}
+								{this.state.show[9] && <NesreceIntenzivnostPrazniki />}
+							</div>
+						</Row>
+
 
 					</Container>
 				</div>
