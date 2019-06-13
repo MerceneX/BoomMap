@@ -5,21 +5,24 @@ import {
 } from 'recharts';
 
 
+
 var data = [
 ];
 
-export default class NesreceVozilo extends PureComponent {
+export default class IntenzivnostPoskodbe extends PureComponent {
 
     state = {
-        datag: [],
+        dataLeto: []
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/api/graph/27').then(res => {
-            this.setState({datag: res.data});
+        axios.get('http://localhost:5000/api/graph/34').then(res => {
+            this.setState({dataLeto: res.data});
             console.log(res.data);
             for(var key in this.state) {
                 data.push(this.state[key]);
+                // console.log(this.state[key]);
+                //this.setState({dataLeto: LData[key]});
             }
         });
     }
@@ -27,19 +30,19 @@ export default class NesreceVozilo extends PureComponent {
     render() {
         return (
             <BarChart
-                width={1250}
+                width={500}
                 height={300}
-                data={this.state.datag.podatki}
+                data={this.state.dataLeto.podatki}
                 margin={{
                     top: 5, right: 30, left: 20, bottom: 5,
                 }}
             >
                 <CartesianGrid strokeDasharray="3 3"/>
-                <XAxis dataKey="vozilo" interval={0} fontSize={6}/>
-                <YAxis domain={[0, 9500]}/>
+                <XAxis dataKey="intenzivnost" interval={0} fontSize={6.5}/>
+                <YAxis domain={[0, 25000]}/>
                 <Tooltip/>
                 <Legend/>
-                <Bar layout="horizontal" dataKey="nesrece" fill="#008080" fillOpacity="0.7" label={{ fill: 'white', fontSize: 10 }}/>
+                <Bar layout="horizontal" dataKey="nesrece" fill="#037253" fillOpacity="0.7" label={{ fill: 'black', fontSize: 10 }}/>
             </BarChart>
         );
     }

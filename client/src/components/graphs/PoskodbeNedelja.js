@@ -24,7 +24,7 @@ const renderActiveShape = (props) => {
 
     return (
         <g>
-            <text x={cx} y={cy} dy={8} textAnchor="middle" fill={fill}>{payload.dan}</text>
+            <text x={cx} y={cy} dy={5} textAnchor="middle" fontSize={11} fill="black">{payload.intenzivnost}</text>
             <Sector
                 cx={cx}
                 cy={cy}
@@ -54,7 +54,7 @@ const renderActiveShape = (props) => {
 };
 
 
-export default class NesrecePraznik extends Component {
+export default class PoskodbeNedelja extends Component {
 
     state = {
         datag: [],
@@ -62,7 +62,7 @@ export default class NesrecePraznik extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/api/graph/29').then(res => {
+        axios.get('http://localhost:5000/api/graph/35').then(res => {
             this.setState({datag: res.data});
             console.log(res.data);
             for (var key in this.state) {
@@ -86,10 +86,10 @@ export default class NesrecePraznik extends Component {
                     data={this.state.datag.podatki}
                     cx={230}
                     cy={150}
-                    innerRadius={60}
-                    outerRadius={80}
+                    innerRadius={80}
+                    outerRadius={100}
                     paddingAngle={5}
-                    fill="#3d8b6e"
+                    fill="#54b2a9"
                     dataKey="nesrece"
                     onMouseEnter={this.onPieEnter}
                 />

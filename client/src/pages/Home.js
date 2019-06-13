@@ -32,7 +32,7 @@ class SimpleMap extends Component {
     handleChange = (selectedOption) => {
         this.mapElement.current.changeOption(selectedOption)
         this.setState({selectedOption: selectedOption });
-        
+
     };
 
     handleLegendChange = (newLegend) => {

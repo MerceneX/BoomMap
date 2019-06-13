@@ -1,21 +1,21 @@
 import React, { PureComponent } from 'react';
 import {
-    BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Label, ResponsiveContainer
+    BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Label
 } from 'recharts';
+
 import axios from 'axios';
 
 var data = [
 ];
 
-
-export default class NesreceVzrok extends PureComponent {
+export default class TipTrcenja extends PureComponent {
 
     state = {
         datac: [],
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/api/graph/26').then(res => {
+        axios.get('http://localhost:5000/api/graph/37').then(res => {
             this.setState({datac: res.data});
             console.log(res.data);
             for(var key in this.state) {
@@ -35,11 +35,11 @@ export default class NesreceVzrok extends PureComponent {
                 }}
             >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="vzrok" interval={0} fontSize={8}/>
+                <XAxis dataKey="intenzivnost" interval={0} fontSize={7}/>
                 <YAxis/>
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="nesrece" fill="#419873" label={{ fill: 'black', fontSize: 12 }}/>
+                <Bar dataKey="nesrece" fill="#398564" label={{ fill: 'white', fontSize: 12 }}/>
             </BarChart>
         );
     }
