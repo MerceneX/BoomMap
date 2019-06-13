@@ -65,6 +65,7 @@ README.md"
 
 ## Uporaba API
 ### Končne Točke
+Atribut naslov poda kratek opis o tej poizvedbi, podatki vsebujejo polje objektov. Vsak od teh objektov je št. nesreč, ki ustrezajo pogoju poizvedbe, specificirane s prvim atributom objekta.
 - GET api/graph/{id}  
 id: 23-37   
 Vnaprej pripravljene poizvedbe iz baze podatkov, v obliki JSON. Primer rezultata:   
@@ -78,5 +79,4 @@ Vnaprej pripravljene poizvedbe iz baze podatkov, v obliki JSON. Primer rezultata
     {   
       "dan":"Delovnik",   
       "nesrece":119486    
-    }]}   
-Atribut naslov poda kratek opis o tej poizvedbi, podatki vsebujejo polje objektov. Vsak od teh objektov je št. nesreč, ki ustrezajo pogoju poizvedbe, specificirane s prvim atributom objekta.
+    }]}
