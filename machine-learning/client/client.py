@@ -29,7 +29,7 @@ def itemsets_to_list(itemsets):
 
 def create_result(data, itemsets_dry, itemsets_not_dry, section, sections_df):
     section_name = sections_df.loc[sections_df['odsek'] == section]
-    day_of_a_week = dp.get_road_data(data)
+    day_of_a_week = dp.get_road_data(data.loc[data['stevilka_odseka']==section])
     keys = list(day_of_a_week.keys())
     result_json[section] = {}
     result_json[section]['povrsje'] = {}

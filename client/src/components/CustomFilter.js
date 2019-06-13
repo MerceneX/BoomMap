@@ -62,11 +62,11 @@ export default class CustomFilter extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            selectedDay : '0',
-            selectedMonth: '',
-            selectedTime: '',
-            selectedWeather:'',
-            surface:''
+            selectedDay : '-1',
+            selectedMonth: '-1',
+            selectedTime: '-1',
+            selectedWeather:'N',
+            surface:'ne_suho'
         }
         this.handleDayChange = this.handleDayChange.bind(this);
         this.handleTimeChange = this.handleTimeChange.bind(this);
@@ -75,13 +75,13 @@ export default class CustomFilter extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     handleDayChange=(selected)=>{
-        this.setState({selectedDay: selected.value });
+        !selected ?this.setState({selectedDay : -1}) : this.setState({selectedDay : selected.value})
     }
     handleMonthChange=(selected)=>{
-        this.setState({selectedMonth: selected.value });
+        !selected ?this.setState({selectedMonth : -1}) : this.setState({selectedMonth : selected.value})
     }
     handleWeatherChange=(selected)=>{
-        this.setState({selectedWeather: selected.value });
+        !selected ?this.setState({selectedWeather : -1}) : this.setState({selectedWeather : selected.value})
     }
     handleTimeChange(event) {
         let time = event.target.value.toString().split(":")
@@ -90,8 +90,7 @@ export default class CustomFilter extends React.Component {
 
     }
     handleSurfaceChange(selected){
-        this.state.surface = selected.value
-        this.setState({surface: selected.value})
+        !selected ?this.setState({surface : 'ne_suho'}) : this.setState({surface : selected.value})
     }
     handleSubmit(event) {
         let state = {
@@ -99,8 +98,9 @@ export default class CustomFilter extends React.Component {
                 Cas_Nesrece: this.state.selectedTime,
                 dan_v_tednu: this.state.selectedDay,
                 mesec: this.state.selectedMonth,
-
         }
+        alert('day:'+this.state.selectedDay+'month'+this.state.selectedMonth+'weather'+this.state.selectedWeather+'surface'+this.state.surface)
+
         this.props.change(state,this.state.surface)
         event.preventDefault();
     }
@@ -110,26 +110,31 @@ export default class CustomFilter extends React.Component {
         <div>
             <form onSubmit={this.handleSubmit}>
             <h6> Po meri: </h6>
+            <hr/>
             <label className="custom"/>
             <Select
+                isClearable = {true}
                 placeholder = "Dan v tednu..."
                 options = {day_options}
                 onChange = {this.handleDayChange}
             />
             <br/>
             <Select
+                isClearable = {true}
                 placeholder = "Vreme..."
                 options = {weather_options}
                 onChange = {this.handleWeatherChange}
             />
             <br/>
             <Select
+                isClearable = {true}
                 placeholder = "Mesec..."
                 options = {month_options}
                 onChange = {this.handleMonthChange}
             />
             <br/>
             <Select
+                isClearable = {true}
                 placeholder = "Povrsje..."
                 options = {[{value: 'suho',label: 'Suho'},{value:'ne_suho',label:'Drugo'}]}
                 onChange = {this.handleSurfaceChange}

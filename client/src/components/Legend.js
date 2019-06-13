@@ -35,38 +35,56 @@ class Legend extends React.Component {
     render(){
         return(
             <div>
-                <hr/>
                 <h6> Kritičnost: </h6>
-
-                <label className ="legendType"> Visoka:</label><br/>
-                 <Checkbox
-                        id = "high"
-                        color = "#CC2A36"
-                        size = "2"
-                        onChange = {this.checkboxHighChanged}
-                        checked =  {this.state.checkboxHighChecked}
-
-                />
-
-                <br/><br/>
-                <label className ="legendType"> Srednja:  </label><br/>
-                <Checkbox
-                    id = "medium"
-                    color = "#ff9933"
-                    size = "2"
-                    onChange = {this.checkboxMediumChanged}
-                    checked =  {this.state.checkboxMediumChecked}
-                />
-                <br/><br/>
-                <label className ="legendType"> Nizka:  </label><br/>
-                <Checkbox
-                    id = "low"
-                    color = "#00b300"
-                    size = "2"
-                    onChange = {this.checkboxLowChanged}
-                    checked =  {this.state.checkboxLowChecked}
-                />
                 <hr/>
+                <div className="legendDiv">
+                    <Row>
+                        <Col>
+                            <label className ="legendType"> Visoka</label>
+                        </Col>
+                        <Col>
+                             <Checkbox
+                                    id = "high"
+                                    color = "#CC2A36"
+                                    size = "2"
+                                    onChange = {this.checkboxHighChanged}
+                                    checked =  {this.state.checkboxHighChecked}
+
+                            />
+                        </Col>
+                        <Col md={"6"}/>
+                    </Row>
+                    <Row>
+                        <Col >
+                           <label className ="legendType"> Srednja  </label>
+                        </Col>
+                         <Col >
+                          <Checkbox
+                            id = "medium"
+                            color = "#ff9933"
+                            size = "2"
+                            onChange = {this.checkboxMediumChanged}
+                            checked =  {this.state.checkboxMediumChecked}
+                        />
+                        </Col>
+                        <Col md={"6"}/>
+                    </Row>
+                    <Row>
+                    <Col>
+                        <label className ="legendType"> Nizka  </label>
+                    </Col>
+                    <Col>
+                        <Checkbox
+                            id = "low"
+                            color = "#00b300"
+                            size = "2"
+                            onChange = {this.checkboxLowChanged}
+                            checked =  {this.state.checkboxLowChecked}
+                        />
+                    </Col>
+                    <Col md={"6"}/>
+                    </Row>
+                </div>
             </div>
 
 

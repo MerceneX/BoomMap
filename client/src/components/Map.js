@@ -1,12 +1,12 @@
 import React from 'react'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
-import myData  from '../../src/data/results'
+import myData from '../../src/data/results_json'
 import request from 'request'
 import "leaflet.awesome-markers/dist/leaflet.awesome-markers.css"
 import "leaflet.awesome-markers/dist/leaflet.awesome-markers"
+import { Container, Row, Col} from 'reactstrap';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
-
 
 let weatherData = "";
 
@@ -77,14 +77,19 @@ class StreetMap extends React.Component {
     };
     isSectionCritical = (section,surfaceType)=>{
         let state = Object.keys(this.state.filterOptions).length !== 0 ? this.state.filterOptions : this.getCurrentState()
+        console.log(state)
         let count = 0;
-        //if(myData[section]["dan_teden"].includes(state['dan_v_tednu']))
-          //  count+=1;
+        if(myData[section]["dan_teden"].includes(parseInt(state['dan_v_tednu']))) {
+            count++;
+        }
         let section_attributes = myData[section]['povrsje'][surfaceType.toString()];
         for(let attribute in state){
-            if(section_attributes[attribute].includes(state[attribute]))
+            console.log(section_attributes)
+            console.log(state[attribute])
+            if(section_attributes[attribute].includes(state[attribute])&& attribute!='dan_v_tednu')
                 count++;
         }
+
         return count
 
     };
@@ -94,6 +99,7 @@ class StreetMap extends React.Component {
             case 4: url = 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png';     break;
             case 3: url= 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-orange.png';   break;
             case 2: url = 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png';   break;
+            case 1: url = 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png';   break;
             }
         return url;
     };
@@ -101,7 +107,7 @@ class StreetMap extends React.Component {
         let isLegendEmpty = (!Object.values(this.state.criticalLevelsChecked).includes(true))
         let legendKeys = Object.keys(this.state.criticalLevelsChecked);
         marker.iconColor = this.setMarkerColor(criticalState);
-        if(criticalState>=2) {
+        if(criticalState>=1) {
             if (isLegendEmpty)
                 this.state.markers.push(marker)
             else {
@@ -136,7 +142,6 @@ class StreetMap extends React.Component {
         let weather =this.getWeatherData(46.55472, 15.64667 );
         const position = [this.state.lat, this.state.lng];
         return (
-
             <Map className="map" center={position} zoom={this.state.zoom}>
                 <TileLayer
                     attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
