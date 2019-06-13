@@ -42,7 +42,7 @@ export default class IntenzivnostPoskodbe extends PureComponent {
                 <YAxis domain={[0, 25000]}/>
                 <Tooltip/>
                 <Legend/>
-                <Bar layout="horizontal" dataKey="nesrece" fill="#008080" fillOpacity="0.7" label={{ fill: 'white', fontSize: 10 }}/>
+                <Bar layout="horizontal" dataKey="nesrece" fill="#037253" fillOpacity="0.7" label={{ fill: 'black', fontSize: 10 }}/>
             </BarChart>
         );
     }

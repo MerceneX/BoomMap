@@ -89,7 +89,7 @@ export default class NesreceSpol extends Component {
                     innerRadius={60}
                     outerRadius={80}
                     paddingAngle={5}
-                    fill="#008080"
+                    fill="#249273"
                     dataKey="nesrece"
                     onMouseEnter={this.onPieEnter}
                 />

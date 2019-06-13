@@ -89,7 +89,7 @@ export default class PoskodbeNedelja extends Component {
                     innerRadius={80}
                     outerRadius={100}
                     paddingAngle={5}
-                    fill="#008080"
+                    fill="#54b2a9"
                     dataKey="nesrece"
                     onMouseEnter={this.onPieEnter}
                 />

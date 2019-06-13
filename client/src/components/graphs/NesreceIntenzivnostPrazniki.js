@@ -89,7 +89,7 @@ export default class NesreceIntenzivnostPrazniki extends Component {
                     innerRadius={80}
                     outerRadius={100}
                     paddingAngle={5}
-                    fill="#008080"
+                    fill="#66b2b2"
                     dataKey="nesrece"
                     onMouseEnter={this.onPieEnter}
                 />

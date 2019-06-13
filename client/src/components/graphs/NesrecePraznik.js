@@ -89,7 +89,7 @@ export default class NesrecePraznik extends Component {
                     innerRadius={60}
                     outerRadius={80}
                     paddingAngle={5}
-                    fill="#008080"
+                    fill="#3d8b6e"
                     dataKey="nesrece"
                     onMouseEnter={this.onPieEnter}
                 />

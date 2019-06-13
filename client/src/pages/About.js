@@ -12,7 +12,7 @@ function About() {
             <div className="container">
                 <h4 className="headers"> Vizija </h4>
                 <Container>
-                    <p> ...  </p></Container>
+                    <p>Namen rešitve je ozaveščanje voznikov, reševalnih služb in tistih, ki se jim mudi, kje povečati potrpljenje in zmanjšati hitrost. V službi reševanja življenj šteje vsaka sekunda, želimo biti del, ki pripomore k reševanju življenj in preprečevanju ogrožanja teh. S pomočjo naše spletne stranih, lahko reševalci preventivno pripravijo enote in proces steče hitreje.  </p></Container>
             </div>
             <div className="container">
                 <h4 className="headers"> Ekipa </h4>

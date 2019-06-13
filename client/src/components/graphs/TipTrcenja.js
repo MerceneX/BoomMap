@@ -39,7 +39,7 @@ export default class TipTrcenja extends PureComponent {
                 <YAxis/>
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="nesrece" fill="#419873" label={{ fill: 'white', fontSize: 12 }}/>
+                <Bar dataKey="nesrece" fill="#398564" label={{ fill: 'white', fontSize: 12 }}/>
             </BarChart>
         );
     }
