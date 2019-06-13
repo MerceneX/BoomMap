@@ -46,6 +46,8 @@ class Statistic2 extends React.Component {
         });
     }
 
+
+
 	render() {
 		function handleClick() {
 			alert('You clicked the Chip.');
@@ -60,7 +62,7 @@ class Statistic2 extends React.Component {
 
                     <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                         <DropdownToggle caret >
-                            Grafi
+                            Izberite graf
                         </DropdownToggle>
                         <DropdownMenu>
                             <DropdownItem onClick={() => this.showHide(0)}>Število nesreč v posameznem letu</DropdownItem>
