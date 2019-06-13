@@ -49,18 +49,13 @@ class Statistics extends React.Component {
 
 
 	render() {
-		function handleClick() {
-			alert('You clicked the Chip.');
-		}
-		function handleDelete() {
-			alert('You clicked the delete icon.');
-		}
+
 		return (
 			<React.Fragment>
 				<div className="container">
 
 
-                    <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+                    <ButtonDropdown  isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                         <DropdownToggle caret >
                             Izberite graf
                         </DropdownToggle>
