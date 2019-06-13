@@ -5,6 +5,7 @@ import Map from '../components/Map'
 import Legend from '../components/Legend'
 import { Container, Row, Col} from 'reactstrap';
 import CustomFilter from '../components/CustomFilter'
+import Breakpoint, { BreakpointProvider } from 'react-socks'
 
 
 const options = [
@@ -32,7 +33,6 @@ class SimpleMap extends Component {
         this.mapElement.current.changeOption(selectedOption)
         this.setState({selectedOption: selectedOption });
 
-        console.log(`Option selected:`, selectedOption);
     };
 
     handleLegendChange = (newLegend) => {
@@ -44,11 +44,13 @@ class SimpleMap extends Component {
     }
     render() {
         const { selectedOption } = this.state;
+
         return (
             // Important! Always set the container height explicitly
+
             <Container fluid={true}>
                 <Row>
-                    <Col xs="2">
+                    <Col md="2" sm={"2"} xs="3">
                         <div align={"left"}>
                             <Select
                                 defaultValue = {options[2]}
@@ -57,8 +59,8 @@ class SimpleMap extends Component {
                             />
                             <br/>
                             <Legend
-                                ref = {this.legendElement}
-                                change = {this.handleLegendChange}
+                            ref = {this.legendElement}
+                            change = {this.handleLegendChange}
                             />
                             <CustomFilter
                                 change = {this.handleFilterSubmit}
@@ -66,7 +68,7 @@ class SimpleMap extends Component {
                         </div>
                         <br/>
                     </Col>
-                    <Col xs="10">
+                    <Col md="10" sm={"10"} xs={"9"}>
                         <Map
                             option = {this.state.selectedOption}
                             ref={this.mapElement}
