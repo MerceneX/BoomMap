@@ -77,15 +77,12 @@ class StreetMap extends React.Component {
     };
     isSectionCritical = (section,surfaceType)=>{
         let state = Object.keys(this.state.filterOptions).length !== 0 ? this.state.filterOptions : this.getCurrentState()
-        console.log(state)
         let count = 0;
         if(myData[section]["dan_teden"].includes(parseInt(state['dan_v_tednu']))) {
             count++;
         }
         let section_attributes = myData[section]['povrsje'][surfaceType.toString()];
         for(let attribute in state){
-            console.log(section_attributes)
-            console.log(state[attribute])
             if(section_attributes[attribute].includes(state[attribute])&& attribute!='dan_v_tednu')
                 count++;
         }
@@ -137,7 +134,6 @@ class StreetMap extends React.Component {
 
     };
     render() {
-        console.log(this.state.filterOptions)
         this.addMarkers();
         let weather =this.getWeatherData(46.55472, 15.64667 );
         const position = [this.state.lat, this.state.lng];

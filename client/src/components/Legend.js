@@ -2,6 +2,7 @@ import React from 'react'
 import Checkbox from "react-simple-checkbox";
 import { Container, Row, Col} from 'reactstrap';
 
+
 class Legend extends React.Component {
 
     constructor(props) {
@@ -15,29 +16,34 @@ class Legend extends React.Component {
 
     };
     checkboxHighChanged = () => {
-        this.state.checkboxHighChecked = !this.state.checkboxHighChecked;
-        this.state.selectedCheckboxes = {4: this.state.checkboxHighChecked, 3: this.state.checkboxMediumChecked, 2: this.state.checkboxLowChecked}
-
-        this.props.change(this.state.selectedCheckboxes)
+        this.setState({checkboxHighChecked : !this.state.checkboxHighChecked},()=>{
+            this.setState({selectedCheckboxes : {4: this.state.checkboxHighChecked, 3: this.state.checkboxMediumChecked, 2: this.state.checkboxLowChecked}},()=>{
+                this.props.change(this.state.selectedCheckboxes)
+                console.log(this.state)
+            })
+        })
     }
     checkboxMediumChanged = () => {
-        this.state.checkboxMediumChecked = !this.state.checkboxMediumChecked;
-        this.state.selectedCheckboxes = {4: this.state.checkboxHighChecked, 3: this.state.checkboxMediumChecked, 2: this.state.checkboxLowChecked}
-
-        this.props.change(this.state.selectedCheckboxes)
+        this.setState({checkboxMediumChecked : !this.state.checkboxMediumChecked},()=>{
+            this.setState({selectedCheckboxes : {4: this.state.checkboxHighChecked, 3: this.state.checkboxMediumChecked, 2: this.state.checkboxLowChecked}},()=>{
+                this.props.change(this.state.selectedCheckboxes)
+                console.log(this.state)
+            })
+        })
     }
     checkboxLowChanged = () => {
-        this.state.checkboxLowChecked = !this.state.checkboxLowChecked;
-        this.state.selectedCheckboxes = {4: this.state.checkboxHighChecked, 3: this.state.checkboxMediumChecked, 2: this.state.checkboxLowChecked}
-
-        this.props.change(this.state.selectedCheckboxes)
+        this.setState({checkboxLowChecked : !this.state.checkboxLowChecked},()=>{
+            this.setState({selectedCheckboxes : {4: this.state.checkboxHighChecked, 3: this.state.checkboxMediumChecked, 2: this.state.checkboxLowChecked}},()=>{
+                this.props.change(this.state.selectedCheckboxes)
+                console.log(this.state)
+            })
+        })
     }
     render(){
         return(
             <div>
                 <h6> Kritičnost: </h6>
                 <hr/>
-                <div className="legendDiv">
                     <Row>
                         <Col>
                             <label className ="legendType"> Visoka</label>
@@ -85,7 +91,7 @@ class Legend extends React.Component {
                     <Col md={"6"}/>
                     </Row>
                 </div>
-            </div>
+
 
 
 
