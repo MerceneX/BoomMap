@@ -99,7 +99,6 @@ export default class CustomFilter extends React.Component {
                 dan_v_tednu: this.state.selectedDay,
                 mesec: this.state.selectedMonth,
         }
-        alert('day:'+this.state.selectedDay+'month'+this.state.selectedMonth+'weather'+this.state.selectedWeather+'surface'+this.state.surface)
 
         this.props.change(state,this.state.surface)
         event.preventDefault();
@@ -160,7 +159,6 @@ export default class CustomFilter extends React.Component {
                 <Col><Button variant="outlined" type="submit">Prikaži </Button></Col>
             </Row>
             </form>
-
         </div>
         )
     }
