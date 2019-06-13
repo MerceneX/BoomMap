@@ -44,7 +44,8 @@
     "server": "nodemon server.js",
     "client": "cd client & npm start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "update-all": "npm install & npm run client-install"
+    "update-all": "npm install & npm run client-install",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install cd client && npm run build"
   },
   "repository": {
     "type": "git",
