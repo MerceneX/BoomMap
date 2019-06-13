@@ -12,7 +12,6 @@ function Footer(props){
                 Vir podatkov: <a href="https://www.avp-rs.si/">avp-rs.si</a>
             </Typography>
             <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-
                 Kontakt: marko.gluhak@student.um.si
             </Typography>
         </footer>
@@ -25,31 +24,6 @@ Footer.propTypes = {
 };
 
 const styles = theme => ({
-
-    icon: {
-        marginRight: theme.spacing.unit * 2,
-    },
-    heroUnit: {
-        backgroundColor: 'blue',
-    },
-    heroContent: {
-        maxWidth: 600,
-        margin: '0 auto',
-        padding: `${theme.spacing.unit * 8}px 0 ${theme.spacing.unit * 6}px`,
-    },
-    heroButtons: {
-        marginTop: theme.spacing.unit * 4,
-    },
-    layout: {
-        width: 'auto',
-        marginLeft: theme.spacing.unit * 3,
-        marginRight: theme.spacing.unit * 3,
-        [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
-            width: 'auto',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-        },
-    },
 
     footer: {
         backgroundColor: '#d0d6dc',
