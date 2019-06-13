@@ -18,7 +18,6 @@ export default class Test extends PureComponent {
     componentDidMount() {
         axios.get('http://localhost:5000/api/graph/31').then(res => {
             this.setState({dataLeto: res.data});
-            console.log(res.data);
             for(var key in this.state) {
                 data.push(this.state[key]);
             }

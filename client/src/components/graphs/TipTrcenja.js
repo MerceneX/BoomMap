@@ -17,7 +17,6 @@ export default class TipTrcenja extends PureComponent {
     componentDidMount() {
         axios.get('http://localhost:5000/api/graph/37').then(res => {
             this.setState({datac: res.data});
-            console.log(res.data);
             for(var key in this.state) {
                 data.push(this.state[key]);
             }

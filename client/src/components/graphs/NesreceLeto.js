@@ -1,9 +1,6 @@
 import React, { PureComponent } from 'react';
 import {
-    AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend
-} from 'recharts';
-import MyCard2 from '../MyCard2';
-
+    AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
 import axios from 'axios';
 
 
