@@ -19,7 +19,6 @@ class Legend extends React.Component {
         this.setState({checkboxHighChecked : !this.state.checkboxHighChecked},()=>{
             this.setState({selectedCheckboxes : {4: this.state.checkboxHighChecked, 3: this.state.checkboxMediumChecked, 2: this.state.checkboxLowChecked}},()=>{
                 this.props.change(this.state.selectedCheckboxes)
-                console.log(this.state)
             })
         })
     }
@@ -27,7 +26,6 @@ class Legend extends React.Component {
         this.setState({checkboxMediumChecked : !this.state.checkboxMediumChecked},()=>{
             this.setState({selectedCheckboxes : {4: this.state.checkboxHighChecked, 3: this.state.checkboxMediumChecked, 2: this.state.checkboxLowChecked}},()=>{
                 this.props.change(this.state.selectedCheckboxes)
-                console.log(this.state)
             })
         })
     }
@@ -35,7 +33,6 @@ class Legend extends React.Component {
         this.setState({checkboxLowChecked : !this.state.checkboxLowChecked},()=>{
             this.setState({selectedCheckboxes : {4: this.state.checkboxHighChecked, 3: this.state.checkboxMediumChecked, 2: this.state.checkboxLowChecked}},()=>{
                 this.props.change(this.state.selectedCheckboxes)
-                console.log(this.state)
             })
         })
     }
