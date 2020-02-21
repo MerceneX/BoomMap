@@ -11,6 +11,7 @@ import Breakpoint, { BreakpointProvider } from 'react-socks'
 const options = [
     { value: 'suho', label: 'Trenutno stanje-suho površje' },
     { value: 'ne_suho', label: 'Trenutno stanje-drugo'},
+    {value: 'current', label: 'Trenutno stanje'},
     { value: 'all', label: 'Kritični odseki' }
 ];
 

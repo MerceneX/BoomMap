@@ -58,6 +58,12 @@ const month_options = [
     { value: '11', label: 'November' },
     { value: '12', label: 'December'},
 ]
+
+const surface_options = [
+    { value: 'suho', label: 'Suho' },
+    { value: 'M', label: 'Mokro' },
+    { value: 'SL', label: 'Sneženo' },
+]
 export default class CustomFilter extends React.Component {
     constructor(props){
         super(props)
@@ -90,7 +96,23 @@ export default class CustomFilter extends React.Component {
 
     }
     handleSurfaceChange(selected){
-        !selected ?this.setState({surface : 'ne_suho'}) : this.setState({surface : selected.value})
+        let surfaceChoice = "";
+        if(selected){
+            if(selected.value !== 'suho'){
+                surfaceChoice = {
+                    general: "ne_suho",
+                    type: selected.value
+                }
+            }
+            else {
+                surfaceChoice = {
+                    general: "suho",
+                    type: "suho"
+                }
+            }
+
+        }
+        !selected ?this.setState({surface : 'ne_suho'}) : this.setState({surface : surfaceChoice})
     }
     handleSubmit(event) {
         let state = {
@@ -98,6 +120,7 @@ export default class CustomFilter extends React.Component {
                 Cas_Nesrece: this.state.selectedTime,
                 dan_v_tednu: this.state.selectedDay,
                 mesec: this.state.selectedMonth,
+                PRPV_Povrsje: this.state.surface
         }
 
         this.props.change(state,this.state.surface)
@@ -134,8 +157,8 @@ export default class CustomFilter extends React.Component {
             <br/>
             <Select
                 isClearable = {true}
-                placeholder = "Povrsje..."
-                options = {[{value: 'suho',label: 'Suho'},{value:'ne_suho',label:'Drugo'}]}
+                placeholder = "Površje..."
+                options = {surface_options}
                 onChange = {this.handleSurfaceChange}
             />
 
