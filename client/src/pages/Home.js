@@ -19,6 +19,7 @@ class SimpleMap extends Component {
         super(props)
         this.mapElement = React.createRef();
         this.legendElement = React.createRef();
+        this.customFilter = React.createRef();
         this.state = {
             selectedOption: 'all',
         }
@@ -31,6 +32,10 @@ class SimpleMap extends Component {
     handleChange = (selectedOption) => {
         this.mapElement.current.changeOption(selectedOption)
         this.setState({selectedOption: selectedOption });
+        let visi = selectedOption.value === 'all'? 'visible': 'hidden'
+        console.log(selectedOption)
+        console.log(visi)
+        this.customFilter.current.changeVisibility(visi)
 
     };
 
@@ -63,6 +68,7 @@ class SimpleMap extends Component {
                             />
                             <CustomFilter
                                 change = {this.handleFilterSubmit}
+                                ref = {this.customFilter}
                             />
                         </div>
                         <br/>

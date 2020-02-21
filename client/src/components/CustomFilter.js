@@ -1,14 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Select from 'react-select'
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { Container, Row, Col} from 'reactstrap';
 import TimePicker from 'rc-time-picker';
-import ReactDOM from 'react-dom';
 import 'rc-time-picker/assets/index.css';
-import {colorFill} from "ionicons/icons";
-import color from "@material-ui/core/colors/red";
+
 
 const day_options = [
     { value: '0', label: 'Ponedeljek' },
@@ -57,13 +53,21 @@ export default class CustomFilter extends React.Component {
             selectedMonth: '-1',
             selectedTime: '-1',
             selectedWeather:'N',
-            surface:{general: 'ne_suho', type: 'SU'}
+            surface:{general: 'ne_suho', type: 'SU'},
+            visible: "hidden"
+
         }
         this.handleDayChange = this.handleDayChange.bind(this);
         this.handleTimeChange = this.handleTimeChange.bind(this);
         this.handleWeatherChange = this.handleWeatherChange.bind(this);
         this.handleSurfaceChange = this.handleSurfaceChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.changeVisibility = this.changeVisibility.bind(this);
+    }
+
+    changeVisibility = (visibility) => {
+        this.setState({visible: visibility})
+        console.log(visibility)
     }
     handleDayChange=(selected)=>{
         !selected ?this.setState({selectedDay : -1}) : this.setState({selectedDay : selected.value})
@@ -112,7 +116,7 @@ export default class CustomFilter extends React.Component {
 
     render(){
         return (
-        <div>
+        <div style={{visibility: this.state.visible}}>
             <form onSubmit={this.handleSubmit}>
             <h6> Po meri: </h6>
             <hr/>
