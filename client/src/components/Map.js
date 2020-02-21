@@ -5,7 +5,7 @@ import myData from '../../src/data/results_json'
 import request from 'request'
 import "leaflet.awesome-markers/dist/leaflet.awesome-markers.css"
 import "leaflet.awesome-markers/dist/leaflet.awesome-markers"
-import { Container, Row, Col} from 'reactstrap';
+
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 
 let weather = {
@@ -34,7 +34,8 @@ class StreetMap extends React.Component {
             filterOptions: {},
             markers: [],
             surface: '',
-            weatherD: ''
+            weatherD: '',
+            currentLoc: {lat: 46.1491664, lng: 14.9860106}
         }
     }
     changeOption(newOption){
@@ -53,15 +54,33 @@ class StreetMap extends React.Component {
         this.setState({filterOptions: filter})
         this.state.surface = surface
     }
-    componentDidMount() {
-        this.getWeatherData(46.55472, 15.64667 );
+
+     componentDidMount() {
+        this.getWeatherData(this.state.currentLoc.lat, this.state.currentLoc.lng);
     }
+    getLocation = () => {
+        if (navigator.geolocation) {
+           let position = navigator.geolocation.getCurrentPosition(this.geoSuccess);
+
+        } else {
+           alert("Not supported")
+        }
+    }
+    geoSuccess =(position) => {
+        var lat = position.coords.latitude;
+        var lng = position.coords.longitude;
+        this.setState({currentLoc: {lat: lat, long: lng}});
+    }
+
     getWeatherData = (lat,lon) => {
-        let url = 'http://api.openweathermap.org/data/2.5/find?lat='+lat+'&lon='+lon+'&cnt=1&APPID=19117506641d90371c01ce010e35f032';
+        fetch('http://api.openweathermap.org/data/2.5/find?lat='+lat+'&lon='+lon+'&cnt=1&APPID=19117506641d90371c01ce010e35f032')
+            .then(res => res.json())
+            .then(json => this.setState({ weatherD: json.list[0].weather[0].main }));
+       /* let url = 'http://api.openweathermap.org/data/2.5/find?lat='+lat+'&lon='+lon+'&cnt=1&APPID=19117506641d90371c01ce010e35f032';
         request({url,json:true},(error,{body})=>{
             let d = body.list[0].weather[0].main;
             this.setState({weatherD: d})
-        })
+        }) */
     };
     getCurrentState = ()=>{
         let date = new Date();
@@ -75,7 +94,6 @@ class StreetMap extends React.Component {
             case "S": surface = {general: 'ne_suho', type: "SL"}; break;
             default: surface = {general: 'suho', type : "SU"}; break;
         }
-        console.log(this.state.weatherD)
         let current = {
             PRVR_Vreme: weather[this.state.weatherD],
             Cas_Nesrece: date.getHours().toString()+'.0',
@@ -90,12 +108,12 @@ class StreetMap extends React.Component {
     isSectionCritical = (section,surfaceType)=>{
         let state = Object.keys(this.state.filterOptions).length !== 0 ? this.state.filterOptions : this.getCurrentState()
         let count = 0;
-
+        console.log(state)
         if(myData[section]["dan_teden"].includes(parseInt(state['dan_v_tednu']))) {
             count++;
         }
         let section_attributes = myData[section]['povrsje'][state['PRPV_Povrsje']['general']];
-
+        console.log(section_attributes)
         for(let attribute in state){
             if(attribute === 'PRPV_Povrsje'){
                 if(section_attributes[attribute].includes(state[attribute]['type'])&& attribute!=='dan_v_tednu')
@@ -113,6 +131,7 @@ class StreetMap extends React.Component {
     setMarkerColor = (criticalState)=> {
         let url = 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png';
             switch (criticalState) {
+            case 5: url = 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png'
             case 4: url = 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png';     break;
             case 3: url= 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-orange.png';   break;
             case 2: url = 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png';   break;
@@ -124,7 +143,8 @@ class StreetMap extends React.Component {
         let isLegendEmpty = (!Object.values(this.state.criticalLevelsChecked).includes(true))
         let legendKeys = Object.keys(this.state.criticalLevelsChecked);
         marker.iconColor = this.setMarkerColor(criticalState);
-        if(criticalState>2) {
+        console.log(criticalState)
+        if(criticalState>=1) {
             if (isLegendEmpty)
                 this.state.markers.push(marker)
             else {
@@ -136,7 +156,6 @@ class StreetMap extends React.Component {
         }
     };
     addMarkers = () => {
-        console.log(this.state.markers.length)
         for(let section in myData) {
             if (!myData[section].koordinate.includes(null)) {
                 let coord = myData[section].koordinate.toString().split(',');
@@ -152,10 +171,9 @@ class StreetMap extends React.Component {
                 }
             }
         }
-        console.log(this.state.markers.length)
-
     };
     render() {
+        this.getLocation();
 
         this.addMarkers();
 
@@ -184,10 +202,7 @@ class StreetMap extends React.Component {
                 </Marker>
                 )}
             </Map>
-
-
         );
     }
 }
-
 export default StreetMap

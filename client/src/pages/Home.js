@@ -9,8 +9,6 @@ import Breakpoint, { BreakpointProvider } from 'react-socks'
 
 
 const options = [
-    { value: 'suho', label: 'Trenutno stanje-suho površje' },
-    { value: 'ne_suho', label: 'Trenutno stanje-drugo'},
     {value: 'current', label: 'Trenutno stanje'},
     { value: 'all', label: 'Kritični odseki' }
 ];
@@ -54,7 +52,7 @@ class SimpleMap extends Component {
                     <Col md="2" sm={"2"} xs="3">
                         <div align={"left"}>
                             <Select
-                                defaultValue = {options[2]}
+                                defaultValue = {options[0]}
                                 onChange={this.handleChange}
                                 options={options}
                             />

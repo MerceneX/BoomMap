@@ -72,7 +72,7 @@ export default class CustomFilter extends React.Component {
             selectedMonth: '-1',
             selectedTime: '-1',
             selectedWeather:'N',
-            surface:'ne_suho'
+            surface:{general: 'ne_suho', type: 'SU'}
         }
         this.handleDayChange = this.handleDayChange.bind(this);
         this.handleTimeChange = this.handleTimeChange.bind(this);
