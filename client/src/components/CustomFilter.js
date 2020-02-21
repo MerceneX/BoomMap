@@ -4,27 +4,12 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { Container, Row, Col} from 'reactstrap';
+import TimePicker from 'rc-time-picker';
+import ReactDOM from 'react-dom';
+import 'rc-time-picker/assets/index.css';
+import {colorFill} from "ionicons/icons";
+import color from "@material-ui/core/colors/red";
 
-
-function TimePickers() {
-
-    return (
-        <form noValidate>
-            <TextField
-                id="time"
-                label="Čas"
-                type="time"
-                defaultValue="07:30"
-                InputLabelProps={{
-                    shrink: true,
-                }}
-                inputProps={{
-                    step: 300, // 5 min
-                }}
-            />
-        </form>
-    );
-}
 const day_options = [
     { value: '0', label: 'Ponedeljek' },
     { value: '1', label: 'Torek'},
@@ -90,9 +75,7 @@ export default class CustomFilter extends React.Component {
         !selected ?this.setState({selectedWeather : -1}) : this.setState({selectedWeather : selected.value})
     }
     handleTimeChange(event) {
-        let time = event.target.value.toString().split(":")
-        let o = parseInt(time[0],10)
-        this.setState({selectedTime: o+'.0'});
+        event ?this.setState({selectedTime: event.format("HH")+'.0'}): this.setState({selectedTime: -1})
 
     }
     handleSurfaceChange(selected){
@@ -163,18 +146,11 @@ export default class CustomFilter extends React.Component {
             />
 
             <br/>
-            <TextField
-                id="time"
-                label="Čas"
-                type="time"
-                defaultValue="00:00"
-                InputLabelProps={{
-                    shrink: true,
-                }}
-                onChange = {this.handleTimeChange}
-                inputProps={{
-                    step: 300, // 5 min
-                }}
+            <TimePicker
+                placeholder={"Čas..."}
+                showSecond={false}
+                onChange={this.handleTimeChange}
+
             />
             <br/>
             <br/>

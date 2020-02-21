@@ -108,12 +108,10 @@ class StreetMap extends React.Component {
     isSectionCritical = (section,surfaceType)=>{
         let state = Object.keys(this.state.filterOptions).length !== 0 ? this.state.filterOptions : this.getCurrentState()
         let count = 0;
-        console.log(state)
         if(myData[section]["dan_teden"].includes(parseInt(state['dan_v_tednu']))) {
             count++;
         }
         let section_attributes = myData[section]['povrsje'][state['PRPV_Povrsje']['general']];
-        console.log(section_attributes)
         for(let attribute in state){
             if(attribute === 'PRPV_Povrsje'){
                 if(section_attributes[attribute].includes(state[attribute]['type'])&& attribute!=='dan_v_tednu')
@@ -143,7 +141,6 @@ class StreetMap extends React.Component {
         let isLegendEmpty = (!Object.values(this.state.criticalLevelsChecked).includes(true))
         let legendKeys = Object.keys(this.state.criticalLevelsChecked);
         marker.iconColor = this.setMarkerColor(criticalState);
-        console.log(criticalState)
         if(criticalState>=1) {
             if (isLegendEmpty)
                 this.state.markers.push(marker)
