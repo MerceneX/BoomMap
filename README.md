@@ -149,5 +149,5 @@ EXPOSE 3000
 CMD [ "npm", "start" ]
 ```
 
-Build image with `docker run -d -p 8080:3000 react`
-Start container with `docker build -t react .`
+Build image with `docker build -t react .`
+Start container with `docker run -d -p 8080:3000 react`
