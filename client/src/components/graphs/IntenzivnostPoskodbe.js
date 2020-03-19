@@ -3,6 +3,7 @@ import axios from 'axios';
 import {
     BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
+const serverLocation = require("../../config/keys.js").server;
 
 
 
@@ -16,7 +17,7 @@ export default class IntenzivnostPoskodbe extends PureComponent {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/api/graph/34').then(res => {
+        axios.get(`${serverLocation}/api/graph/34`).then(res => {
             this.setState({dataLeto: res.data});
             console.log(res.data);
             for(var key in this.state) {

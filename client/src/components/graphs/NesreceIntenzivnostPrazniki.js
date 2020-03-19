@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { PieChart, Pie, Sector, Legend} from 'recharts';
 
 
+
 import axios from "axios";
 
 var data = [];
@@ -53,7 +54,7 @@ const renderActiveShape = (props) => {
     );
 };
 
-
+const serverLocation = require("../../config/keys.js").server;
 export default class NesreceIntenzivnostPrazniki extends Component {
 
     state = {
@@ -62,7 +63,7 @@ export default class NesreceIntenzivnostPrazniki extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/api/graph/36').then(res => {
+        axios.get(`${serverLocation}/api/graph/36`).then(res => {
             this.setState({datag: res.data});
             for (var key in this.state) {
                 data.push(this.state[key]);

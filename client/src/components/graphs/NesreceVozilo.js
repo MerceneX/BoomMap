@@ -7,6 +7,7 @@ import {
 
 var data = [
 ];
+const serverLocation = require("../../config/keys.js").server;
 
 export default class NesreceVozilo extends PureComponent {
 
@@ -15,7 +16,7 @@ export default class NesreceVozilo extends PureComponent {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/api/graph/27').then(res => {
+        axios.get(`${serverLocation}/api/graph/27`).then(res => {
             this.setState({datag: res.data});
             for(var key in this.state) {
                 data.push(this.state[key]);
