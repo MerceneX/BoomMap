@@ -53,6 +53,7 @@ const renderActiveShape = (props) => {
     );
 };
 
+const serverLocation = require("../../config/keys.js").server;
 
 export default class NesrecePraznik extends Component {
 
@@ -62,7 +63,7 @@ export default class NesrecePraznik extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/api/graph/29').then(res => {
+        axios.get(`${serverLocation}/api/graph/29`).then(res => {
             this.setState({datag: res.data});
             for (var key in this.state) {
                 data.push(this.state[key]);
