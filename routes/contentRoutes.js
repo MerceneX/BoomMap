@@ -26,4 +26,10 @@ router.get("/road-events", async (req, res) => {
 	res.json(response);
 });
 
+router.get("/borders", async (req, res) => {
+	cGuy = ContentGuy.getInstance();
+	const response = await cGuy.getBordersStatus();
+	res.json(response);
+});
+
 module.exports = router;
