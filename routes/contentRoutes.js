@@ -4,11 +4,13 @@ const express = require("express"),
 
 router.get("/news", async (req, res) => {
 	cGuy = ContentGuy.getInstance();
-	console.log(cGuy);
 	const response = await cGuy.getNews();
-	/*response.items.forEach(element => {
-		element.title;
-	});*/
+	res.json(response);
+});
+
+router.get("/road-conditions", async (req, res) => {
+	cGuy = ContentGuy.getInstance();
+	const response = await cGuy.getRoadConditions();
 	res.json(response);
 });
 
