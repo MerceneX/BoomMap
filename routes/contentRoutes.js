@@ -20,4 +20,10 @@ router.get("/traffic-forecast", async (req, res) => {
 	res.json(response);
 });
 
+router.get("/road-events", async (req, res) => {
+	cGuy = ContentGuy.getInstance();
+	const response = await cGuy.getRoadEvents();
+	res.json(response);
+});
+
 module.exports = router;
