@@ -1,7 +1,7 @@
 import React from 'react';
 import Typography from "@material-ui/core/Typography";
 import PropTypes from 'prop-types';
-import logo from '../design/boomLogo.svg';
+import logo from '../design/VarnoDomov_logo.svg';
 import '../design/App.css';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -10,12 +10,8 @@ function Header(props){
     return (
         <div className={classes.heroUnit}>
             <div className={classes.heroContent}>
-               <img className="logo" src={logo} alt="Logo" />
-                <Typography variant="h6" align="center" color="textSecondary" paragraph>
-                    Predvidevamo kritične regije za možnost nesreče in ozaveščamo voznike, reševalne službe
-                    in tiste, ki se jim mudi, kje povečati potrpljenje in zmanjšati hitrost.
-                </Typography>
-
+               <img className="logo" src={logo} alt="Logo" style={{height: "130px", width: "130px"}} align="center" />
+                <h1 align="center">  <b>VARNO</b> DOMOV </h1>
             </div>
         </div>
     )
@@ -33,9 +29,8 @@ const styles = theme => ({
         backgroundColor: theme.palette.background.paper,
     },
     heroContent: {
-        maxWidth: 600,
+        maxWidth: 450,
         margin: '0 auto',
-        padding: `${theme.spacing.unit * 8}px 0 ${theme.spacing.unit * 6}px`,
     },
 
 });

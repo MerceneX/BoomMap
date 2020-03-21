@@ -7,7 +7,7 @@ import {withStyles} from "@material-ui/core";
 function Footer(props){
     const { classes } = props;
     return (
-        <footer className={classes.footer}>
+        <footer className={classes.footer} >
             <Typography variant="h6" align="center" gutterBottom>
                 Vir podatkov: <a href="https://www.avp-rs.si/">avp-rs.si</a>
             </Typography>
@@ -26,7 +26,7 @@ Footer.propTypes = {
 const styles = theme => ({
 
     footer: {
-        backgroundColor: '#d0d6dc',
+        backgroundColor: '#E1DDDB',
         padding: theme.spacing.unit * 6,
     },
 });
