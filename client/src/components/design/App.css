@@ -1,14 +1,21 @@
 
 .nav-bar{
-    background-color: #3e8e8a;
-
+    background-color: #0c4560  ;
+    color: #ffffff;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
 }
 .nav-link{
-    color: white;
+    color: #ffffff;
+}
+.pageName{
+    color: #000000;
+    font-size: 40px;
+    font-family: 'Roboto', sans-serif;
 }
 
-.nav-link:hover{
-    color: black;
+.logo{
+    margin-left: 150px;
 }
 
 .person{
@@ -58,6 +65,14 @@
 
 }
 
+.contentCointainer{
+    color: black;
+    background-color: white;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 25px;
+}
 
-
-
+.opisFunkcionalnosti{
+    font-size: 20px;
+}
