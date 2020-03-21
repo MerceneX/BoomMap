@@ -26,7 +26,7 @@ const styles = theme => ({
 
 
     heroUnit: {
-        backgroundColor: theme.palette.background.paper,
+        backgroundColor: '#e5e5e5 ',
     },
     heroContent: {
         maxWidth: 450,

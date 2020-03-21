@@ -5,6 +5,9 @@ import Footer from "./components/layout/Footer";
 import Navigation from "./components/layout/Navigation";
 import Header from "./components/layout/Header";
 import FrontPage from "./pages/FrontPage";
+import Statistics from "./pages/Statistics";
+import Home from "./pages/Home";
+import About from "./pages/About";
 import 'leaflet/dist/leaflet.css';
 import Container from "reactstrap/es/Container";
 
@@ -21,6 +24,9 @@ function App() {
         <Container>
             
         </Container>
+        <Route path="/statistika" component={Statistics}/>
+        <Route path="/onas" component={About}/>
+        <Route path="/zemljevid" component={Home}/>
            
          </div>
          <Footer/>
