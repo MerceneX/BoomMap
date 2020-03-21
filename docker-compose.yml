@@ -1,0 +1,23 @@
+version: '2.0'
+services:
+  server:
+    restart: always
+    container_name: varno_domov_server
+    build: .
+    ports:
+    - "8088:5000"
+    links:
+    - react
+    networks:
+      - varnodomovnetwork
+  react:
+    restart: always
+    container_name: varno_domov_client
+    build: client/
+    ports:
+    - "8080:3000"
+    networks:
+      - varnodomovnetwork
+networks:
+  varnodomovnetwork:
+    driver: bridge
