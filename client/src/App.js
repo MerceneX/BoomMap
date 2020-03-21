@@ -10,6 +10,8 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import 'leaflet/dist/leaflet.css';
 import Container from "reactstrap/es/Container";
+import StanjeNaCestah from "./pages/StanjeNaCestah";
+
 
 
 function App() {
@@ -27,7 +29,7 @@ function App() {
         <Route path="/statistika" component={Statistics}/>
         <Route path="/onas" component={About}/>
         <Route path="/zemljevid" component={Home}/>
-           
+        <Route path="/novice" component={StanjeNaCestah}/>
          </div>
          <Footer/>
     </Router>
