@@ -46,15 +46,12 @@ class Statistics extends React.Component {
         });
     }
 
-
-
 	render() {
 
 		return (
 			<React.Fragment>
 				<div className="container">
-
-
+				<br></br>
                     <ButtonDropdown  isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                         <DropdownToggle caret >
                             Izberite graf
@@ -95,8 +92,6 @@ class Statistics extends React.Component {
 
 					<br/><br/><br/>
 
-
-
 					<Container className="graphs">
 						<Row>
 							<div>
@@ -104,9 +99,10 @@ class Statistics extends React.Component {
                                 {this.state.show[0] && <h6> Število nesreč v posameznem letu </h6>}
 								{this.state.show[0] && <NesreceLeto />}
 							</div>
+						</Row>
+						<br></br>
+						<Row>
 							<div>
-
-
                                 {this.state.show[1] && <h6> Število nesreč glede na posamezen dan v tednu </h6>}
                                 {this.state.show[1] && <DneviChart />}
 							</div>
@@ -128,6 +124,8 @@ class Statistics extends React.Component {
 								{this.state.show[4] && <h6> Nesreče glede na spol povzročitelja</h6>}
 								{this.state.show[4] && <NesreceSpol />}
 							</div>
+						</Row>
+						<Row>
 							<div>
 								{this.state.show[7] && <h6> Glede na vreme </h6>}
 								{this.state.show[7] && <NesreceVreme />}
@@ -138,6 +136,8 @@ class Statistics extends React.Component {
 								{this.state.show[5] && <h6> Glede na praznike </h6>}
 								{this.state.show[5] && <NesrecePraznik />}
 							</div>
+						</Row>
+						<Row>
 							<div>
 								{this.state.show[6] && <h6> Glede na stanje prometa </h6>}
 								{this.state.show[6] && <NesreceStanjePrometa />}
@@ -154,13 +154,13 @@ class Statistics extends React.Component {
 								{this.state.show[10] && <h6> Intenzivnost poškodb </h6>}
 								{this.state.show[10] && <IntenzivnostPoskodbe />}
 							</div>
+						</Row>
+						<Row>
 							<div>
 								{this.state.show[11] && <h6> Intenzivnost poškodb v nedeljo</h6>}
 								{this.state.show[11] && <PoskodbeNedelja />}
 							</div>
-
 						</Row>
-
 						<Row>
 							<div>
 								{this.state.show[9] && <h6> Glede na intenzivnost poškodb med prazniki </h6>}
@@ -169,7 +169,7 @@ class Statistics extends React.Component {
 						</Row>
 						<Row>
 							<div>
-								{this.state.show[12] && <h6> Glede na tip nesrece </h6>}
+								{this.state.show[12] && <h6> Glede na tip nesreče </h6>}
 								{this.state.show[12] && <NesreceTip />}
 							</div>
 						</Row>

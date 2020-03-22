@@ -31,7 +31,7 @@ export default class NesreceDnevi extends PureComponent {
   render() {
     return (
       <BarChart
-        width={500}
+        width={1200}
         height={300}
         data={this.state.datag.podatki}
         margin={{

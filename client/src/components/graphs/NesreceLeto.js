@@ -27,7 +27,7 @@ export default class NesreceLeto extends PureComponent {
     render() {
         return (
             <AreaChart
-                width={500}
+                width={1200}
                 height={300}
                 data={this.state.dataLeto.podatki}
                 margin={{

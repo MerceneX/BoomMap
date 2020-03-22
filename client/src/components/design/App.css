@@ -77,3 +77,12 @@
 .opisFunkcionalnosti{
     font-size: 20px;
 }
+
+.graphs{
+    color: black;
+    font-size: 15px;
+}
+
+.containerStatistics{
+    margin-left: 100px;
+}
