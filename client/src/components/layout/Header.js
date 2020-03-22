@@ -11,7 +11,7 @@ import Row from "reactstrap/es/Row";
 function Header(props){
     const { classes } = props;
     return (
-        <div>
+        <div className="bcg">
             <div>
               <Container className="headerContainter">
                     <Row>
