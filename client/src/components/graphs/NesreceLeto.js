@@ -18,6 +18,10 @@ export default class NesreceLeto extends PureComponent {
 		dataLeto: []
 	};
 
+	state = {
+		dataLeto: []
+	};
+
 	componentDidMount() {
 		axios.get(`${serverLocation}/api/graph/23`).then(res => {
 			this.setState({ dataLeto: res.data });
@@ -27,11 +31,11 @@ export default class NesreceLeto extends PureComponent {
 			}
 		});
 	}
+
 	render() {
-		console.log("Hi");
 		return (
 			<AreaChart
-				width={500}
+				width={1200}
 				height={300}
 				data={this.state.dataLeto.podatki}
 				margin={{

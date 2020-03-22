@@ -28,19 +28,19 @@ export default class NesreceTip extends PureComponent {
     render() {
         return (
             <BarChart
-                width={1200}
+                width={1100}
                 height={300}
                 data={this.state.datac.podatki}
                 margin={{
                     top: 5, right: 30, left: 20, bottom: 5,
                 }}
             >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="tip" interval={0} fontSize={8}/>
+                <CartesianGrid strokeDasharray="5 5" />
+                <XAxis dataKey="tip" interval={0} fontSize={8} />
                 <YAxis/>
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="nesrece" fill="#52bf90" label={{ fill: 'white', fontSize: 12 }}/>
+                <Bar dataKey="nesrece" fill="#52bf90" label={{ fill: 'white', fontSize: 15 }}/>
             </BarChart>
         );
     }
