@@ -15,11 +15,8 @@
     "mongoose": "^5.9.2",
     "nodemon": "^1.19.4",
     "request": "^2.88.2",
-<<<<<<< Updated upstream
-    "rss-parser": "^3.7.5"
-=======
+    "rss-parser": "^3.7.5",
     "typeface-roboto": "0.0.75"
->>>>>>> Stashed changes
   },
   "devDependencies": {},
   "scripts": {
