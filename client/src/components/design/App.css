@@ -9,14 +9,19 @@
 .nav-link{
     color: #ffffff;
 }
+
+.logo{
+    margin-left: 0px;
+}
 .pageName{
-    color: #000000;
-    font-size: 40px;
+    margin-right: 0px;
+    margin-top: 40px;
     font-family: 'Roboto', sans-serif;
 }
 
-.logo{
-    margin-left: 150px;
+.headerContainter{
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .person{
@@ -85,4 +90,8 @@
 
 .containerStatistics{
     margin-left: 100px;
+}
+
+.TitleFront{
+    font-size: 50px;
 }
