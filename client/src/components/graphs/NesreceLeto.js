@@ -1,15 +1,24 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from "react";
 import {
-    AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
-import axios from 'axios';
+	AreaChart,
+	Area,
+	XAxis,
+	YAxis,
+	CartesianGrid,
+	Tooltip,
+	Legend
+} from "recharts";
+import axios from "axios";
 
-
-var data = [
-];
+var data = [];
 const serverLocation = require("../../config/keys.js").server;
 
 export default class NesreceLeto extends PureComponent {
+	state = {
+		dataLeto: []
+	};
 
+<<<<<<< HEAD
     state = {
         dataLeto: []
     }
@@ -43,4 +52,43 @@ export default class NesreceLeto extends PureComponent {
             </AreaChart>
         );
     }
+=======
+	componentDidMount() {
+		axios.get(`${serverLocation}/api/graph/23`).then(res => {
+			this.setState({ dataLeto: res.data });
+			console.log(res.data);
+			for (var key in this.state) {
+				data.push(this.state[key]);
+			}
+		});
+	}
+	render() {
+		console.log("Hi");
+		return (
+			<AreaChart
+				width={500}
+				height={300}
+				data={this.state.dataLeto.podatki}
+				margin={{
+					top: 10,
+					right: 30,
+					left: 0,
+					bottom: 0
+				}}
+			>
+				<CartesianGrid strokeDasharray="3 3" />
+				<XAxis dataKey="leto" />
+				<YAxis />
+				<Tooltip />
+				<Legend />
+				<Area
+					type="monotone"
+					dataKey="nesrece"
+					stroke="#66b2b2"
+					fill="#66b2b2"
+				/>
+			</AreaChart>
+		);
+	}
+>>>>>>> 132260de67e81bc4d0a9781ecf2e94e94a46a38e
 }
