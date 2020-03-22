@@ -17,8 +17,8 @@ function FrontPage(props){
         <Container className="contentCointainer">
             
                 <h5 align="center">Predvidevamo kritične regije za možnost nesreče in ozaveščamo voznike, reševalne službe in tiste, ki se jim mudi, kje povečati potrpljenje in zmanjšati hitrost.</h5>
-                <h3 align="center">Skupaj za varno pot domov</h3>
-            <br></br><br></br>
+                <h3 align="center"><b>Skupaj za varno pot domov</b></h3>
+            <br></br>
             <Row>
                 <Col>
                     <img className="imageFrontPage" src={MapIcon} alt="imageFrontPage"/>
@@ -41,7 +41,8 @@ function FrontPage(props){
                 </Col>
             </Row>
             
-            <Row className="opisFunkcionalnosti">
+            <Container className="descriptionContainter">
+            <Row>
                 <Col>
                     <p>Prikaz kritičnih odsekov na slovenskih cestah, z možnostjo prilagoditve parametrov na trenutne razmere cest. </p>
                     <NavLink href="/zemljevid">Preberi več</NavLink>
@@ -62,7 +63,7 @@ function FrontPage(props){
                         <NavLink href="/About">Preberi več</NavLink>
                 </Col>
             </Row>
-           
+            </Container>
 
 <br></br>
 <br></br>
