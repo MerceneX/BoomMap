@@ -9,6 +9,7 @@ import "../components/design/App.css";
 function About() {
     return (
         <React.Fragment>
+            <br></br>
             <div className="container">
                 <h4 className="headers"> Vizija </h4>
                 <Container>

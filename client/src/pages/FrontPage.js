@@ -4,6 +4,10 @@ import '../components/design/App.css';
 import { IoIosStats } from "react-icons/io";
 import {MdPerson} from "react-icons/md";
 import { Container, Row, Col } from 'reactstrap';
+import NewsIcon from "../components/design/NewsIcon.svg";
+import MapIcon from "../components/design/MapIcon.svg";
+import GraphIcon from "../components/design/GraphIcon.svg";
+import AboutIcon from "../components/design/AboutIcon.svg";
 import predloga from "../components/design/predloga.svg";
 
 
@@ -13,66 +17,64 @@ function FrontPage(props){
         <Container className="contentCointainer">
             
                 <h5 align="center">Predvidevamo kritične regije za možnost nesreče in ozaveščamo voznike, reševalne službe in tiste, ki se jim mudi, kje povečati potrpljenje in zmanjšati hitrost.</h5>
-                <h3 align="center">Moto, ki je še v razvoju</h3>
-            <br></br><br></br>
+                <h3 align="center"><b>Skupaj za varno pot domov</b></h3>
+            <br></br>
             <Row>
                 <Col>
-                    <img className="imageFrontPage" src={predloga} alt="imageFrontPage"/>
+                    <img className="imageFrontPage" src={MapIcon} alt="imageFrontPage"/>
                     <p>Zemljevid</p>
                 </Col>
 
                 <Col> 
-                    <img className="imageFrontPage" src={predloga} alt="imageFrontPage"/>
+                    <img className="imageFrontPage" src={GraphIcon} alt="imageFrontPage"/>
                     <p>Statistika</p>
                 </Col>
 
                 <Col>
-                    <img className="imageFrontPage" src={predloga} alt="imageFrontPage"/>
+                    <img className="imageFrontPage" src={NewsIcon} alt="imageFrontPage"/>
                     <p>Novice</p>
                 </Col>
 
                 <Col>
-                    <img className="imageFrontPage" src={predloga} alt="imageFrontPage"/>
+                    <img className="imageFrontPage" src={AboutIcon} alt="imageFrontPage"/>
                     <p>O projektu</p>
                 </Col>
             </Row>
             
-            <Row className="opisFunkcionalnosti">
+            <Container className="descriptionContainter">
+            <Row>
                 <Col>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                    <p>Prikaz kritičnih odsekov na slovenskih cestah, z možnostjo prilagoditve parametrov na trenutne razmere cest. </p>
                     <NavLink href="/zemljevid">Preberi več</NavLink>
                 </Col>
 
                 <Col> 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                    <p>Statistično predelani podatki o prometnih nesrečah od leta 1994 naprej. Prikaz števila prometnih nesreč glede na različne filtre.</p>
                         <NavLink href="/statistika">Preberi več</NavLink>
                 </Col>
 
                 <Col>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                    <p>Zadnje aktualne prometne novice, stanje na slovenskih mejah in še kaj. </p>
                         <NavLink href="/novice">Preberi več</NavLink>
                 </Col>
 
                 <Col>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                    <p> Zgodba o inspiraciji, ideji, razvoju projekta in kdo stoji za njim.</p>
                         <NavLink href="/About">Preberi več</NavLink>
                 </Col>
             </Row>
-           
+            </Container>
 
 <br></br>
 <br></br>
            <h5> prostor za novice </h5>
            <Row>
-               <Col> ena </Col>
-               <Col> dva </Col>
-               <Col> tri </Col>
-               <Col> štiri </Col>
+               <Col> <img className="imageFrontPage" src={predloga} alt="imageFrontPage"/> </Col>
+               <Col> <img className="imageFrontPage" src={predloga} alt="imageFrontPage"/> </Col>
+               <Col> <img className="imageFrontPage" src={predloga} alt="imageFrontPage"/> </Col>
+               <Col> <img className="imageFrontPage" src={predloga} alt="imageFrontPage"/> </Col>
            </Row>
+           <br></br>
         </Container>
     )
 }

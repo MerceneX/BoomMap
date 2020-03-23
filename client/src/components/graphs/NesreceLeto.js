@@ -18,41 +18,37 @@ export default class NesreceLeto extends PureComponent {
 		dataLeto: []
 	};
 
-	componentDidMount() {
-		axios.get(`${serverLocation}/api/graph/23`).then(res => {
-			this.setState({ dataLeto: res.data });
-			console.log(res.data);
-			for (var key in this.state) {
-				data.push(this.state[key]);
-			}
-		});
-	}
-	render() {
-		console.log("Hi");
-		return (
-			<AreaChart
-				width={500}
-				height={300}
-				data={this.state.dataLeto.podatki}
-				margin={{
-					top: 10,
-					right: 30,
-					left: 0,
-					bottom: 0
-				}}
-			>
-				<CartesianGrid strokeDasharray="3 3" />
-				<XAxis dataKey="leto" />
-				<YAxis />
-				<Tooltip />
-				<Legend />
-				<Area
-					type="monotone"
-					dataKey="nesrece"
-					stroke="#66b2b2"
-					fill="#66b2b2"
-				/>
-			</AreaChart>
-		);
-	}
+    state = {
+        dataLeto: []
+    }
+
+    componentDidMount() {
+        axios.get(`${serverLocation}/api/graph/23`).then(res => {
+            this.setState({dataLeto: res.data});
+            console.log(res.data);
+            for(var key in this.state) {
+                data.push(this.state[key]);
+            }
+        });
+    }
+
+    render() {
+        return (
+            <AreaChart
+                width={1200}
+                height={300}
+                data={this.state.dataLeto.podatki}
+                margin={{
+                    top: 10, right: 30, left: 0, bottom: 0,
+                }}
+            >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="leto" />
+                <YAxis />
+                <Tooltip />
+                <Legend/>
+                <Area type="monotone" dataKey="nesrece" stroke="#66b2b2" fill="#66b2b2" />
+            </AreaChart>
+        );
+    }
 }
