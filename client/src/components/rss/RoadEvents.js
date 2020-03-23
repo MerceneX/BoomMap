@@ -25,16 +25,7 @@ class DogodkiNaCestah extends React.Component {
                 data.push(this.state[key]);
             }
 
-           // sliced = this.state.datag.items.slice(1,10);
-          //  console.log(sliced);
-          //  this.setState({ datag: sliced }, () => console.log("Updated state"));
 
-            //    console.log(this.state.datag.title);
-        //   console.log(this.state.datag.items.slice(1,10));
-
-
-
-            //    console.log(this.state[key]);
         });
     }
 

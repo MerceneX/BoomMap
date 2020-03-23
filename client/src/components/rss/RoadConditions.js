@@ -20,9 +20,6 @@ class RoadConditions extends React.Component {
                 data.push(this.state[key]);
             }
 
-            //    console.log(this.state.datag.title);
-           //console.log(this.state.datag.items);
-            //    console.log(this.state[key]);
         });
     }
 
