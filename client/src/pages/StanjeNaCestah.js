@@ -1,5 +1,7 @@
 import React, { PureComponent } from "react";
 import axios from "axios";
+import StanjeNaMejah from "../components/rss/StanjeNaMejah";
+import DogodkiNaCestah from "../components/rss/DogodkiNaCestah";
 
 import axios from "axios";
 const serverLocation = require("../config/keys.js").server;
