@@ -12,6 +12,7 @@ class RoadConditions extends React.Component {
         datag: []
     };
 
+
     componentDidMount() {
         axios.get(`${serverLocation}/api/content/road-conditions`).then(res => {
             this.setState({ datag: res.data }, () => console.log("Updated state"));
@@ -20,18 +21,25 @@ class RoadConditions extends React.Component {
             }
 
             //    console.log(this.state.datag.title);
-            console.log(this.state.datag.items);
+           //console.log(this.state.datag.items);
             //    console.log(this.state[key]);
         });
     }
 
+
+
     render() {
+
+
+
         let numbers;
-        if (this.state.datag.items) {
-            numbers = this.state.datag.items.map(item => {
-                console.log("Iterating through for item " + item.title);
-                return <li><b>{item.title}</b> <br /> {item.description}<br /></li>;
-            });
+        let dataS =this.state.datag;
+        console.log(dataS);
+        if (dataS.items) {
+                numbers = dataS.items.map(item => {
+                    //console.log("Iterating through for item " + item.title);
+                    return <li><b>{item.title}</b> <br/> {item.description}<br/></li>;
+                });
         }
         return (
             <div className="container">
