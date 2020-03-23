@@ -1,7 +1,8 @@
 import React, { PureComponent } from "react";
 import axios from "axios";
-import StanjeNaMejah from "../components/rss/StanjeNaMejah";
-import DogodkiNaCestah from "../components/rss/DogodkiNaCestah";
+import Borders from "../components/rss/Borders";
+import RoadConditions from "../components/rss/RoadConditions";
+import RoadEvents from "../components/rss/RoadEvents";
 
 import axios from "axios";
 const serverLocation = require("../config/keys.js").server;

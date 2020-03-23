@@ -7,13 +7,14 @@ const serverLocation = require("../../config/keys.js").server;
 
 var data = [];
 
-class stanjeNaMejah extends React.Component {
+class DogodkiNaCestah extends React.Component {
     state = {
         datag: []
     };
 
     componentDidMount() {
-        axios.get(`${serverLocation}/api/content/borders`).then(res => {
+        axios.get(`${serverLocation}/api/content/road-events`).then(res => {
+
             this.setState({ datag: res.data }, () => console.log("Updated state"));
             for (var key in this.state) {
                 data.push(this.state[key]);
@@ -27,6 +28,7 @@ class stanjeNaMejah extends React.Component {
 
     render() {
         let numbers;
+
         if (this.state.datag.items) {
             numbers = this.state.datag.items.map(item => {
                 console.log("Iterating through for item " + item.title);
@@ -43,4 +45,4 @@ class stanjeNaMejah extends React.Component {
         );
     }
 }
-export default stanjeNaMejah;
+export default DogodkiNaCestah;

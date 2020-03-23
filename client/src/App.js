@@ -11,7 +11,7 @@ import About from "./pages/About";
 import 'leaflet/dist/leaflet.css';
 import Container from "reactstrap/es/Container";
 import StanjeNaCestah from "./pages/StanjeNaCestah";
-import stanjeNaMejah from "./components/rss/StanjeNaMejah";
+import borders from "./components/rss/Borders";
 
 
 
