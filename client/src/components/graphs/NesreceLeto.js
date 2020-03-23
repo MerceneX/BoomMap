@@ -1,14 +1,22 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from "react";
 import {
-    AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
-import axios from 'axios';
+	AreaChart,
+	Area,
+	XAxis,
+	YAxis,
+	CartesianGrid,
+	Tooltip,
+	Legend
+} from "recharts";
+import axios from "axios";
 
-
-var data = [
-];
+var data = [];
 const serverLocation = require("../../config/keys.js").server;
 
 export default class NesreceLeto extends PureComponent {
+	state = {
+		dataLeto: []
+	};
 
     state = {
         dataLeto: []
@@ -27,7 +35,7 @@ export default class NesreceLeto extends PureComponent {
     render() {
         return (
             <AreaChart
-                width={500}
+                width={1200}
                 height={300}
                 data={this.state.dataLeto.podatki}
                 margin={{

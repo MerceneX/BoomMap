@@ -9,14 +9,18 @@
 .nav-link{
     color: #ffffff;
 }
-.pageName{
-    color: #000000;
-    font-size: 40px;
-    font-family: 'Roboto', sans-serif;
-}
 
+.bcg{
+    background-color: #e5f3f5;
+}
 .logo{
-    margin-left: 150px;
+    margin-left: 0px;
+}
+.pageName{
+    margin-right: 0px;
+    margin-top: 40px;
+    font-family: 'Roboto', sans-serif;
+    color: black;
 }
 
 .person{
@@ -72,8 +76,27 @@
     padding-top: 30px;
     text-align: center;
     font-size: 25px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.descriptionContainter{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
 }
 
 .opisFunkcionalnosti{
     font-size: 20px;
+}
+
+.graphs{
+    color: black;
+    font-size: 15px;
+}
+
+.containerStatistics{
+    margin-left: 100px;
+}
+
+.TitleFront{
+    font-size: 50px;
 }
