@@ -12,14 +12,12 @@ function Header(props){
     const { classes } = props;
     return (
         <div className="bcg">
-            <div>
               <Container className="headerContainter">
                     <Row>
                         <Col className="pageName"><h1 align="right">  <b>VARNO</b> DOMOV </h1></Col>
                         <Col><img className="logo" src={logo} alt="Logo" style={{height: "130px", width: "130px"}} /></Col>
                     </Row>
               </Container>
-            </div>
         </div>
     )
 }
