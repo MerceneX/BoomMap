@@ -23,12 +23,7 @@ class RoadConditions extends React.Component {
         });
     }
 
-
-
     render() {
-
-
-
         let numbers;
         let dataS =this.state.datag;
         console.log(dataS);
@@ -39,9 +34,9 @@ class RoadConditions extends React.Component {
                 });
         }
         return (
-            <div className="container">
+            <div className="containerConditions">
                 <div className="col-xs-8">
-                    <h1>{this.state.datag.title}</h1>
+                    <h4>{this.state.datag.title}</h4>
                     <ul>{numbers}</ul>
                 </div>
             </div>

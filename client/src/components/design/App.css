@@ -110,3 +110,24 @@ a:hover{
 .TitleFront{
     font-size: 50px;
 }
+
+.containerBorders{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    padding-top: 20px;
+    margin-left: 150px;
+}
+
+.containerConditions{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    padding-top: 20px;
+    margin-left: 150px;
+}
+
+.containerEvents{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    padding-top: 20px;
+    margin-left: 150px;
+}

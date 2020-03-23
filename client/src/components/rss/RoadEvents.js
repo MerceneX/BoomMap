@@ -24,8 +24,6 @@ class DogodkiNaCestah extends React.Component {
             for (var key in this.state) {
                 data.push(this.state[key]);
             }
-
-
         });
     }
 
@@ -39,9 +37,9 @@ class DogodkiNaCestah extends React.Component {
             });
         }
         return (
-            <div className="container">
+            <div className="containerEvents">
                 <div className="col-xs-8">
-                    <h1>{this.state.title.title}</h1>
+                    <h4>{this.state.title.title}</h4>
                     <ul>{numbers}</ul>
                 </div>
             </div>

@@ -34,9 +34,9 @@ class borders extends React.Component {
             });
         }
         return (
-            <div className="container">
-                <div className="col-xs-8">
-                    <h1>{this.state.datag.title}</h1>
+            <div className="containerBorders">
+                <div>
+                    <h4 className="contentHeaderConditions">{this.state.datag.title}</h4>
                     <ul>{numbers}</ul>
                 </div>
             </div>
