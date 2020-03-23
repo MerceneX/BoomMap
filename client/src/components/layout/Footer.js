@@ -12,7 +12,7 @@ function Footer(props){
                 Vir podatkov: <a href="https://www.avp-rs.si/">avp-rs.si</a>
             </Typography>
             <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-                Kontakt: marko.gluhak@student.um.si
+                Kontakt: varnodomov.info@gmail.com
             </Typography>
         </footer>
     )
