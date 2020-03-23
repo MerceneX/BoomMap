@@ -53,6 +53,7 @@ class SimpleMap extends Component {
             // Important! Always set the container height explicitly
 
             <Container fluid={true}>
+                <br></br>
                 <Row>
                     <Col md="2" sm={"2"} xs="3">
                         <div align={"left"}>

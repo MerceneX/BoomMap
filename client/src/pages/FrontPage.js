@@ -13,9 +13,9 @@ function FrontPage(props){
     return (
         <Container className="contentCointainer">
             
-                <h5 align="center">Predvidevamo kritične regije za možnost nesreče in ozaveščamo voznike, reševalne službe in tiste, ki se jim mudi, kje povečati potrpljenje in zmanjšati hitrost.</h5>
+                <h6 align="center">Predvidevamo kritične regije za možnost nesreče in ozaveščamo voznike, reševalne službe in tiste, ki se jim mudi, kje povečati potrpljenje in zmanjšati hitrost.</h6>
                 <br></br>
-                <h3 align="center"><i><b>Skupaj za varno pot domov</b></i></h3>
+                <h4 align="center"><i><b>Skupaj za varno pot domov</b></i></h4>
             <br></br>
             <Row>
                 <Col>
