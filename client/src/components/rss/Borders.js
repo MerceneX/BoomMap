@@ -20,7 +20,7 @@ class borders extends React.Component {
             }
 
             //    console.log(this.state.datag.title);
-            console.log(this.state.datag.items);
+           // console.log(this.state.datag.items);
             //    console.log(this.state[key]);
         });
     }
@@ -29,7 +29,7 @@ class borders extends React.Component {
         let numbers;
         if (this.state.datag.items) {
             numbers = this.state.datag.items.map(item => {
-                console.log("Iterating through for item " + item.title);
+               // console.log("Iterating through for item " + item.title);
                 return <li><b>{item.title}</b> <br /> {item.description}<br /></li>;
             });
         }
