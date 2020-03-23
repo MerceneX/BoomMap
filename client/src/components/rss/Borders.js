@@ -7,13 +7,13 @@ const serverLocation = require("../../config/keys.js").server;
 
 var data = [];
 
-class DogodkiNaCestah extends React.Component {
+class borders extends React.Component {
     state = {
         datag: []
     };
 
     componentDidMount() {
-        axios.get(`${serverLocation}/api/content/road-conditions`).then(res => {
+        axios.get(`${serverLocation}/api/content/borders`).then(res => {
             this.setState({ datag: res.data }, () => console.log("Updated state"));
             for (var key in this.state) {
                 data.push(this.state[key]);
@@ -43,4 +43,4 @@ class DogodkiNaCestah extends React.Component {
         );
     }
 }
-export default DogodkiNaCestah;
+export default borders;
