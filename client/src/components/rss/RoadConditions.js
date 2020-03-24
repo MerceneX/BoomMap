@@ -1,12 +1,13 @@
 
 import React from 'react';
 import axios from "axios";
-
+import ReactDOM from 'react-dom';
+import parse from 'html-react-parser';
 const serverLocation = require("../../config/keys.js").server;
 
 
 var data = [];
-
+var parsed;
 class RoadConditions extends React.Component {
     state = {
         datag: []
@@ -26,11 +27,16 @@ class RoadConditions extends React.Component {
     render() {
         let numbers;
         let dataS =this.state.datag;
+      //  let html;
         console.log(dataS);
         if (dataS.items) {
                 numbers = dataS.items.map(item => {
                     //console.log("Iterating through for item " + item.title);
-                    return <li><b>{item.title}</b> <br/> {item.description}<br/></li>;
+
+                   parsed=parse(item.description);
+                    return parsed;
+                    // <li><b>{item.title}</b> <br/> {item.description}<br/></li>;
+
                 });
         }
         return (
