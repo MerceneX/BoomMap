@@ -1,14 +1,27 @@
 
 .nav-bar{
-    background-color: #3e8e8a;
-
+    background-color: #0c4560  ;
+    color: #ffffff;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
 }
+
 .nav-link{
-    color: white;
+    color: #ffffff;
 }
 
-.nav-link:hover{
+.bcg{
+    background-color: #e5f3f5;
+    height: 160px;
+}
+.logo{
+    margin-top: 15px;
+}
+.pageName{
+    margin-top: 60px;
+    font-family: 'Roboto', sans-serif;
     color: black;
+    margin-left: 230px;
 }
 
 .person{
@@ -17,17 +30,11 @@
     position: center;
 }
 
-.theteam{
-    color: black;
+.teamTitles{
+    color: #0c4560;
     text-align: center;
-    font-weight: bold;
     font-size: 16px;
-}
-
-.teamdescription{
-    color: gray();
-    font-size: 14px;
-    text-align: center;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .graphs{
@@ -58,6 +65,69 @@
 
 }
 
+.contentCointainer{
+    color: black;
+    background-color: white;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+}
 
+.descriptionContainter{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    color: black;
+}
 
+.aboutContainer{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+}
 
+a {
+    color: #0c4560;
+    cursor: pointer;
+}
+
+a:hover{
+    color: #e5f3f5;
+}
+
+.opisFunkcionalnosti{
+    font-size: 20px;
+}
+
+.graphs{
+    color: black;
+    font-size: 15px;
+}
+
+.containerStatistics{
+    margin-left: 100px;
+}
+
+.TitleFront{
+    font-size: 50px;
+}
+
+.containerBorders{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    padding-top: 20px;
+    margin-left: 150px;
+}
+
+.containerConditions{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    padding-top: 20px;
+    margin-left: 150px;
+}
+
+.containerEvents{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    padding-top: 20px;
+    margin-left: 150px;
+}
