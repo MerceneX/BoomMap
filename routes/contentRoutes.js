@@ -1,6 +1,7 @@
 const express = require("express"),
 	router = express.Router({ mergeParams: true }),
-	ContentGuy = require("../lib/content/ContentGuy");
+	ContentGuy = require("../lib/content/ContentGuy"),
+	RoadEventsOptions = require("../lib/content/road-events/RoadEventsQueryOptions");
 
 router.get("/news", async (req, res) => {
 	cGuy = ContentGuy.getInstance();
@@ -22,7 +23,17 @@ router.get("/traffic-forecast", async (req, res) => {
 
 router.get("/road-events", async (req, res) => {
 	cGuy = ContentGuy.getInstance();
-	const response = await cGuy.getRoadEvents();
+	const options = new RoadEventsOptions(
+		req.query.term,
+		req.query.dStart,
+		req.query.dEnd,
+		req.query.sort,
+		req.query.sortAscDesc,
+		req.query.limit,
+		req.query.skip
+	);
+	console.log(options);
+	const response = await cGuy.getRoadEvents(options);
 	res.json(response);
 });
 
