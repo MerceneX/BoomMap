@@ -1,7 +1,7 @@
 import React from 'react';
 import Typography from "@material-ui/core/Typography";
 import PropTypes from 'prop-types';
-import logo from '../design/VarnoDomov_logo.svg';
+import logo from '../design/VarnoDomovLogo.svg';
 import '../design/App.css';
 import { withStyles } from '@material-ui/core/styles';
 import Col from "reactstrap/es/Col";
