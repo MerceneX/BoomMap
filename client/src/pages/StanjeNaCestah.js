@@ -18,7 +18,7 @@ class StanjeNaCestah extends React.Component {
 				<Borders />
 				<RoadConditions />
 				<RoadEvents />
-                <TrafficForecast />
+
 			</React.Fragment>
 		);
 	}
