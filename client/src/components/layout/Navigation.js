@@ -7,6 +7,7 @@ import {MdPerson} from "react-icons/md";
 import {FaNewspaper} from "react-icons/fa";
 import {FaMapMarkerAlt} from "react-icons/fa";
 import {FaRoad} from "react-icons/fa";
+import {FaCar} from "react-icons/fa";
 
 class Navigation extends React.Component {
     render() {
@@ -18,7 +19,7 @@ class Navigation extends React.Component {
                         <NavLink href="/statistika"> <IoIosStats/> Statistika</NavLink>
                         <NavLink href="/prometnenovice"> <FaNewspaper/> Novice</NavLink>
                         <NavLink href="/stanjenacestah"> <FaRoad/> Stanje na cestah</NavLink>
-                        <NavLink href="/napovedi"> <FaRoad/> Napovedi prometa</NavLink>
+                        <NavLink href="/napovedi"> <FaCar/> Napovedi prometa</NavLink>
                         <NavLink href="/onas"><MdPerson/> O nas</NavLink>
                 </Navbar>
             </div>
