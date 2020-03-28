@@ -36,15 +36,15 @@ class News extends React.Component {
             numbers = this.state.datag.map(item => {
                 console.log("Iterating through for item " + item.title);
                 parsed = parse(""+item.description+"");
-              //  return <li><b>{item.title}</b> <br /> {item.description}<br /></li>;
-                return parsed;
+                return <p><hr/><b>{item.title}</b><br /> {parsed} <br /><hr/></p>;
             });
         }
         return (
             <div className="containerEvents">
                 <div className="col-xs-8">
                     <h4>{this.state.title.title}</h4>
-                    <ul>{numbers}</ul>
+
+                    {numbers}
                 </div>
             </div>
         );
