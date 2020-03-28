@@ -35,11 +35,12 @@ class borders extends React.Component {
         }
         return (
             <div className="containerBorders">
-                <div>
-                    <h4 className="contentHeaderConditions">{this.state.datag.title}</h4>
-                    <ul>{numbers}</ul>
-                </div>
+            <div>
+                <h4 className="contentHeaderConditions">{this.state.datag.title}</h4>
+                <ul>{numbers}</ul>
             </div>
+        </div>
+           
         );
     }
 }

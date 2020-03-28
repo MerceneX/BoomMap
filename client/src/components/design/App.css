@@ -2,14 +2,14 @@
 .nav-bar{
     background-color: #0c4560  ;
     color: #ffffff;
-    font-size: 15px;
+    font-size: 17px;
     font-family: 'Roboto', sans-serif;
+    text-align: center;
 }
 
 .nav-link{
     color: #ffffff;
 }
-
 .bcg{
     background-color: #e5f3f5;
     height: 160px;
@@ -52,7 +52,6 @@
 .checkboxLabel {
     padding-left: 30px;
     padding-top : 30px;
-
 }
 
 .legendType {
@@ -62,7 +61,6 @@
 
 .legendDiv {
     padding: 3%;
-
 }
 
 .contentCointainer{
@@ -91,7 +89,7 @@ a {
 }
 
 a:hover{
-    color: #e5f3f5;
+    color: #619ca5;
 }
 
 .opisFunkcionalnosti{

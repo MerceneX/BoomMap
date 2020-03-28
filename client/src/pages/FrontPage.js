@@ -12,30 +12,28 @@ function FrontPage(props){
     const { classes } = props;
     return (
         <Container className="contentCointainer">
-            
-                <h6 align="center">Predvidevamo kritične regije za možnost nesreče in ozaveščamo voznike, reševalne službe in tiste, ki se jim mudi, kje povečati potrpljenje in zmanjšati hitrost.</h6>
+                <h5 align="center"> Vse najnovejše preverjene prometne informacije na enem mestu. Predvidevamo kritične regije za možnost nesreče in ozaveščamo voznike, 
+                reševalne službe in tiste, ki se jim mudi, kje povečati potrpljenje in zmanjšati hitrost.
+                </h5>
                 <br></br>
-                <h4 align="center"><i><b>Skupaj za varno pot domov</b></i></h4>
+                <h4 align="center"><b>Skupaj za varno pot domov</b></h4>
             <br></br>
-            <Row>
-                <Col>
+            <Row className="contentCointainer">
+                <Col sm={3}>
                     <img className="imageFrontPage" src={MapIcon} alt="imageFrontPage"/>
-                    <p><b>Zemljevid</b></p>
+                    <h5><b>Kritične točke</b></h5>
                 </Col>
-
-                <Col> 
+                <Col sm={3}> 
                     <img className="imageFrontPage" src={GraphIcon} alt="imageFrontPage"/>
-                    <p><b>Statistika</b></p>
+                    <h5><b>Statistika</b></h5>
                 </Col>
-
-                <Col>
+                <Col sm={3}>
                     <img className="imageFrontPage" src={NewsIcon} alt="imageFrontPage"/>
-                    <p><b>Novice</b></p>
+                    <h5><b>Prometne novice</b></h5>
                 </Col>
-
-                <Col>
+                <Col sm={3}>
                     <img className="imageFrontPage" src={AboutIcon} alt="imageFrontPage"/>
-                    <p><b>O projektu</b></p>
+                    <h5><b>O projektu</b></h5>
                 </Col>
             </Row>
             
