@@ -36,7 +36,7 @@ class News extends React.Component {
             numbers = this.state.datag.map(item => {
                 console.log("Iterating through for item " + item.title);
                 parsed = parse(""+item.description+"");
-                return <p><hr/><b>{item.title}</b><br /> {parsed} <br /><hr/></p>;
+                return <p><hr/><b>{item.title}</b><br /><br />  {parsed} <br /><hr/></p>;
             });
         }
         return (
