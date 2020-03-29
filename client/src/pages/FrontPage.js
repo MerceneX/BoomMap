@@ -51,11 +51,13 @@ function FrontPage(props){
 
                 <Col>
                     <p>Zadnje aktualne prometne novice, stanje na slovenskih mejah in še kaj. </p>
-                        <a href="/novice">Preberi več</a>
+                        <a href="/novice">Novice</a><br></br>
+                        <a href="/stanjenacestah">Stanje na cestah</a><br></br>
+                        <a href="/napovedi">Napovedi prometa</a>
                 </Col>
 
                 <Col>
-                    <p> Zgodba o inspiraciji, ideji, razvoju projekta in kdo stoji za njim.</p>
+                    <p> Zgodba o ideji, viziji, razvoju projekta in kdo stoji za njim.</p>
                         <a href="/About">Preberi več</a>
                 </Col>
             </Row>
