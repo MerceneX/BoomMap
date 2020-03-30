@@ -4,6 +4,7 @@ const express = require("express"),
 	RoadEventsOptions = require("../lib/content/road-events/RoadEventsQueryOptions"),
 	NewsOptions = require("../lib/content/news/NewsQueryOptions"),
 	RoadConditionsOptions = require("../lib/content/road-conditions/RoadConditionsQueryOptions"),
+	TrafficForecastOptions = require("../lib/content/traffic-forecast/TrafficForecastQueryOptions"),
 	BordersQueryOptions = require("../lib/content/borders/BordersQueryOptions");
 
 router.get("/news", async (req, res) => {
@@ -38,7 +39,16 @@ router.get("/road-conditions", async (req, res) => {
 
 router.get("/traffic-forecast", async (req, res) => {
 	cGuy = ContentGuy.getInstance();
-	const response = await cGuy.getTrafficForecast();
+	const options = new TrafficForecastOptions(
+		req.query.term,
+		req.query.dStart,
+		req.query.dEnd,
+		req.query.sort,
+		req.query.sortAscDesc,
+		req.query.limit,
+		req.query.skip
+	);
+	const response = await cGuy.getTrafficForecast(options);
 	res.json(response);
 });
 
