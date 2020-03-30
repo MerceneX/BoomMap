@@ -45,7 +45,6 @@ class News extends React.Component {
             <>
             <div className="containerEvents">
                 <div className="col-xs-8">
-                <h1>Novice</h1>
                     {numbers}
 
                 </div>

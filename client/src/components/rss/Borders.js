@@ -33,7 +33,6 @@ class borders extends React.Component {
         return (
             <div className="containerEvents">
                 <div className="col-xs-8">
-                    <h4>Borders</h4>
                     <ul>{numbers}</ul>
                 </div>
             </div>

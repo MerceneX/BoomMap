@@ -43,7 +43,6 @@ class TrafficForecast extends React.Component {
             <div className="containerEvents">
                 <div className="col-xs-8">
                     <h4>{this.state.title.title}</h4>
-
                     {numbers}
                 </div>
             </div>
