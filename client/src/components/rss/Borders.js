@@ -27,7 +27,7 @@ class borders extends React.Component {
         if (this.state.datag.items) {
             numbers = this.state.datag.items[0].map(item => {
                 console.log("Iterating through for item " + item.title);
-                return <p><b>{item.title}</b> <br /> {item.description}<br /><hr /></p>;
+                return <p><h5><b>{item.title}</b></h5>  {item.description}<br /><hr /></p>;
             });
         }
         return (
