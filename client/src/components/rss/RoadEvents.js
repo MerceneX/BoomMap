@@ -17,9 +17,9 @@ class DogodkiNaCestah extends React.Component {
     componentDidMount() {
         axios.get(`${serverLocation}/api/content/road-events`).then(res => {
 
-           // this.setState({ datag: res.data }, () => console.log("Updated state"));
             this.setState({ datag: res.data.items.slice(0,10) }, () => console.log("Updated state"));
             this.setState({ title: res.data }, () => console.log("Updated state"));
+            console.log(this.state.datag[0]);
 
             for (var key in this.state) {
                 data.push(this.state[key]);
@@ -29,9 +29,9 @@ class DogodkiNaCestah extends React.Component {
 
     render() {
         let numbers;
-       // console.log(this.state.datag);
-        if (this.state.datag) {
-            numbers = this.state.datag.map(item => {
+        console.log(this.state.datag[0]);
+        if (this.state.datag[0]) {
+            numbers = this.state.datag[0].map(item => {
                 console.log("Iterating through for item " + item.title);
                 return <li><b>{item.title}</b> <br /> {item.description}<br /></li>;
             });
@@ -39,7 +39,7 @@ class DogodkiNaCestah extends React.Component {
         return (
             <div className="containerEvents">
                 <div className="col-xs-8">
-                    <h4>{this.state.title.title}</h4>
+                    <h4>RoadEvents</h4>
                     <ul>{numbers}</ul>
                 </div>
             </div>
