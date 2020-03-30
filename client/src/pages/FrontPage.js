@@ -18,7 +18,7 @@ function FrontPage(props) {
 				Predvidevamo kritične regije za možnost nesreče in ozaveščamo voznike,
 				reševalne službe in tiste, ki se jim mudi, kje povečati potrpljenje in
 				zmanjšati hitrost.
-				<br /> Združujemo podatke, pridobljene s kredibilnih državnih ustanov in
+				<br /><br/> Združujemo podatke, pridobljene s kredibilnih državnih ustanov in
 				jim dodajamo pomen. Podatki prihajajo z Agencije za Varnost v prometu
 				Slovenije in spletnih mest DARS. Vam ponujamo prosto brskanje po teh
 				podatkih, saj vse shranjujemo v našo bazo podatkov v namene arhiviranja.

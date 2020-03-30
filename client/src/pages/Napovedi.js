@@ -7,10 +7,12 @@ class StanjeNaCestah extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <br></br>
+
+                <div className="backgroundIcons">
 				<div className="stanjeIcons">
 					<img src={ForecastBanner} alt="ForecastBanner"/>
 				</div>
+                </div>
                 <TrafficForecast />
             </React.Fragment>
         );

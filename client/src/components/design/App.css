@@ -5,6 +5,7 @@
     font-size: 17px;
     font-family: 'Roboto', sans-serif;
     text-align: center;
+    padding: 10px 185px;
 }
 
 .nav-link{
@@ -137,7 +138,17 @@ a:hover{
 }
 
 .stanjeIcons{
+    justify-content: normal;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: 0 auto;
+    background-color: #ACD1D4;
+    margin-top: 6px;
+}
+
+.stanjeIcons img{
     height: 100px;
-    width: 1000px;
     margin: 0 auto;
 }
+

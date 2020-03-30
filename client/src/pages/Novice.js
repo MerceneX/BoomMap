@@ -7,9 +7,10 @@ class Novice extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				<br></br>
+				<div className="backgroundIcons">
 				<div className="stanjeIcons">
 					<img src={NewsBanner} alt="NewsBanner"/>
+				</div>
 				</div>
 				<News />
 			</React.Fragment>
