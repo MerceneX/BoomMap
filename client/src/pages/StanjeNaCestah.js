@@ -17,11 +17,12 @@ class StanjeNaCestah extends React.Component {
 				<img src={BorderIcon} alt="borderIcon"/>
 				</div>
 				<Borders/>
-				<RoadConditions/>
 				<div className="stanjeIcons">
-				<img src={EventsIcon}  alt="eventIcon"/>
-				</div>
-				<RoadEvents/>
+                				<img src={EventsIcon}  alt="eventIcon"/>
+                				</div>
+                				<RoadEvents/>
+				<RoadConditions/>
+
 
 			</React.Fragment>
 		);

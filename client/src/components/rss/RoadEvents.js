@@ -33,13 +33,13 @@ class DogodkiNaCestah extends React.Component {
         if (this.state.datag[0]) {
             numbers = this.state.datag[0].map(item => {
                 console.log("Iterating through for item " + item.title);
-                return <li><b>{item.title}</b> <br /> {item.description}<hr /><br /></li>;
+                return <p><b>{item.title}</b> <br /> {item.description}<br /><hr /></p>;
             });
         }
         return (
             <div className="containerEvents">
                 <div className="col-xs-8">
-                    <h4>RoadEvents</h4>
+                    <h4>Road Events</h4>
                     <ul>{numbers}</ul>
                 </div>
             </div>
