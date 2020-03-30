@@ -24,17 +24,22 @@
     margin-left: 230px;
 }
 
-.person{
-    height: 70%;
-    width: 60%;
+.teamPhoto{
     position: center;
+    height: 300px;
+    width: 230px;
 }
 
 .teamTitles{
     color: #0c4560;
     text-align: center;
-    font-size: 16px;
+    font-size: 17px;
     font-family: 'Open Sans', sans-serif;
+}
+.teamName{
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .graphs{
