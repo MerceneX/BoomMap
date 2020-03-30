@@ -27,16 +27,16 @@ class borders extends React.Component {
         if (this.state.datag.items) {
             numbers = this.state.datag.items[0].map(item => {
                 console.log("Iterating through for item " + item.title);
-                return <li><b>{item.title}</b> <br /> {item.description}<br /></li>;
+                return <p><b>{item.title}</b> <br /> {item.description}<br /><hr /></p>;
             });
         }
         return (
-            <div className="containerBorders">
-            <div>
-                <h4 className="contentHeaderConditions">Borders</h4>
-                <ul>{numbers}</ul>
+            <div className="containerConditions">
+                <div className="col-xs-8">
+                    <h4>Borders</h4>
+                    <ul>{numbers}</ul>
+                </div>
             </div>
-        </div>
            
         );
     }

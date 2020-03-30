@@ -33,7 +33,7 @@ class DogodkiNaCestah extends React.Component {
         if (this.state.datag[0]) {
             numbers = this.state.datag[0].map(item => {
                 console.log("Iterating through for item " + item.title);
-                return <li><b>{item.title}</b> <br /> {item.description}<br /></li>;
+                return <li><b>{item.title}</b> <br /> {item.description}<hr /><br /></li>;
             });
         }
         return (

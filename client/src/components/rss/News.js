@@ -3,6 +3,7 @@ import React from 'react';
 import axios from "axios";
 import parse from 'html-react-parser';
 
+
 const serverLocation = require("../../config/keys.js").server;
 
 
@@ -10,11 +11,14 @@ var data = [];
 var sliced = [];
 var parsed;
 
+
 class News extends React.Component {
     state = {
         datag: [],
-        title: []
+        title: [],
     };
+
+
 
     componentDidMount() {
         axios.get(`${serverLocation}/api/content/news`).then(res => {
@@ -38,13 +42,15 @@ class News extends React.Component {
             })
         }
         return (
+            <>
             <div className="containerEvents">
                 <div className="col-xs-8">
-                    <h1>Novice</h1>
-
+                <h1>Novice</h1>
                     {numbers}
+
                 </div>
             </div>
+            </>
         );
     }
 }
