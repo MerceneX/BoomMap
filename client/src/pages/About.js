@@ -81,11 +81,12 @@ function About() {
 						<p>
 							Smo ekipa štirih študentov univerzitetnega programa Informatike in
 							Tehnologij Komuniciranja na Fakulteti za Elektrotehniko,
-							Računalništvo in Informatiko Univerze v Mariboru. Rešitev, ki vam jo predstavljamo,
-							smo začeli v sklopu zaključnega projektnega dela ob koncu 2.
-							letnika. Po koncu petih tednov obveznega dela smo verjeli,
-							da imamo dobro idejo, možnosti izboljšave in smisel za delo, smo se odločili nadaljevati
-							z razvojem tudi v prostem času. Mi smo ekipa, za Varno Domov:
+							Računalništvo in Informatiko Univerze v Mariboru. Rešitev, ki vam
+							jo predstavljamo, smo začeli v sklopu zaključnega projektnega dela
+							ob koncu 2. letnika. Po koncu petih tednov obveznega dela smo
+							verjeli, da imamo dobro idejo, možnosti izboljšave in smisel za
+							delo, smo se odločili nadaljevati z razvojem tudi v prostem času.
+							Mi smo ekipa, za Varno Domov:
 						</p>
 					</Col>
 				</Row>
@@ -93,17 +94,17 @@ function About() {
 					<Col>
 						<img className="teamPhoto" src={MG} alt="person" />
 						<p className="teamName">Marko Gluhak</p>
-						<p>Vodja in back-end razvijalec</p>
+						<p>Vodja in razvijalec zaledja</p>
 					</Col>
 					<Col>
 						<img className="teamPhoto" src={MK} alt="person" />
 						<p className="teamName">Maruša Konečnik</p>
-						<p>Strojno učenje</p>
+						<p>Razvijalka strojnega učenja</p>
 					</Col>
 					<Col>
 						<img className="teamPhoto" src={PG} alt="person" />
 						<p className="teamName">Pina Gornik</p>
-						<p>Front-end razvijalka</p>
+						<p>Razvijalka grafičnega vmesnika</p>
 					</Col>
 					<Col>
 						<img className="teamPhoto" src={NF} alt="person" />
