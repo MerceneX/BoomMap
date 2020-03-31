@@ -5,6 +5,7 @@ import MK from "../components/design/MK.jpg";
 import PG from "../components/design/PG.jpg";
 import NF from "../components/design/NF.jpg";
 import "../components/design/App.css";
+import IdeaIcon from "../components/design/IdeaIcon.svg";
 
 function About() {
 	return (
@@ -19,7 +20,7 @@ function About() {
 					<Col></Col>
 				</Row>
 				<Row>
-					<Col>
+					<Col sm={8}>
 						<p>
 							V Republiki Sloveniji smo od osamosvojitve zgradili mnoge državne
 							in lokalne ceste, ki (zaradi širitve na eni in manj vzdrževanja na
@@ -34,6 +35,9 @@ function About() {
 							učinkovitejšo klasifikacijo cestnih odsekov, ter oceno stopnje
 							njihove nevarnosti.{" "}
 						</p>
+					</Col>
+					<Col sm={4}>
+						<img className="ideaImage" src={IdeaIcon} alt="imageFrontPage"/>
 					</Col>
 				</Row>
 				<Row>
