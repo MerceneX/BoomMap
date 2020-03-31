@@ -5,7 +5,6 @@ import MK from "../components/design/MK.jpg";
 import PG from "../components/design/PG.jpg";
 import NF from "../components/design/NF.jpg";
 import "../components/design/App.css";
-import predloga from "../components/design/predloga.svg";
 
 function About() {
 	return (
@@ -117,5 +116,4 @@ function About() {
 		</React.Fragment>
 	);
 }
-
 export default About;
