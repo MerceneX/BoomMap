@@ -1,80 +1,127 @@
-import React from 'react';
-import {Navbar, NavLink} from 'reactstrap';
-import '../components/design/App.css';
-import { Container, Row, Col } from 'reactstrap';
+import React from "react";
+import { Navbar, NavLink } from "reactstrap";
+import "../components/design/App.css";
+import { Container, Row, Col } from "reactstrap";
 import NewsIcon from "../components/design/NewsIcon.svg";
 import MapIcon from "../components/design/MapIcon.svg";
 import GraphIcon from "../components/design/GraphIcon.svg";
 import AboutIcon from "../components/design/AboutIcon.svg";
-import predloga from "../components/design/predloga.svg";
+import {FaAngleRight} from "react-icons/fa";
 
-function FrontPage(props){
-    const { classes } = props;
-    return (
-        <Container className="contentCointainer">
-            
-                <h6 align="center">Predvidevamo kritične regije za možnost nesreče in ozaveščamo voznike, reševalne službe in tiste, ki se jim mudi, kje povečati potrpljenje in zmanjšati hitrost.</h6>
-                <br></br>
-                <h4 align="center"><i><b>Skupaj za varno pot domov</b></i></h4>
-            <br></br>
-            <Row>
-                <Col>
-                    <img className="imageFrontPage" src={MapIcon} alt="imageFrontPage"/>
-                    <p><b>Zemljevid</b></p>
-                </Col>
+function FrontPage(props) {
+	const { classes } = props;
+	return (
+		<Container className="contentCointainer">
+			
+			<section class="DescriptionClass">
+				<div class="DescriptionContent">
+					<p>
+					{" "}
+					Vse najnovejše preverjene prometne informacije na enem mestu.
+					Predvidevamo kritične regije za možnost nesreče in ozaveščamo voznike,
+					reševalne službe in tiste, ki se jim mudi, kje povečati potrpljenje in
+					zmanjšati hitrost.
+				</p>
+				</div>
+			</section>
 
-                <Col> 
-                    <img className="imageFrontPage" src={GraphIcon} alt="imageFrontPage"/>
-                    <p><b>Statistika</b></p>
-                </Col>
+			<div className="paragraphBelow">
+					<h5> Združujemo podatke, pridobljene s kredibilnih državnih ustanov in
+						jim dodajamo pomen. Podatki prihajajo z Agencije za Varnost v prometu
+						Slovenije in spletnih mest DARS. Vam ponujamo prosto brskanje po teh
+						podatkih, saj vse shranjujemo v našo bazo podatkov v namene arhiviranja.
+						Podatke o samih nesrečah, zbrane z AVP, pa urejamo v podobo zemljevida
+						kritičnih točk, ki izvirajo vse od leta 1994.
+					</h5>
+				<br></br>
+					<h4 align="center">
+						<b>Skupaj za varno pot domov</b>
+					</h4>
+			</div>
 
-                <Col>
-                    <img className="imageFrontPage" src={NewsIcon} alt="imageFrontPage"/>
-                    <p><b>Novice</b></p>
-                </Col>
+			<Row className="contentCointainer">
+				<Col sm={3}>
+					<img className="imageFrontPage" src={MapIcon} alt="imageFrontPage" />
+					<h5>
+						<b>Kritične točke</b>
+					</h5>
+				</Col>
+				<Col sm={3}>
+					<img
+						className="imageFrontPage" src={GraphIcon} alt="imageFrontPage"/>
+					<h5>
+						<b>Statistika</b>
+					</h5>
+				</Col>
+				<Col sm={3}>
+					<img className="imageFrontPage" src={NewsIcon} alt="imageFrontPage" />
+					<h5>
+						<b>Prometne novice</b>
+					</h5>
+				</Col>
+				<Col sm={3}>
+					<img
+						className="imageFrontPage" src={AboutIcon} alt="imageFrontPage"/>
+					<h5>
+						<b>O projektu</b>
+					</h5>
+				</Col>
+			</Row>
 
-                <Col>
-                    <img className="imageFrontPage" src={AboutIcon} alt="imageFrontPage"/>
-                    <p><b>O projektu</b></p>
-                </Col>
-            </Row>
-            
-            <Container className="descriptionContainter">
-            <Row>
-                <Col>
-                    <p>Prikaz kritičnih odsekov na slovenskih cestah, z možnostjo prilagoditve parametrov na trenutne razmere cest. </p>
-                    <a href="/zemljevid">Preberi več</a>
-                </Col>
+			<Container className="descriptionContainter">
+				<Row>
+					<Col>
+						<p>
+							Prikaz kritičnih odsekov na slovenskih cestah, z možnostjo
+							prilagoditve parametrov na trenutne razmere cest.{" "}
+						</p>
+					</Col>
 
-                <Col> 
-                    <p>Statistično predelani podatki o prometnih nesrečah od leta 1994 naprej. Prikaz števila prometnih nesreč glede na različne filtre.</p>
-                        <a href="/statistika">Preberi več</a>
-                </Col>
+					<Col>
+						<p>
+							Statistično predelani podatki o prometnih nesrečah od leta 1994
+							naprej. Prikaz števila prometnih nesreč glede na različne filtre.
+						</p>
+					</Col>
 
-                <Col>
-                    <p>Zadnje aktualne prometne novice, stanje na slovenskih mejah in še kaj. </p>
-                        <a href="/novice">Preberi več</a>
-                </Col>
+					<Col>
+						<p>
+							Zadnje aktualne prometne novice, stanje na slovenskih mejah in še
+							kaj.{" "}
+						</p>
+						<br></br>
+					</Col>
 
-                <Col>
-                    <p> Zgodba o inspiraciji, ideji, razvoju projekta in kdo stoji za njim.</p>
-                        <a href="/About">Preberi več</a>
-                </Col>
-            </Row>
-            </Container>
+					<Col>
+						<p>
+							{" "}
+							Zgodba o ideji, viziji, razvoju projekta in kdo stoji za njim.
+						</p>
+					</Col>
+				</Row>
+				<Row>
+					<Col>
+					<a href="/zemljevid">Preberi več  <FaAngleRight/></a>
+					</Col>
 
-<br></br>
-<br></br>
-           <h5> prostor za novice </h5>
-           <Row>
-               <Col> <img className="imageFrontPage" src={predloga} alt="imageFrontPage"/> </Col>
-               <Col> <img className="imageFrontPage" src={predloga} alt="imageFrontPage"/> </Col>
-               <Col> <img className="imageFrontPage" src={predloga} alt="imageFrontPage"/> </Col>
-               <Col> <img className="imageFrontPage" src={predloga} alt="imageFrontPage"/> </Col>
-           </Row>
-           <br></br>
-        </Container>
-    )
+					<Col>
+					<a href="/statistika">Preberi več  <FaAngleRight/></a>
+					</Col>
+
+					<Col>
+					<a href="/prometnenovice"> Novice  <FaAngleRight/></a><br></br>
+					<a href="/stanjenacestah"> Stanje na cestah  <FaAngleRight/></a>
+					<a href="/napovedi"> Napovedi prometa  <FaAngleRight/></a>
+					</Col>
+
+					<Col>
+					<a href="/onas">Preberi več  <FaAngleRight/></a>
+					</Col>
+
+				</Row>
+			</Container>
+		</Container>
+	);
 }
 
 export default FrontPage;

@@ -1,25 +1,27 @@
 
+
 import React from 'react';
 import axios from "axios";
+import parse from 'html-react-parser';
 
 const serverLocation = require("../../config/keys.js").server;
 
 
 var data = [];
 var sliced = [];
+var parsed;
 
-class DogodkiNaCestah extends React.Component {
+class TrafficForecast extends React.Component {
     state = {
         datag: [],
         title: []
     };
 
     componentDidMount() {
-        axios.get(`${serverLocation}/api/content/road-events`).then(res => {
+        axios.get(`${serverLocation}/api/content/traffic-forecast`).then(res => {
 
-            this.setState({ datag: res.data.items.slice(0,10) }, () => console.log("Updated state"));
+            this.setState({ datag: res.data.items.slice(0,3) }, () => console.log("Updated state"));
             this.setState({ title: res.data }, () => console.log("Updated state"));
-            console.log(this.state.datag[0]);
 
             for (var key in this.state) {
                 data.push(this.state[key]);
@@ -29,20 +31,22 @@ class DogodkiNaCestah extends React.Component {
 
     render() {
         let numbers;
-        console.log(this.state.datag[0]);
+         console.log(this.state.datag[0]);
         if (this.state.datag[0]) {
             numbers = this.state.datag[0].map(item => {
                 console.log("Iterating through for item " + item.title);
-                return <div className="ContentStyle"><p><h5><b>{item.title}</b><hr/></h5> {item.description}<br /></p></div>;
+                parsed = parse(""+item.description+"");
+                return <div className="ContentStyle"><p><h5><b>{item.title}</b><hr/></h5><br/>{parsed}<br/></p></div>;
             });
         }
         return (
             <div className="containerEvents">
                 <div className="col-xs-8">
-                    <ul>{numbers}</ul>
+                    <h4>{this.state.title.title}</h4>
+                    {numbers}
                 </div>
             </div>
         );
     }
 }
-export default DogodkiNaCestah;
+export default TrafficForecast;

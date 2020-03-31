@@ -19,27 +19,24 @@ class borders extends React.Component {
                 data.push(this.state[key]);
             }
 
-            //    console.log(this.state.datag.title);
-           // console.log(this.state.datag.items);
-            //    console.log(this.state[key]);
         });
     }
 
     render() {
         let numbers;
         if (this.state.datag.items) {
-            numbers = this.state.datag.items.map(item => {
-               // console.log("Iterating through for item " + item.title);
-                return <li><b>{item.title}</b> <br /> {item.description}<br /></li>;
+            numbers = this.state.datag.items[0].map(item => {
+                console.log("Iterating through for item " + item.title);
+                return <div className="ContentStyle"><p><h5><b>{item.title}</b><hr/></h5> {item.description}<br/></p></div>;
             });
         }
         return (
-            <div className="containerBorders">
-                <div>
-                    <h4 className="contentHeaderConditions">{this.state.datag.title}</h4>
+            <div className="containerEvents">
+                <div className="col-xs-8">
                     <ul>{numbers}</ul>
                 </div>
             </div>
+           
         );
     }
 }
