@@ -36,7 +36,7 @@ class TrafficForecast extends React.Component {
             numbers = this.state.datag[0].map(item => {
                 console.log("Iterating through for item " + item.title);
                 parsed = parse(""+item.description+"");
-                return <div className="ContentStyle"><p><h4><b>{item.title}</b><hr/></h4><br/>{parsed}<br/></p></div>;
+                return <div className="ContentStyle"><p><h5><b>{item.title}</b><hr/></h5><br/>{parsed}<br/></p></div>;
             });
         }
         return (
