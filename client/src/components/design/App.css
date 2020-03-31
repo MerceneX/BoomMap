@@ -12,7 +12,16 @@
 
 .nav-link{
     color: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 5px;
 }
+
+.nav-link svg{
+    margin-right: 5px;
+}
+
 .bcg{
     background-color: #e5f3f5;
     height: 160px;
