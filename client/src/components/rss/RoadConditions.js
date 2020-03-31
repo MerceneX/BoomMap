@@ -15,7 +15,7 @@ class RoadConditions extends React.Component {
 
 
     componentDidMount() {
-        axios.get(`${serverLocation}/api/content/road-conditions`).then(res => {
+        axios.get(`${serverLocation}/api/content/road-conditions?limit=1`).then(res => {
             this.setState({ datag: res.data }, () => console.log("Updated state"));
             console.log(this.state.datag.items[0])
             for (var key in this.state) {
