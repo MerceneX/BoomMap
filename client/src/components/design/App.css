@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 .nav-bar{
     background-color: #0c4560  ;
@@ -35,7 +37,7 @@
     color: #0c4560;
     text-align: center;
     font-size: 17px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 .teamName{
     text-align: center;
@@ -52,7 +54,6 @@
 .map{
     height: 100%;
     width: 100%;
-
 }
 
 .checkboxLabel {
@@ -75,19 +76,24 @@
     padding-top: 30px;
     text-align: center;
     font-size: 18px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .descriptionContainter{
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     color: black;
 }
 
 .aboutContainer{
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 18px;
 }
+
+.aboutContainer h4{
+    font-weight: bold;
+}
+
 
 a {
     color: #0c4560;
@@ -116,21 +122,21 @@ a:hover{
 }
 
 .containerBorders{
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     padding-top: 20px;
     margin: 0 auto;
 }
 
 .containerConditions{
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     padding-top: 20px;
     margin-left: 150px;
 }
 
 .containerEvents{
-    font-family: 'Open Sans', sans-serif;
+    font-family: '', sans-serif;
     font-size: 18px;
     padding-top: 20px;
     margin-left: 200px;
@@ -143,12 +149,22 @@ a:hover{
     height: 100%;
     display: flex;
     margin: 0 auto;
-    background-color: #ACD1D4;
+    background-color: #C7DEE0;
     margin-top: 6px;
 }
 
 .stanjeIcons img{
-    height: 100px;
+    height: 80px;
     margin: 0 auto;
 }
 
+.EventStyle{
+    background-color: #F1F2F2;
+    border-bottom-width: 2px;
+    border-bottom-color: gray;
+    border-bottom-style: inset;
+    border-right-style: inset;
+    border-right-color: gray;
+    border-right-width: 2px;
+    margin-bottom: 15px;
+}

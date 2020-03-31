@@ -14,24 +14,26 @@ class StanjeNaCestah extends React.Component {
 			<React.Fragment>
 				<div className="backgroundIcons">
 					<div className="stanjeIcons">
+						<img src={ReportBanner}  alt="ReportBanner"/>
+					</div>
+				</div>
+				<RoadConditions/>
+
+				<div className="backgroundIcons">
+					<div className="stanjeIcons">
 						<img src={BorderBanner} alt="BorderBanner"/>
 					</div>
 				</div>
 
 				<Borders/>
+
 				<div className="backgroundIcons">
 					<div className="stanjeIcons">
 						<img src={EventsBanner}  alt="EventsBanner"/>
 					</div>
 				</div>
-
                 <RoadEvents/>
-				<div className="backgroundIcons">
-					<div className="stanjeIcons">
-						<img src={ReportBanner}  alt="ReportBanner"/>
-					</div>
-				</div>
-				<RoadConditions/>
+				
 
 
 			</React.Fragment>

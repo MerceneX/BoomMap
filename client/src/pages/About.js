@@ -82,11 +82,11 @@ function About() {
 						<p>
 							Smo ekipa štirih študentov univerzitetnega programa Informatike in
 							Tehnologij Komuniciranja na Fakulteti za Elektrotehniko,
-							Računalništvo in Informatiko. Rešitev, ki vam jo predstavljamo,
+							Računalništvo in Informatiko Univerze v Mariboru. Rešitev, ki vam jo predstavljamo,
 							smo začeli v sklopu zaključnega projektnega dela ob koncu 2.
-							letnika. Ker smo po koncu petih tednov obveznega dela res verjeli,
-							da imamo dobro idejo in smisel za delo, smo se odločili poprijeti
-							zanj tudi v prostem času. Mi smo ekipa, za Varno Domov:
+							letnika. Po koncu petih tednov obveznega dela smo verjeli,
+							da imamo dobro idejo, možnosti izboljšave in smisel za delo, smo se odločili nadaljevati
+							z razvojem tudi v prostem času. Mi smo ekipa, za Varno Domov:
 						</p>
 					</Col>
 				</Row>

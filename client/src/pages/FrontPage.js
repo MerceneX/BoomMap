@@ -6,7 +6,7 @@ import NewsIcon from "../components/design/NewsIcon.svg";
 import MapIcon from "../components/design/MapIcon.svg";
 import GraphIcon from "../components/design/GraphIcon.svg";
 import AboutIcon from "../components/design/AboutIcon.svg";
-import predloga from "../components/design/predloga.svg";
+import {FaAngleRight} from "react-icons/fa";
 
 function FrontPage(props) {
 	const { classes } = props;
@@ -72,7 +72,7 @@ function FrontPage(props) {
 							Prikaz kritičnih odsekov na slovenskih cestah, z možnostjo
 							prilagoditve parametrov na trenutne razmere cest.{" "}
 						</p>
-						<a href="/zemljevid">Preberi več</a>
+						<a href="/zemljevid">Preberi več  <FaAngleRight/></a>
 					</Col>
 
 					<Col>
@@ -80,7 +80,7 @@ function FrontPage(props) {
 							Statistično predelani podatki o prometnih nesrečah od leta 1994
 							naprej. Prikaz števila prometnih nesreč glede na različne filtre.
 						</p>
-						<a href="/statistika">Preberi več</a>
+						<a href="/statistika">Preberi več  <FaAngleRight/></a>
 					</Col>
 
 					<Col>
@@ -88,11 +88,11 @@ function FrontPage(props) {
 							Zadnje aktualne prometne novice, stanje na slovenskih mejah in še
 							kaj.{" "}
 						</p>
-						<a href="/novice">Novice</a>
+						<a href="/novice">Novice <FaAngleRight/></a>
 						<br></br>
-						<a href="/stanjenacestah">Stanje na cestah</a>
+						<a href="/stanjenacestah">Stanje na cestah <FaAngleRight/></a>
 						<br></br>
-						<a href="/napovedi">Napovedi prometa</a>
+						<a href="/napovedi">Napovedi prometa <FaAngleRight/></a>
 					</Col>
 
 					<Col>
@@ -100,49 +100,10 @@ function FrontPage(props) {
 							{" "}
 							Zgodba o ideji, viziji, razvoju projekta in kdo stoji za njim.
 						</p>
-						<a href="/About">Preberi več</a>
+						<a href="/About">Preberi več  <FaAngleRight/></a>
 					</Col>
 				</Row>
 			</Container>
-
-			<br></br>
-			<br></br>
-			<h5> prostor za novice </h5>
-			<Row>
-				<Col>
-					{" "}
-					<img
-						className="imageFrontPage"
-						src={predloga}
-						alt="imageFrontPage"
-					/>{" "}
-				</Col>
-				<Col>
-					{" "}
-					<img
-						className="imageFrontPage"
-						src={predloga}
-						alt="imageFrontPage"
-					/>{" "}
-				</Col>
-				<Col>
-					{" "}
-					<img
-						className="imageFrontPage"
-						src={predloga}
-						alt="imageFrontPage"
-					/>{" "}
-				</Col>
-				<Col>
-					{" "}
-					<img
-						className="imageFrontPage"
-						src={predloga}
-						alt="imageFrontPage"
-					/>{" "}
-				</Col>
-			</Row>
-			<br></br>
 		</Container>
 	);
 }
