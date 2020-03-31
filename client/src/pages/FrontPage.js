@@ -12,24 +12,33 @@ function FrontPage(props) {
 	const { classes } = props;
 	return (
 		<Container className="contentCointainer">
-			<h5 align="center">
-				{" "}
-				Vse najnovejše preverjene prometne informacije na enem mestu.
-				Predvidevamo kritične regije za možnost nesreče in ozaveščamo voznike,
-				reševalne službe in tiste, ki se jim mudi, kje povečati potrpljenje in
-				zmanjšati hitrost.
-				<br /><br/> Združujemo podatke, pridobljene s kredibilnih državnih ustanov in
-				jim dodajamo pomen. Podatki prihajajo z Agencije za Varnost v prometu
-				Slovenije in spletnih mest DARS. Vam ponujamo prosto brskanje po teh
-				podatkih, saj vse shranjujemo v našo bazo podatkov v namene arhiviranja.
-				Podatke o samih nesrečah, zbrane z AVP, pa urejamo v podobo zemljevida
-				kritičnih točk, ki izvirajo vse od leta 1994.
-			</h5>
-			<br></br>
-			<h4 align="center">
-				<b>Skupaj za varno pot domov</b>
-			</h4>
-			<br></br>
+			
+			<section class="DescriptionClass">
+				<div class="DescriptionContent">
+					<p>
+					{" "}
+					Vse najnovejše preverjene prometne informacije na enem mestu.
+					Predvidevamo kritične regije za možnost nesreče in ozaveščamo voznike,
+					reševalne službe in tiste, ki se jim mudi, kje povečati potrpljenje in
+					zmanjšati hitrost.
+				</p>
+				</div>
+			</section>
+
+			<div className="paragraphBelow">
+					<h5> Združujemo podatke, pridobljene s kredibilnih državnih ustanov in
+						jim dodajamo pomen. Podatki prihajajo z Agencije za Varnost v prometu
+						Slovenije in spletnih mest DARS. Vam ponujamo prosto brskanje po teh
+						podatkih, saj vse shranjujemo v našo bazo podatkov v namene arhiviranja.
+						Podatke o samih nesrečah, zbrane z AVP, pa urejamo v podobo zemljevida
+						kritičnih točk, ki izvirajo vse od leta 1994.
+					</h5>
+				<br></br>
+					<h4 align="center">
+						<b>Skupaj za varno pot domov</b>
+					</h4>
+			</div>
+
 			<Row className="contentCointainer">
 				<Col sm={3}>
 					<img className="imageFrontPage" src={MapIcon} alt="imageFrontPage" />

@@ -31,7 +31,7 @@ class RoadConditions extends React.Component {
             console.log(this.state.datag.items[0]);
                 numbers = this.state.datag.items[0].map(item => {
                    parsed=parse(""+item.description+"");
-                    return <p><h5><b>{item.title}</b></h5> <br />  {parsed} <br /><hr/></p>;
+                    return <div className="ConditionsStyle"><p><h5><b>{item.title}</b><hr/></h5><br/>{parsed}<br/></p></div>;
 
                 });
         }
