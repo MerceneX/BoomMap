@@ -48,10 +48,7 @@ function FrontPage(props) {
 				</Col>
 				<Col sm={3}>
 					<img
-						className="imageFrontPage"
-						src={GraphIcon}
-						alt="imageFrontPage"
-					/>
+						className="imageFrontPage" src={GraphIcon} alt="imageFrontPage"/>
 					<h5>
 						<b>Statistika</b>
 					</h5>
@@ -64,10 +61,7 @@ function FrontPage(props) {
 				</Col>
 				<Col sm={3}>
 					<img
-						className="imageFrontPage"
-						src={AboutIcon}
-						alt="imageFrontPage"
-					/>
+						className="imageFrontPage" src={AboutIcon} alt="imageFrontPage"/>
 					<h5>
 						<b>O projektu</b>
 					</h5>
@@ -81,7 +75,6 @@ function FrontPage(props) {
 							Prikaz kritičnih odsekov na slovenskih cestah, z možnostjo
 							prilagoditve parametrov na trenutne razmere cest.{" "}
 						</p>
-						<a href="/zemljevid">Preberi več  <FaAngleRight/></a>
 					</Col>
 
 					<Col>
@@ -89,7 +82,6 @@ function FrontPage(props) {
 							Statistično predelani podatki o prometnih nesrečah od leta 1994
 							naprej. Prikaz števila prometnih nesreč glede na različne filtre.
 						</p>
-						<a href="/statistika">Preberi več  <FaAngleRight/></a>
 					</Col>
 
 					<Col>
@@ -97,11 +89,7 @@ function FrontPage(props) {
 							Zadnje aktualne prometne novice, stanje na slovenskih mejah in še
 							kaj.{" "}
 						</p>
-						<a href="/novice">Novice <FaAngleRight/></a>
 						<br></br>
-						<a href="/stanjenacestah">Stanje na cestah <FaAngleRight/></a>
-						<br></br>
-						<a href="/napovedi">Napovedi prometa <FaAngleRight/></a>
 					</Col>
 
 					<Col>
@@ -109,8 +97,27 @@ function FrontPage(props) {
 							{" "}
 							Zgodba o ideji, viziji, razvoju projekta in kdo stoji za njim.
 						</p>
-						<a href="/About">Preberi več  <FaAngleRight/></a>
 					</Col>
+				</Row>
+				<Row>
+					<Col>
+					<a href="/zemljevid">Preberi več  <FaAngleRight/></a>
+					</Col>
+
+					<Col>
+					<a href="/statistika">Preberi več  <FaAngleRight/></a>
+					</Col>
+
+					<Col>
+					<a href="/prometnenovice"> Novice  <FaAngleRight/></a><br></br>
+					<a href="/stanjenacestah"> Stanje na cestah  <FaAngleRight/></a>
+					<a href="/napovedi"> Napovedi prometa  <FaAngleRight/></a>
+					</Col>
+
+					<Col>
+					<a href="/onas">Preberi več  <FaAngleRight/></a>
+					</Col>
+
 				</Row>
 			</Container>
 		</Container>
