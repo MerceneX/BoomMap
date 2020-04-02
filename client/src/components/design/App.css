@@ -172,6 +172,10 @@ a:hover {
 	max-width: 80rem;
 }
 
+.containerEvents ul {
+	padding: 0;
+}
+
 .stanjeIcons {
 	justify-content: normal;
 	width: 100%;
