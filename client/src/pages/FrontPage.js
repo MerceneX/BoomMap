@@ -26,10 +26,12 @@ function FrontPage(props) {
 					</p>
 				</div>
 			</section>
-			<h4 align="center" className="Slogan">
-				<b>Skupaj za varno pot domov</b>
-			</h4>
+
 			<Container className="contentContainer">
+				<h4 align="center" className="Slogan">
+					<b>Skupaj za varno pot domov</b>
+				</h4>
+
 				<Row className="contentCointainer">
 					<Col sm={4}>
 						<img
@@ -85,28 +87,7 @@ function FrontPage(props) {
 						</a>
 					</Col>
 				</Row>
-				<div className="paragraphBelow">
-					<p>
-						<span>
-							Združujemo podatke, pridobljene s&nbsp;
-							<b>kredibilnih državnih ustanov</b>
-							in jim dodajamo pomen.&nbsp;
-						</span>
-						&nbsp; Podatki prihajajo z&nbsp;
-						<b>Agencije za Varnost v prometu</b>
-						Slovenije in spletnih mest&nbsp;<b>DARS</b>. Vam ponujamo
-						prosto&nbsp;
-						<b>brskanje</b> po teh&nbsp;
-						<b>podatkih</b>, saj vse shranjujemo v našo bazo podatkov v namene
-						arhiviranja. Podatke o samih nesrečah, zbrane z AVP, pa urejamo v
-						podobo
-						<button type="button" className="button">
-							Zemljevida kritičnih točk
-						</button>
-						, ki izvirajo vse od leta 1994.
-					</p>
-					<br></br>
-				</div>
+
 				<Row className="contentContainer">
 					<Col sm={4}>
 						<img
@@ -159,7 +140,28 @@ function FrontPage(props) {
 						</a>
 					</Col>
 				</Row>
-				<Row></Row>
+				<div className="paragraphBelow">
+					<p>
+						<span>
+							Združujemo podatke, pridobljene s&nbsp;
+							<b>kredibilnih državnih ustanov</b>
+							in jim dodajamo pomen.&nbsp;
+						</span>
+						&nbsp; Podatki prihajajo z&nbsp;
+						<b>Agencije za Varnost v prometu</b>
+						Slovenije in spletnih mest&nbsp;<b>DARS</b>. Vam ponujamo
+						prosto&nbsp;
+						<b>brskanje</b> po teh&nbsp;
+						<b>podatkih</b>, saj vse shranjujemo v našo bazo podatkov v namene
+						arhiviranja. Podatke o samih nesrečah, zbrane z AVP, pa urejamo v
+						podobo
+						<button type="button" className="button">
+							Zemljevida kritičnih točk
+						</button>
+						, ki izvirajo vse od leta 1994.
+					</p>
+					<br></br>
+				</div>
 			</Container>
 		</div>
 	);
