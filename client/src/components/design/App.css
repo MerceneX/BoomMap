@@ -2,23 +2,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 .nav-bar {
-	background-color: #0c4560;
-	color: #ffffff;
+	background-color: #0c4560 !important;
+	color: #f4f4f4;
 	font-size: 18px;
 	font-family: "Roboto", sans-serif;
-	text-align: center;
 	padding: 10px 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
 .nav-link {
-	color: #ffffff;
+	color: #f4f4f4 !important;
 	display: flex;
-	flex-wrap: unset;
 	align-items: center;
-	margin: 0 5px;
+}
+.nav-link:hover {
+	color: #619ca5 !important;
+}
+
+.navbar-dark .navbar-toggler {
+	margin-left: 10px;
+}
+
+.navbar-nav {
+	margin: 0 auto;
+	padding-left: 8px;
 }
 
 .nav-link svg {
