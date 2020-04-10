@@ -32,7 +32,7 @@ function FrontPage(props) {
 					<b>Skupaj za varno pot domov</b>
 				</h4>
 
-				<Row className="contentCointainer">
+				<Row className="contentContainer">
 					<Col sm={4}>
 						<img
 							className="imageFrontPage"
