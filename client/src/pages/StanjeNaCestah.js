@@ -3,9 +3,6 @@ import axios from "axios";
 import Borders from "../components/rss/Borders";
 import RoadConditions from "../components/rss/RoadConditions";
 import RoadEvents from "../components/rss/RoadEvents";
-import BorderBanner from "../components/design/BorderBanner.svg";
-import EventsBanner from "../components/design/EventsBanner.svg";
-import ReportBanner from "../components/design/ReportBanner.svg";
 
 
 class StanjeNaCestah extends React.Component {
@@ -14,14 +11,14 @@ class StanjeNaCestah extends React.Component {
 			<React.Fragment>
 				<div className="backgroundIcons">
 					<div className="stanjeIcons">
-						<img src={ReportBanner}  alt="ReportBanner"/>
+						<img/>
 					</div>
 				</div>
 				<RoadConditions/>
 
 				<div className="backgroundIcons">
 					<div className="stanjeIcons">
-						<img src={BorderBanner} alt="BorderBanner"/>
+						<img/>
 					</div>
 				</div>
 
@@ -29,7 +26,7 @@ class StanjeNaCestah extends React.Component {
 
 				<div className="backgroundIcons">
 					<div className="stanjeIcons">
-						<img src={EventsBanner}  alt="EventsBanner"/>
+						<img/>
 					</div>
 				</div>
                 <RoadEvents/>
