@@ -11,9 +11,9 @@ import Row from "reactstrap/es/Row";
 function Header(props) {
 	return (
 		<div className="bcg">
-			<h1>
+			<h2>
 				<span className="logo-bold">VARNO</span> DOMOV
-			</h1>
+			</h2>
 			<img className="logo" src={logo} alt="Logo" />
 		</div>
 	);

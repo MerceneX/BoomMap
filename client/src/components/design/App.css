@@ -54,6 +54,10 @@
 	font-weight: bold;
 }
 
+.bcg h2 {
+	font-size: 3rem;
+}
+
 .pageName {
 	margin-top: 60px;
 	font-family: "Roboto", sans-serif;
@@ -99,6 +103,31 @@
 
 .legendDiv {
 	padding: 3%;
+}
+
+.fpCol {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 3rem;
+}
+
+.descLink {
+	background-color: #e5f3f5;
+	padding: 0 0.2rem;
+	border: solid 1px #c4c4c4;
+	border-radius: 2rem;
+	display: flex;
+	width: fit-content;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+}
+
+.descLink:hover {
+	font-weight: bolder;
+	border-radius: 0;
 }
 
 .contentContainer {
@@ -372,6 +401,9 @@ a:hover {
 	.paragraphBelow span {
 		display: none;
 	}
+	.bcg h2 {
+		font-size: 2.5rem;
+	}
 }
 
 @media (max-width: 756px) {
@@ -406,5 +438,9 @@ a:hover {
 
 	.imageFrontPage {
 		width: 65%;
+	}
+
+	.bcg h2 {
+		font-size: 2rem;
 	}
 }

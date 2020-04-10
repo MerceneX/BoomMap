@@ -23,14 +23,17 @@ function FrontPage(props) {
 						Predvidevamo&nbsp;<b>kritične regije</b> za možnost nesreče in
 						ozaveščamo voznike, reševalne službe in tiste, ki se jim mudi, kje
 						povečati potrpljenje in zmanjšati hitrost.
+						<a className="descLink" href="/zemljevid">
+							Na Zemljevid <FaAngleRight />
+						</a>
 					</p>
 				</div>
 			</section>
 
 			<Container className="contentContainer">
-				<h4 align="center" className="Slogan">
-					<b>Skupaj za varno pot domov</b>
-				</h4>
+				<h1 align="center" className="Slogan">
+					Skupaj za varno pot domov
+				</h1>
 
 				<Row className="contentContainer">
 					<Col sm={4} className="fpCol">
@@ -51,7 +54,7 @@ function FrontPage(props) {
 						</a>
 					</Col>
 
-					<Col sm={4}>
+					<Col sm={4} className="fpCol">
 						<img
 							className="imageFrontPage"
 							src={GraphIcon}
@@ -69,7 +72,7 @@ function FrontPage(props) {
 						</a>
 					</Col>
 
-					<Col sm={4}>
+					<Col sm={4} className="fpCol">
 						<img
 							className="imageFrontPage"
 							src={AboutIcon}
@@ -87,7 +90,7 @@ function FrontPage(props) {
 						</a>
 					</Col>
 
-					<Col sm={4}>
+					<Col sm={4} className="fpCol">
 						<img
 							className="imageFrontPage"
 							src={NewsIcon}
@@ -102,7 +105,7 @@ function FrontPage(props) {
 						</a>
 					</Col>
 
-					<Col sm={4}>
+					<Col sm={4} className="fpCol">
 						<img
 							className="imageFrontPage"
 							src={EventsIcon}
@@ -120,7 +123,7 @@ function FrontPage(props) {
 						</a>
 					</Col>
 
-					<Col sm={4}>
+					<Col sm={4} className="fpCol">
 						<img
 							className="imageFrontPage"
 							src={ForecastIcon}
@@ -152,11 +155,7 @@ function FrontPage(props) {
 						<b>brskanje</b> po teh&nbsp;
 						<b>podatkih</b>, saj vse shranjujemo v našo bazo podatkov v namene
 						arhiviranja. Podatke o samih nesrečah, zbrane z AVP, pa urejamo v
-						podobo
-						<button type="button" className="button">
-							Zemljevida kritičnih točk
-						</button>
-						, ki izvirajo vse od leta 1994.
+						podobo zemljevida kritičnih točk , ki izvirajo vse od leta 1994.
 					</p>
 					<br></br>
 				</div>
