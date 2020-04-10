@@ -214,9 +214,29 @@ a:hover {
 	border-left: 1px solid #e1e1e1;
 
 	margin-bottom: 15px;
-	padding-left: 10px;
-	padding-top: 20px;
+	padding: 30px;
 	margin-top: 30px;
+}
+
+.ContentStyle .date {
+	font-style: italic;
+	font-size: 0.9rem;
+	color: #a4a4a4;
+}
+
+.ContentStyle .contentTitle div {
+	font-style: italic;
+	font-size: 0.9rem;
+	color: #a4a4a4;
+}
+
+.ContentStyle .contentHeader {
+	display: flex;
+	justify-content: space-between;
+}
+
+.cardContent ul {
+	padding-left: 2rem;
 }
 
 .ConditionsStyle a {
