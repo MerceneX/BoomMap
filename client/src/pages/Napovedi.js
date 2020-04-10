@@ -1,21 +1,28 @@
 import React from "react";
 import TrafficForecast from "../components/rss/TrafficForecast";
-import ForecastBanner from "../components/design/ForecastBanner.svg";
-
+import ForecastBannerImgLeft from "../components/design/ForecastBanner_left.svg";
+import ForecastBannerImgRight from "../components/design/ForecastBanner_right.svg";
 
 class StanjeNaCestah extends React.Component {
-    render() {
-        return (
-            <React.Fragment>
-
-                <div className="backgroundIcons">
-				<div className="stanjeIcons">
-					<img src={ForecastBanner} alt="ForecastBanner"/>
+	render() {
+		return (
+			<React.Fragment>
+				<div className="banner">
+					<img
+						src={ForecastBannerImgLeft}
+						alt="NewsBanner"
+						className="bannerImgLeft bannerImg"
+					/>
+					<h1 className="bannerTitle">Prometne Napovedi</h1>
+					<img
+						src={ForecastBannerImgRight}
+						alt="NewsBanner"
+						className="bannerImgRight bannerImg"
+					/>
 				</div>
-                </div>
-                <TrafficForecast />
-            </React.Fragment>
-        );
-    }
+				<TrafficForecast />
+			</React.Fragment>
+		);
+	}
 }
 export default StanjeNaCestah;

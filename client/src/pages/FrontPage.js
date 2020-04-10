@@ -33,7 +33,7 @@ function FrontPage(props) {
 				</h4>
 
 				<Row className="contentContainer">
-					<Col sm={4}>
+					<Col sm={4} className="fpCol">
 						<img
 							className="imageFrontPage"
 							src={MapIcon}
@@ -86,9 +86,7 @@ function FrontPage(props) {
 							Preberi več <FaAngleRight />
 						</a>
 					</Col>
-				</Row>
 
-				<Row className="contentContainer">
 					<Col sm={4}>
 						<img
 							className="imageFrontPage"

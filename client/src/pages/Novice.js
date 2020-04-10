@@ -1,16 +1,24 @@
 import React from "react";
-import axios from "axios";
 import News from "../components/rss/News";
-import NewsBanner from "../components/design/NewsBanner.svg";
+import NewsBannerImgLeft from "../components/design/NewsBanner_left.svg";
+import NewsBannerImgRight from "../components/design/NewsBanner_right.svg";
 
 class Novice extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				<div className="backgroundIcons">
-				<div className="stanjeIcons">
-					<img src={NewsBanner} alt="NewsBanner"/>
-				</div>
+				<div className="banner">
+					<img
+						src={NewsBannerImgLeft}
+						alt="NewsBanner"
+						className="bannerImgLeft bannerImg"
+					/>
+					<h1 className="bannerTitle">Prometne Novice</h1>
+					<img
+						src={NewsBannerImgRight}
+						alt="NewsBanner"
+						className="bannerImgRight bannerImg"
+					/>
 				</div>
 				<News />
 			</React.Fragment>

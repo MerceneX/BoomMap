@@ -3,39 +3,59 @@ import axios from "axios";
 import Borders from "../components/rss/Borders";
 import RoadConditions from "../components/rss/RoadConditions";
 import RoadEvents from "../components/rss/RoadEvents";
-import BorderBanner from "../components/design/BorderBanner.svg";
-import EventsBanner from "../components/design/EventsBanner.svg";
-import ReportBanner from "../components/design/ReportBanner.svg";
-
+import ReportBannerLeft from "../components/design/ReportBanner_left.svg";
+import ReportBannerRight from "../components/design/ReportBanner_right.svg";
+import BorderBannerLeft from "../components/design/BorderBanner_left.svg";
+import BorderBannerRight from "../components/design/BorderBanner_right.svg";
+import EventsBannerLeft from "../components/design/EventsBanner_left.svg";
+import EventsBannerRight from "../components/design/EventsBanner_right.svg";
 
 class StanjeNaCestah extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				<div className="backgroundIcons">
-					<div className="stanjeIcons">
-						<img src={ReportBanner}  alt="ReportBanner"/>
-					</div>
+				<div className="banner">
+					<img
+						src={ReportBannerLeft}
+						alt="NewsBanner"
+						className="bannerImgLeft bannerImg"
+					/>
+					<h1 className="bannerTitle">Prometno poročilo</h1>
+					<img
+						src={ReportBannerRight}
+						alt="NewsBanner"
+						className="bannerImgRight bannerImg"
+					/>
 				</div>
-				<RoadConditions/>
-
-				<div className="backgroundIcons">
-					<div className="stanjeIcons">
-						<img src={BorderBanner} alt="BorderBanner"/>
-					</div>
+				<RoadConditions />
+				<div className="banner">
+					<img
+						src={BorderBannerLeft}
+						alt="NewsBanner"
+						className="bannerImgLeft bannerImg"
+					/>
+					<h2 className="bannerTitle">Mejnih prehodov</h2>
+					<img
+						src={BorderBannerRight}
+						alt="NewsBanner"
+						className="bannerImgRight bannerImg"
+					/>
 				</div>
-
-				<Borders/>
-
-				<div className="backgroundIcons">
-					<div className="stanjeIcons">
-						<img src={EventsBanner}  alt="EventsBanner"/>
-					</div>
+				<Borders />
+				<div className="banner">
+					<img
+						src={EventsBannerLeft}
+						alt="NewsBanner"
+						className="bannerImgLeft bannerImg"
+					/>
+					<h2 className="bannerTitle">Ostalih dogodkov</h2>
+					<img
+						src={EventsBannerRight}
+						alt="NewsBanner"
+						className="bannerImgRight bannerImg"
+					/>
 				</div>
-                <RoadEvents/>
-				
-
-
+				<RoadEvents />
 			</React.Fragment>
 		);
 	}

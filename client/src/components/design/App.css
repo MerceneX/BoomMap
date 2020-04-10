@@ -182,19 +182,27 @@ a:hover {
 	padding: 0;
 }
 
-.stanjeIcons {
-	justify-content: normal;
+.banner {
+	justify-content: center;
 	width: 100%;
 	height: 100%;
 	display: flex;
 	margin: 0 auto;
 	background-color: #c7dee0;
 	margin-top: 50px;
+	align-items: center;
 }
 
-.stanjeIcons img {
-	height: 75px;
-	margin: 0 auto;
+.bannerTitle {
+	font-family: "Montserrat", sans-serif;
+	margin: 0 1rem;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.bannerImg {
+	height: 65px;
+	margin: 0.5rem 5rem;
 }
 
 .ContentStyle {
@@ -379,5 +387,24 @@ a:hover {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	}
+
+	.bannerTitle {
+		font-family: "Montserrat", sans-serif;
+		margin: 0;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	.bannerImg {
+		height: 55px;
+		margin: 0.5rem 0 0.5rem 1.5rem;
+	}
+	.bannerImgRight {
+		display: none;
+	}
+
+	.imageFrontPage {
+		width: 65%;
 	}
 }
