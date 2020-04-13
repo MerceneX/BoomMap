@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../design/App.css";
 import {
 	Collapse,
 	Navbar,
@@ -21,6 +20,7 @@ import { FaNewspaper } from "react-icons/fa";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaRoad } from "react-icons/fa";
 import { FaCar } from "react-icons/fa";
+import "../design/App.css";
 
 const Navigation = (props) => {
 	const [isOpen, setIsOpen] = useState(false);
