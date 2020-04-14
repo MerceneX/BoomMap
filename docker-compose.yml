@@ -13,7 +13,7 @@ services:
   react:
     restart: always
     container_name: varno_domov_client
-    build: client/react-SSR-app
+    build: client/
     ports:
       - "8080:3000"
     networks:

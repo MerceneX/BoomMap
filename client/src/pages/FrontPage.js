@@ -8,11 +8,28 @@ import MapIcon from "../components/design/MapIcon.svg";
 import GraphIcon from "../components/design/GraphIcon.svg";
 import AboutIcon from "../components/design/AboutIcon.svg";
 import { FaAngleRight } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 function FrontPage(props) {
 	const { classes } = props;
 	return (
 		<div>
+			<Helmet>
+				<meta
+					name="description"
+					content="Predvidevamo kritične regije za možnost nesreče in	ozaveščamo voznike, reševalne službe in tiste, ki se jim mudi, kje povečati potrpljenje in zmanjšati hitrost. Varno pot domov poskušamo ustvariti z prijetno agregacijo kredibilnih virov kot so DARS in Agencija za Varnost v Prometu Slovenije."
+				/>
+				<meta
+					name="keywords"
+					content="varno domov, varno-domov, varnost, cesta, dars, promet, kritične regije"
+				/>
+				<link
+					rel="stylesheet"
+					href="https://fonts.googleapis.com/icon?family=Material+Icons"
+				/>
+				<link rel="stylesheet" href="path/to/materialize.css" />
+				<title>Domača Stran za Varno Domov</title>
+			</Helmet>
 			<section class="DescriptionClass">
 				<div class="DescriptionContent">
 					<p>

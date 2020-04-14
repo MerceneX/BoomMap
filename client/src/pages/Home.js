@@ -7,10 +7,11 @@ import { Container, Row, Col } from "reactstrap";
 import { Grid } from "@material-ui/core";
 import CustomFilter from "../components/CustomFilter";
 import Breakpoint, { BreakpointProvider } from "react-socks";
+import { Helmet } from "react-helmet";
 
 const options = [
 	{ value: "current", label: "Trenutno stanje" },
-	{ value: "all", label: "Kritični odseki" }
+	{ value: "all", label: "Kritični odseki" },
 ];
 
 class SimpleMap extends Component {
@@ -20,12 +21,12 @@ class SimpleMap extends Component {
 		this.legendElement = React.createRef();
 		this.customFilter = React.createRef();
 		this.state = {
-			selectedOption: "all"
+			selectedOption: "all",
 		};
 		this.handleChange = this.handleChange.bind(this);
 	}
 
-	handleChange = selectedOption => {
+	handleChange = (selectedOption) => {
 		this.mapElement.current.changeOption(selectedOption);
 		this.setState({ selectedOption: selectedOption });
 		let visi = selectedOption.value === "all" ? "visible" : "hidden";
@@ -34,7 +35,7 @@ class SimpleMap extends Component {
 		this.customFilter.current.changeVisibility(visi);
 	};
 
-	handleLegendChange = newLegend => {
+	handleLegendChange = (newLegend) => {
 		this.mapElement.current.changeCriticalLevel(newLegend);
 	};
 
@@ -47,6 +48,22 @@ class SimpleMap extends Component {
 		return (
 			// Important! Always set the container height explicitly
 			<div class="map-container">
+				<Helmet>
+					<meta
+						name="description"
+						content="Predstavljamo Zemljevid na Varno Domov, narejen za napovedovanje kritičnih regij in točk na Slovenskih cestah. Izboljšujemo varnost z opozarjanjem voznikov na njihvi poti domov, v službo in povsod drugod s hitrim pregledom na enem spletnem mestu. Zemljevid agregira podatke z Agencije za Varnost v Prometu, ki podatke o prometnih nesrečah zbira že vse od leta 1994. Uporabniki lahko poleg trenutnega stanja ne cesti vidijo tudi situacijo cest v s svojimi izbranimi parametri."
+					/>
+					<meta
+						name="keywords"
+						content="varno domov, kritične regije, zemljevid, boomMap, napovedovanje"
+					/>
+					<link
+						rel="stylesheet"
+						href="https://fonts.googleapis.com/icon?family=Material+Icons"
+					/>
+					<link rel="stylesheet" href="path/to/materialize.css" />
+					<title>Zemljevid Kritičnih Točk - Varno Domov</title>
+				</Helmet>
 				<div className="legend">
 					<h5>Možnosti:</h5>
 					<Select

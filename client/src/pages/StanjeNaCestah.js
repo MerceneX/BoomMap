@@ -9,11 +9,28 @@ import BorderBannerLeft from "../components/design/BorderBanner_left.svg";
 import BorderBannerRight from "../components/design/BorderBanner_right.svg";
 import EventsBannerLeft from "../components/design/EventsBanner_left.svg";
 import EventsBannerRight from "../components/design/EventsBanner_right.svg";
+import { Helmet } from "react-helmet";
 
 class StanjeNaCestah extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
+				<Helmet>
+					<meta
+						name="description"
+						content="Ponujamo vam pravočasne in relevantne informacije o trenutnem stanju na cestah, vse zbrane na enem mestu. Informacije o trenutnih dogodkih na cesti, stanju na mejnih prehodih ter morebitnih izrednih dogodkih lahko preverite na naši strani varno-domov.si"
+					/>
+					<meta
+						name="keywords"
+						content="varno domov, varno-domov, trenutno stanje, mejni prehodi, meje, dogodki, nesreče, delo na cesti"
+					/>
+					<link
+						rel="stylesheet"
+						href="https://fonts.googleapis.com/icon?family=Material+Icons"
+					/>
+					<link rel="stylesheet" href="path/to/materialize.css" />
+					<title>Trenutno Stanje na Cestah - Varno Domov</title>
+				</Helmet>
 				<div className="banner">
 					<img
 						src={ReportBannerLeft}
