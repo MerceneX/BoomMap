@@ -55,7 +55,7 @@ class StreetMap extends React.Component {
         this.state.surface = surface
     }
 
-     componentDidMount() {
+     async componentDidMount() {
         this.getWeatherData(this.state.currentLoc.lat, this.state.currentLoc.lng);
     }
     getLocation = () => {
@@ -75,12 +75,9 @@ class StreetMap extends React.Component {
     getWeatherData = (lat,lon) => {
         fetch('http://api.openweathermap.org/data/2.5/find?lat='+lat+'&lon='+lon+'&cnt=1&APPID=19117506641d90371c01ce010e35f032')
             .then(res => res.json())
-            .then(json => this.setState({ weatherD: json.list[0].weather[0].main }));
-       /* let url = 'http://api.openweathermap.org/data/2.5/find?lat='+lat+'&lon='+lon+'&cnt=1&APPID=19117506641d90371c01ce010e35f032';
-        request({url,json:true},(error,{body})=>{
-            let d = body.list[0].weather[0].main;
-            this.setState({weatherD: d})
-        }) */
+            .then(json => this.setState({ weatherD: json.list[0].weather[0].main }))
+            .catch((err) => { this.setState({ weatherD: 'Clear' })});
+
     };
     getCurrentState = ()=>{
         let date = new Date();
