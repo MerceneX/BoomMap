@@ -362,6 +362,9 @@ a:hover {
 }
 
 @media (max-width: 1100px) {
+	.map {
+		height: 75vh;
+	}
 	.map-container {
 		display: grid;
 		align-content: center;
