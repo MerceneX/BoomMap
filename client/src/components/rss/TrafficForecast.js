@@ -5,7 +5,6 @@ import parse from "html-react-parser";
 const serverLocation = require("../../config/keys.js").server;
 
 var data = [];
-var sliced = [];
 var parsed;
 
 class TrafficForecast extends React.Component {

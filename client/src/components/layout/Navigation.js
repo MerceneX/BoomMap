@@ -1,18 +1,5 @@
 import React, { useState } from "react";
-import {
-	Collapse,
-	Navbar,
-	NavbarToggler,
-	NavbarBrand,
-	Nav,
-	NavItem,
-	NavLink,
-	UncontrolledDropdown,
-	DropdownToggle,
-	DropdownMenu,
-	DropdownItem,
-	NavbarText,
-} from "reactstrap";
+import { Collapse, Navbar, NavbarToggler, Nav, NavLink } from "reactstrap";
 import { IoIosStats } from "react-icons/io";
 import { IoIosHome } from "react-icons/io";
 import { MdPerson } from "react-icons/md";

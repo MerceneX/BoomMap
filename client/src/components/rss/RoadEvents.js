@@ -4,7 +4,6 @@ import axios from "axios";
 const serverLocation = require("../../config/keys.js").server;
 
 var data = [];
-var sliced = [];
 
 class DogodkiNaCestah extends React.Component {
 	state = {

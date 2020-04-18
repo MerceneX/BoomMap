@@ -3,10 +3,7 @@ import "leaflet/dist/leaflet.css";
 import Select from "react-select";
 import Map from "../components/Map";
 import Legend from "../components/Legend";
-import { Container, Row, Col } from "reactstrap";
-import { Grid } from "@material-ui/core";
 import CustomFilter from "../components/CustomFilter";
-import Breakpoint, { BreakpointProvider } from "react-socks";
 import { Helmet } from "react-helmet";
 
 const options = [
@@ -43,8 +40,6 @@ class SimpleMap extends Component {
 		this.mapElement.current.changeFilterOptions(state, surface);
 	};
 	render() {
-		const { selectedOption } = this.state;
-
 		return (
 			// Important! Always set the container height explicitly
 			<div class="map-container">

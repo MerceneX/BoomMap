@@ -7,10 +7,9 @@ import NesrecePraznik from "../components/graphs/NesrecePraznik";
 import NesreceVreme from "../components/graphs/NesreceVreme";
 import NesreceCeste from "../components/graphs/NesreceCeste";
 import NesreceStanjePrometa from "../components/graphs/NesreceStanjePrometa";
-import { Col, Container, Row } from "reactstrap";
+import { Container, Row } from "reactstrap";
 import NesreceVozilo from "../components/graphs/NesreceVozilo";
 import {
-	Button,
 	ButtonDropdown,
 	DropdownToggle,
 	DropdownMenu,

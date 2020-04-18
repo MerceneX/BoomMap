@@ -11,7 +11,6 @@ import { FaAngleRight } from "react-icons/fa";
 import { Helmet } from "react-helmet";
 
 function FrontPage(props) {
-	const { classes } = props;
 	return (
 		<div>
 			<Helmet>
@@ -27,11 +26,10 @@ function FrontPage(props) {
 					rel="stylesheet"
 					href="https://fonts.googleapis.com/icon?family=Material+Icons"
 				/>
-				<link rel="stylesheet" href="path/to/materialize.css" />
 				<title>Domača Stran za Varno Domov</title>
 			</Helmet>
-			<section class="DescriptionClass">
-				<div class="DescriptionContent">
+			<section className="DescriptionClass">
+				<div className="DescriptionContent">
 					<p>
 						<span>
 							Vse najnovejše preverjene prometne informacije na enem mestu.
