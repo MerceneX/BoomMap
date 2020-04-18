@@ -129,6 +129,9 @@
 	font-weight: bolder;
 	border-radius: 1rem;
 	box-shadow: 5px 5px 20px grey;
+	background-color: #0c4560;
+	color: #f4f4f4;
+	text-decoration: none;
 }
 
 .contentContainer {
