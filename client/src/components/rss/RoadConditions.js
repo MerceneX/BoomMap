@@ -1,47 +1,55 @@
-
-import React from 'react';
+import React from "react";
 import axios from "axios";
-import ReactDOM from 'react-dom';
-import parse from 'html-react-parser';
+import parse from "html-react-parser";
 const serverLocation = require("../../config/keys.js").server;
-
 
 var data = [];
 var parsed;
 class RoadConditions extends React.Component {
-    state = {
-        datag: []
-    };
+	state = {
+		datag: [],
+	};
 
+	componentDidMount() {
+		axios
+			.get(`${serverLocation}/api/content/road-conditions?limit=1`)
+			.then((res) => {
+				this.setState({ datag: res.data }, () => console.log("Updated state"));
+				for (var key in this.state) {
+					data.push(this.state[key]);
+				}
+			});
+	}
 
-    componentDidMount() {
-        axios.get(`${serverLocation}/api/content/road-conditions?limit=1`).then(res => {
-            this.setState({ datag: res.data }, () => console.log("Updated state"));
-            console.log(this.state.datag.items[0])
-            for (var key in this.state) {
-                data.push(this.state[key]);
-            }
+	render() {
+		let numbers;
+		if (this.state.datag.items) {
+			numbers = this.state.datag.items[0].map((item) => {
+				parsed = parse("" + item.description + "");
+				return (
+					<div className="ContentStyle">
+						<div className="contentHeader">
+							<h5>
+								<b>{item.title}</b>
+							</h5>
+							<p className="date">
+								{new Date(item.datePublished).toDateString()}
+							</p>
+						</div>
+						<hr />
 
-        });
-    }
-
-    render() {
-        let numbers;
-        if (this.state.datag.items) {
-            console.log(this.state.datag.items[0]);
-                numbers = this.state.datag.items[0].map(item => {
-                   parsed=parse(""+item.description+"");
-                    return <div className="ContentStyle"><p><h5><b>{item.title}</b><hr/></h5><br/>{parsed}<br/></p></div>;
-
-                });
-        }
-        return (
-            <div className="containerEvents">
-                <div className="col-xs-8">
-                    <ul>{numbers}</ul>
-                </div>
-            </div>
-        );
-    }
+						<p className="cardContent">{parsed}</p>
+					</div>
+				);
+			});
+		}
+		return (
+			<div className="containerEvents">
+				<div className="col-xs-8">
+					<ul>{numbers}</ul>
+				</div>
+			</div>
+		);
+	}
 }
 export default RoadConditions;

@@ -6,10 +6,27 @@ import PG from "../components/design/PG.jpg";
 import NF from "../components/design/NF.jpg";
 import "../components/design/App.css";
 import IdeaIcon from "../components/design/IdeaIcon.svg";
+import { Helmet } from "react-helmet";
 
 function About() {
 	return (
 		<React.Fragment>
+			<Helmet>
+				<meta
+					name="desription"
+					content="Smo ekipa štirih študentov univerzitetnega programa Informatike in Tehnologij Komuniciranja na Fakulteti za Elektrotehniko, Računalništvo in Informatiko Univerze v Mariboru. Rešitev, ki vam jo predstavljamo, smo začeli v sklopu zaključnega projektnega dela ob koncu 2. letnika. Po koncu petih tednov obveznega dela smo verjeli, da imamo dobro idejo, možnosti izboljšave in smisel za delo, smo se odločili nadaljevati z razvojem tudi v prostem času. Mi smo ekipa, za Varno Domov"
+				/>
+				<meta
+					name="keywords"
+					content="varno domov, Marko Gluhak, Maruša Konečnik, Nataša Feher, Pina Gornik, FERI, ITK"
+				/>
+				<link
+					rel="stylesheet"
+					href="https://fonts.googleapis.com/icon?family=Material+Icons"
+				/>
+				<link rel="stylesheet" href="path/to/materialize.css" />
+				<title>O Nas - Varno Domov</title>
+			</Helmet>
 			<br></br>
 
 			<Container className="aboutContainer">
@@ -37,7 +54,7 @@ function About() {
 						</p>
 					</Col>
 					<Col sm={4}>
-						<img className="ideaImage" src={IdeaIcon} alt="imageFrontPage"/>
+						<img className="ideaImage" src={IdeaIcon} alt="imageFrontPage" />
 					</Col>
 				</Row>
 				<Row>
