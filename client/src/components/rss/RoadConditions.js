@@ -26,6 +26,7 @@ class RoadConditions extends React.Component {
 		if (this.state.datag.items) {
 			numbers = this.state.datag.items[0].map((item) => {
 				parsed = parse("" + item.description + "");
+				const datePublished = new Date(item.datePublished);
 				return (
 					<div className="ContentStyle">
 						<div className="contentHeader">
@@ -33,7 +34,8 @@ class RoadConditions extends React.Component {
 								<b>{item.title}</b>
 							</h5>
 							<p className="date">
-								{new Date(item.datePublished).toDateString()}
+								{datePublished.getDay()}. {datePublished.getMonth()}.&nbsp;{" "}
+								{datePublished.getFullYear()}
 							</p>
 						</div>
 						<hr />
