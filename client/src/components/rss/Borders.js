@@ -23,7 +23,7 @@ class borders extends React.Component {
 		let numbers;
 		if (this.state.datag.items) {
 			numbers = this.state.datag.items[0].map((item) => {
-				console.log("Iterating through for item " + item.title);
+				const datePublished = new Date(item.datePublished);
 				return (
 					<div className="ContentStyle">
 						<div className="contentHeader">
@@ -33,9 +33,7 @@ class borders extends React.Component {
 								</h5>
 								<div className="contentCategory">{item.category}</div>
 							</div>
-							<p className="date">
-								{new Date(item.datePublished).toDateString()}
-							</p>
+							<p className="date">{datePublished.toLocaleTimeString()}</p>
 						</div>
 						<hr />
 

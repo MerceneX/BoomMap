@@ -31,7 +31,7 @@ class TrafficForecast extends React.Component {
 		console.log(this.state.datag[0]);
 		if (this.state.datag[0]) {
 			numbers = this.state.datag[0].map((item) => {
-				console.log("Iterating through for item " + item.title);
+				const datePublished = new Date(item.datePublished);
 				parsed = parse("" + item.description + "");
 				return (
 					<div className="ContentStyle">
@@ -40,7 +40,8 @@ class TrafficForecast extends React.Component {
 								<b>{item.title}</b>
 							</h5>
 							<p className="date">
-								{new Date(item.datePublished).toDateString()}
+								{datePublished.getDay()}. {datePublished.getMonth()}.&nbsp;{" "}
+								{datePublished.getFullYear()}
 							</p>
 						</div>
 						<hr />

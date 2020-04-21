@@ -29,8 +29,8 @@ class News extends React.Component {
 		let numbers;
 		if (this.state.datag[0]) {
 			numbers = this.state.datag[0].map((item) => {
-				console.log("Iterating through for item " + item.title);
 				parsed = parse("" + item.description + "");
+				const datePublished = new Date(item.datePublished);
 				return (
 					<div className="ContentStyle">
 						<div className="contentHeader">
@@ -38,7 +38,8 @@ class News extends React.Component {
 								<b>{item.title}</b>
 							</h5>
 							<p className="date">
-								{new Date(item.datePublished).toDateString()}
+								{datePublished.getDay()}. {datePublished.getMonth()}.&nbsp;{" "}
+								{datePublished.getFullYear()}
 							</p>
 						</div>
 						<hr />
