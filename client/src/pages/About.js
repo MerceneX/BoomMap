@@ -4,6 +4,7 @@ import MG from "../components/design/MG.jpg";
 import MK from "../components/design/MK.jpg";
 import PG from "../components/design/PG.jpg";
 import NF from "../components/design/NF.jpg";
+import Plaque from "../components/design/Plaque.png"
 import "../components/design/App.css";
 import IdeaIcon from "../components/design/IdeaIcon.svg";
 import { Helmet } from "react-helmet";
@@ -32,12 +33,37 @@ function About() {
 			<Container className="aboutContainer">
 				<Row>
 					<Col>
-						<h4>Ideja</h4>
+						<h4>Zmaga na konferenci Dnevi Slovenske Informatike 2020</h4>
 					</Col>
-					<Col></Col>
 				</Row>
 				<Row>
-					<Col sm={8}>
+					<Col className="awards">
+						<div className="awardspcol">
+							<img className="plaque-photo" src={Plaque} alt="Plaketa za izjemne prispevke študentov v letu 2020" />
+							<p className="awardsp1">
+								Kljub izzivu, ki je bilo leto 2020, je v tem letu potekala konferenca Dnevi Slovenske Informatike,
+								ki smo se je seveda udeležili. Konkurenca je bila zelo zatevna, saj so tekmovali tudi asistenti,
+								ki so poučevali na naši fakulteti. A je naša rešitev s svojo inovativnostjo in potencialom
+								za družbeno korist prepričala komisijo. Našo predstavitev in celotno konferenco si lahko ogledate
+							na<a className="emphasisedLink" href="https://dsi2020.dsi-konferenca.si/">naslednji povezavi.</a>
+							</p>
+							<p className="awardsp1">
+								Naša nagrada je obsegala tudi nekatere, nenapisane prednosti. Naš mentor doc. dr. Luka Pavlič
+								nam je uredil tudi brezplačno namestitev naše rešitve na strežniku fakultete, kjer zadeva teče še sedaj.
+								Za sodelovanje pa so bili tudi odprti pri podjetju Domovanje, ki so nam omogočili brezplačen najem
+								domene, varno-domov.si. Za naš dosežek, pa smo prejeli tudi nekaj, kar si ne bi mogli v začetku naše
+								študentske poti sploh predstavljati. Prejeli smo plaketo, za izjemne prispevke študentov za leto 2020.
+								<p className="thanksp">Iskrena zahvala vsem, ki ste nas na tej poti podpirali in tistim, ki nas še vedno boste!</p>
+							</p>
+						</div>
+					</Col>
+				</Row>
+				<Row>
+					<Col className="ideaImageContainer" sm={4}>
+						<img className="ideaImage" src={IdeaIcon} alt="imageFrontPage" />
+					</Col>
+					<Col lg={8}>
+						<h4 className="ideaTitle">Ideja</h4>
 						<p>
 							V Republiki Sloveniji smo od osamosvojitve zgradili mnoge državne
 							in lokalne ceste, ki (zaradi širitve na eni in manj vzdrževanja na
@@ -52,9 +78,6 @@ function About() {
 							učinkovitejšo klasifikacijo cestnih odsekov, ter oceno stopnje
 							njihove nevarnosti.{" "}
 						</p>
-					</Col>
-					<Col sm={4}>
-						<img className="ideaImage" src={IdeaIcon} alt="imageFrontPage" />
 					</Col>
 				</Row>
 				<Row>
@@ -103,7 +126,8 @@ function About() {
 							Smo ekipa štirih študentov univerzitetnega programa Informatike in
 							Tehnologij Komuniciranja na Fakulteti za Elektrotehniko,
 							Računalništvo in Informatiko Univerze v Mariboru. Rešitev, ki vam
-							jo predstavljamo, smo začeli v sklopu zaključnega projektnega dela
+							jo predstavljamo, smo pod mentorstvom dr. doc. Luke Pavlič
+							začeli v sklopu zaključnega projekta
 							ob koncu 2. letnika. Po koncu petih tednov obveznega dela smo
 							verjeli, da imamo dobro idejo, možnosti izboljšave in smisel za
 							delo, smo se odločili nadaljevati z razvojem tudi v prostem času.
@@ -112,22 +136,22 @@ function About() {
 					</Col>
 				</Row>
 				<Row className="teamTitles">
-					<Col>
+					<Col xl={3} md={6} xs={12}>
 						<img className="teamPhoto" src={MG} alt="person" />
 						<p className="teamName">Marko Gluhak</p>
-						<p>Vodja in razvijalec zaledja</p>
+						<p>Vodja in razvijalec zalednega sistema</p>
 					</Col>
-					<Col>
+					<Col xl={3} md={6} xs={12}>
 						<img className="teamPhoto" src={MK} alt="person" />
 						<p className="teamName">Maruša Konečnik</p>
 						<p>Razvijalka strojnega učenja</p>
 					</Col>
-					<Col>
+					<Col xl={3} md={6} xs={12}>
 						<img className="teamPhoto" src={PG} alt="person" />
 						<p className="teamName">Pina Gornik</p>
 						<p>Razvijalka grafičnega vmesnika</p>
 					</Col>
-					<Col>
+					<Col xl={3} md={6} xs={12}>
 						<img className="teamPhoto" src={NF} alt="person" />
 						<p className="teamName">Nataša Feher</p>
 						<p>Grafična oblikovalka</p>
