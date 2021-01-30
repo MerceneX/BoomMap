@@ -65,7 +65,6 @@ export default class CustomFilter extends React.Component {
 
 	changeVisibility = (visibility) => {
 		this.setState({ visible: visibility });
-		console.log(visibility);
 	};
 	handleDayChange = (selected) => {
 		!selected

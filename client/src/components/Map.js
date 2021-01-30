@@ -43,13 +43,13 @@ class StreetMap extends React.Component {
 		this.setState({ selectedOption: newOption.value });
 	}
 	changeCriticalLevel(newLevel) {
-		this.state.markers = [];
+		this.setState({markers: []});
 		this.setState({ criticalLevelsChecked: newLevel });
 	}
 	changeFilterOptions = (filter, surface) => {
-		this.state.markers = [];
+		this.setState({ markers: [] });
 		this.setState({ filterOptions: filter });
-		this.state.surface = surface;
+		this.setState({ surface: surface });
 	};
 
 	async componentDidMount() {
