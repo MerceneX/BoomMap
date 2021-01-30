@@ -526,4 +526,9 @@ a:hover {
   .bcg h2 {
     font-size: 2rem;
   }
+
+  .plaque-photo {
+    height: 13rem;
+    width: 18rem;
+  }
 }
