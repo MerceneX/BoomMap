@@ -1,4 +1,4 @@
 module.exports = {
-	server: "http://localhost:5000"
+	server: "https://development1.varno-domov.si"
 	//server: "https://varno-domov.si"
 };
