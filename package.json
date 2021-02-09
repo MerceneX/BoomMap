@@ -4,28 +4,23 @@
   "description": "Zaključni projekt 2. letnika ITK uni.",
   "main": "server.js",
   "dependencies": {
-    "axios": "^0.18.1",
-    "body-parser": "^1.19.0",
-    "concurrently": "^4.1.2",
+    "axios": "^0.21.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongodb": "^3.5.4",
-    "mongoose": "^5.9.2",
-    "nodemon": "^1.19.4",
-    "npm-update-all": "^1.0.1",
-    "request": "^2.88.2",
-    "rss-parser": "^3.7.5",
-    "typeface-roboto": "0.0.75"
+    "mongodb": "^3.6.3",
+    "dotenv": "^8.2.0",
+    "xml2js": "^0.4.23"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.7"
+  },
   "scripts": {
-    "client-install": "cd client & npm install",
-    "start": "node server.js",
-    "server": "nodemon server.js",
+    "c-install": "cd client & npm install",
+    "dev": "cross-env NODE_ENV=development node server.js",
+    "prod": "NODE_ENV=production node server.js",
     "client": "cd client & npm start",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "update-all": "npm install & npm run client-install",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install cd client && npm run build"
+    "i-dep": "npm install & npm run client-install"
   },
   "repository": {
     "type": "git",
@@ -35,7 +30,8 @@
     "react",
     "node",
     "express",
-    "mongodb"
+    "mongodb",
+    "python"
   ],
   "author": "Marko, Maruša, Nataša, Pina",
   "license": "ISC",

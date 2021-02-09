@@ -3,9 +3,11 @@ services:
   server:
     restart: always
     container_name: varno_domov_server
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - "8088:5000"
+      - "32322:5000"
     links:
       - react
     networks:
@@ -15,7 +17,7 @@ services:
     container_name: varno_domov_client
     build: client/
     ports:
-      - "8080:3000"
+      - "32323:80"
     networks:
       - varnodomovnetwork
 networks:

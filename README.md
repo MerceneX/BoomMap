@@ -92,62 +92,19 @@ Atribut naslov poda kratek opis o tej poizvedbi, podatki vsebujejo polje objekto
   "nesrece":119486
   }]}
 
-## Dokerizacija
+## Namestitev
 
-### Server
+### FERI Portainer
 
-Dockerfile:
+1. Potrebno je zgraditi Docker slike kot je pripravljeno v Makefile po receptu "build-prod-from-master". Podatkovno bazo je potrebno namestiti samo prvič, če ne izvajamo posodobitev.
+2. Za dostop do FERI Portainer rešitve, je potrebna uporaba ForcePoint VPN in prijava s študentsko identiteto.
+3. Prijavimo se v Portainer na naslednji povezavi: https://zabojnik.informatika.uni-mb.si/portainer/#/auth s podatki pridobljeni od skrbnika go. Streharja.
+4. Če nameščamo prvič je potrebno najprej ustvariti notranje omrežje zabojnikov.
+5. Nato ustvarimo še trajni "volume" za podatkovno bazo.
+6. Naložimo vse Docker slike (če namestitev posodabljamo, je potrebno ustaviti zabojnike in slike odtraniti pred ponovnim nalaganjem).
+7. Ustvarimo zabojnik iz Docker slike za podatkovno bazo, ji pripnemo trajni zapis, ki smo ga predhodno ustvarili in prav tako zabojnik vključimo v ustvarjeno omrežje in dodelimo IP in hostname. Ne smemo pozabiti na izpostavitev porta navzven.
+8. Enak postopek ponovimo za spletni strežnik z Node in uporabniški del React.
+9. Pomembno je, da pravilno nastavimo tudi spremenljivke okolja (environment variables) v .env.production za odjemalca in strežnik. Strežnik potrebuje v spremenljivki "DBURI" IP zabojnika znotraj omrežja in "DBNAME" za ime podatkovne baze. Za .env.production odjemalca, pa potrebujemo le nastaviti "REACT_APP_SERVER" na https://varno-domov.si, da se podatko prenašajo preko HTTPS.
+10. Arhitekturo si lahko ogledamo na spodnji fotografiji.
 
-```
-FROM node:10
-
-# Create app directory
-WORKDIR /usr/src/app
-
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
-
-RUN npm install
-# If you are building your code for production
-# RUN npm ci --only=production
-
-# Bundle app source
-COPY . .
-
-EXPOSE 5000
-CMD [ "node", "server.js" ]
-```
-
-Build image with `docker build -t express .`
-Start container with `docker run -d -p 8088:5000 express`
-
-### Client
-
-Dockerfile:
-
-```
-FROM node:10
-
-# Create app directory
-WORKDIR /usr/src/app
-
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
-
-RUN npm install
-# If you are building your code for production
-# RUN npm ci --only=production
-
-# Bundle app source
-COPY . .
-
-EXPOSE 3000
-CMD [ "npm", "start" ]
-```
-
-Build image with `docker build -t react .`
-Start container with `docker run -d -p 8080:3000 react`
+    ![Arhitektura Portainer Namestitve](/READMEAttachments/PortainerArchitecture.jpg)

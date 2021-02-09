@@ -1,5 +1,6 @@
+setupEnv(process.env.NODE_ENV);
+
 const express = require("express"),
-	bodyParser = require("body-parser"),
 	app = express(),
 	cors = require("cors");
 
@@ -29,3 +30,16 @@ database.connect(err => {
 		app.listen(port, () => console.log(`Server started on port ${port}`));
 	}
 });
+
+function setupEnv(env) {
+	if (env) {
+		require('dotenv').config({
+			path: `${__dirname}/.env.${process.env.NODE_ENV}`
+		});
+		console.log(`${__dirname}/.env.${process.env.NODE_ENV}`);
+	} else {
+		console.log(`${__dirname}/.env.${process.env.NODE_ENV}`);
+		console.log("Please specify apps running environment.\nExiting...");
+		process.exit(1);
+	}
+}
