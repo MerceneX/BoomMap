@@ -3,7 +3,9 @@ services:
   server:
     restart: always
     container_name: varno_domov_server
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "32322:5000"
     links:
