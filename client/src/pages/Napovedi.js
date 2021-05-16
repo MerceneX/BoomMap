@@ -1,8 +1,8 @@
-import React from "react";
-import TrafficForecast from "../components/rss/TrafficForecast";
-import ForecastBannerImgLeft from "../components/design/ForecastBanner_left.svg";
-import ForecastBannerImgRight from "../components/design/ForecastBanner_right.svg";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import TrafficForecast from '../components/rss/TrafficForecast';
+import ForecastBannerImgLeft from '../components/design/ForecastBanner_left.svg';
+import ForecastBannerImgRight from '../components/design/ForecastBanner_right.svg';
+import { Helmet } from 'react-helmet';
 
 class StanjeNaCestah extends React.Component {
   render() {

@@ -1,13 +1,13 @@
-const express = require("express"),
+const express = require('express'),
   router = express.Router({ mergeParams: true }),
-  ContentGuy = require("../lib/content/ContentGuy"),
-  RoadEventsOptions = require("../lib/content/road-events/RoadEventsQueryOptions"),
-  NewsOptions = require("../lib/content/news/NewsQueryOptions"),
-  RoadConditionsOptions = require("../lib/content/road-conditions/RoadConditionsQueryOptions"),
-  TrafficForecastOptions = require("../lib/content/traffic-forecast/TrafficForecastQueryOptions"),
-  BordersQueryOptions = require("../lib/content/borders/BordersQueryOptions");
+  ContentGuy = require('../lib/content/ContentGuy'),
+  RoadEventsOptions = require('../lib/content/road-events/RoadEventsQueryOptions'),
+  NewsOptions = require('../lib/content/news/NewsQueryOptions'),
+  RoadConditionsOptions = require('../lib/content/road-conditions/RoadConditionsQueryOptions'),
+  TrafficForecastOptions = require('../lib/content/traffic-forecast/TrafficForecastQueryOptions'),
+  BordersQueryOptions = require('../lib/content/borders/BordersQueryOptions');
 
-router.get("/news", async (req, res) => {
+router.get('/news', async (req, res) => {
   cGuy = ContentGuy.getInstance();
   const options = new NewsOptions(
     req.query.term,
@@ -22,7 +22,7 @@ router.get("/news", async (req, res) => {
   res.json(response);
 });
 
-router.get("/road-conditions", async (req, res) => {
+router.get('/road-conditions', async (req, res) => {
   cGuy = ContentGuy.getInstance();
   const options = new RoadConditionsOptions(
     req.query.term,
@@ -37,7 +37,7 @@ router.get("/road-conditions", async (req, res) => {
   res.json(response);
 });
 
-router.get("/traffic-forecast", async (req, res) => {
+router.get('/traffic-forecast', async (req, res) => {
   cGuy = ContentGuy.getInstance();
   const options = new TrafficForecastOptions(
     req.query.term,
@@ -52,7 +52,7 @@ router.get("/traffic-forecast", async (req, res) => {
   res.json(response);
 });
 
-router.get("/road-events", async (req, res) => {
+router.get('/road-events', async (req, res) => {
   cGuy = ContentGuy.getInstance();
   const options = new RoadEventsOptions(
     req.query.term,
@@ -67,7 +67,7 @@ router.get("/road-events", async (req, res) => {
   res.json(response);
 });
 
-router.get("/borders", async (req, res) => {
+router.get('/borders', async (req, res) => {
   cGuy = ContentGuy.getInstance();
   const options = new BordersQueryOptions(
     req.query.term,

@@ -1,13 +1,13 @@
-import React from "react";
-import { Container, Row, Col } from "reactstrap";
-import MG from "../components/design/MG.jpg";
-import MK from "../components/design/MK.jpg";
-import PG from "../components/design/PG.jpg";
-import NF from "../components/design/NF.jpg";
-import Plaque from "../components/design/Plaque.png";
-import "../components/design/App.css";
-import IdeaIcon from "../components/design/IdeaIcon.svg";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import { Container, Row, Col } from 'reactstrap';
+import MG from '../components/design/MG.jpg';
+import MK from '../components/design/MK.jpg';
+import PG from '../components/design/PG.jpg';
+import NF from '../components/design/NF.jpg';
+import Plaque from '../components/design/Plaque.png';
+import '../components/design/App.css';
+import IdeaIcon from '../components/design/IdeaIcon.svg';
+import { Helmet } from 'react-helmet';
 
 function About() {
   return (
@@ -54,8 +54,7 @@ function About() {
                 lahko ogledate na
                 <a
                   className="emphasisedLink"
-                  href="https://dsi2020.dsi-konferenca.si/"
-                >
+                  href="https://dsi2020.dsi-konferenca.si/">
                   naslednji povezavi.
                 </a>
               </p>
@@ -95,7 +94,7 @@ function About() {
               udeležencev prometa mogoče narediti še več. Sami smo s to mislijo,
               skovali vizijo o spletni rešitvi, ki bi zajemala naprednejšo in
               učinkovitejšo klasifikacijo cestnih odsekov, ter oceno stopnje
-              njihove nevarnosti.{" "}
+              njihove nevarnosti.{' '}
             </p>
           </Col>
         </Row>

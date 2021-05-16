@@ -1,22 +1,22 @@
-import React from "react";
-import axios from "axios";
+import React from 'react';
+import axios from 'axios';
 
-const serverLocation = require("../../config/keys.js").server;
+const serverLocation = require('../../config/keys.js').server;
 
 var data = [];
 
 class DogodkiNaCestah extends React.Component {
   state = {
     datag: [],
-    title: [],
+    title: []
   };
 
   componentDidMount() {
-    axios.get(`${serverLocation}/api/content/road-events`).then((res) => {
+    axios.get(`${serverLocation}/api/content/road-events`).then(res => {
       this.setState({ datag: res.data.items.slice(0, 10) }, () =>
-        console.log("Updated state")
+        console.log('Updated state')
       );
-      this.setState({ title: res.data }, () => console.log("Updated state"));
+      this.setState({ title: res.data }, () => console.log('Updated state'));
 
       for (var key in this.state) {
         data.push(this.state[key]);
@@ -27,7 +27,7 @@ class DogodkiNaCestah extends React.Component {
   render() {
     let numbers;
     if (this.state.datag[0]) {
-      numbers = this.state.datag[0].map((item) => {
+      numbers = this.state.datag[0].map(item => {
         const datePublished = new Date(item.datePublished);
         return (
           <div className="ContentStyle">

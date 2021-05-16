@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent } from 'react';
 import {
   BarChart,
   Bar,
@@ -8,22 +8,22 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  Label,
-} from "recharts";
+  Label
+} from 'recharts';
 
-import axios from "axios";
+import axios from 'axios';
 
 var data = [];
 
-const serverLocation = require("../../config/keys.js").server;
+const serverLocation = require('../../config/keys.js').server;
 
 export default class NesreceUdelezenci extends PureComponent {
   state = {
-    datac: [],
+    datac: []
   };
 
   componentDidMount() {
-    axios.get(`${serverLocation}/api/graph/28`).then((res) => {
+    axios.get(`${serverLocation}/api/graph/28`).then(res => {
       this.setState({ datac: res.data });
       for (var key in this.state) {
         data.push(this.state[key]);
@@ -41,9 +41,8 @@ export default class NesreceUdelezenci extends PureComponent {
           top: 5,
           right: 30,
           left: 20,
-          bottom: 5,
-        }}
-      >
+          bottom: 5
+        }}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="udelezenec" interval={0} fontSize={3} />
         <YAxis />
@@ -52,7 +51,7 @@ export default class NesreceUdelezenci extends PureComponent {
         <Bar
           dataKey="nesrece"
           fill="#419873"
-          label={{ fill: "black", fontSize: 12 }}
+          label={{ fill: 'black', fontSize: 12 }}
         />
       </BarChart>
     );

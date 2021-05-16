@@ -1,59 +1,59 @@
-import React from "react";
-import Select from "react-select";
-import Button from "@material-ui/core/Button";
-import { Row, Col } from "reactstrap";
-import TimePicker from "rc-time-picker";
-import "rc-time-picker/assets/index.css";
+import React from 'react';
+import Select from 'react-select';
+import Button from '@material-ui/core/Button';
+import { Row, Col } from 'reactstrap';
+import TimePicker from 'rc-time-picker';
+import 'rc-time-picker/assets/index.css';
 
 const day_options = [
-  { value: "0", label: "Ponedeljek" },
-  { value: "1", label: "Torek" },
-  { value: "2", label: "Sreda" },
-  { value: "3", label: "Četrtek" },
-  { value: "4", label: "Petek" },
-  { value: "5", label: "Sobota" },
-  { value: "6", label: "Nedelja" },
+  { value: '0', label: 'Ponedeljek' },
+  { value: '1', label: 'Torek' },
+  { value: '2', label: 'Sreda' },
+  { value: '3', label: 'Četrtek' },
+  { value: '4', label: 'Petek' },
+  { value: '5', label: 'Sobota' },
+  { value: '6', label: 'Nedelja' }
 ];
 
 const weather_options = [
-  { value: "J", label: "Jasno" },
-  { value: "D", label: "Deževno" },
-  { value: "O", label: "Oblačno" },
-  { value: "S", label: "Sneg" },
-  { value: "V", label: "Veter" },
-  { value: "M", label: "Megla" },
+  { value: 'J', label: 'Jasno' },
+  { value: 'D', label: 'Deževno' },
+  { value: 'O', label: 'Oblačno' },
+  { value: 'S', label: 'Sneg' },
+  { value: 'V', label: 'Veter' },
+  { value: 'M', label: 'Megla' }
 ];
 
 const month_options = [
-  { value: "1", label: "Januar" },
-  { value: "2", label: "Februar" },
-  { value: "3", label: "Marec" },
-  { value: "4", label: "April" },
-  { value: "5", label: "Maj" },
-  { value: "6", label: "Junij" },
-  { value: "7", label: "Julij" },
-  { value: "8", label: "Avgust" },
-  { value: "9", label: "September" },
-  { value: "10", label: "Oktober" },
-  { value: "11", label: "November" },
-  { value: "12", label: "December" },
+  { value: '1', label: 'Januar' },
+  { value: '2', label: 'Februar' },
+  { value: '3', label: 'Marec' },
+  { value: '4', label: 'April' },
+  { value: '5', label: 'Maj' },
+  { value: '6', label: 'Junij' },
+  { value: '7', label: 'Julij' },
+  { value: '8', label: 'Avgust' },
+  { value: '9', label: 'September' },
+  { value: '10', label: 'Oktober' },
+  { value: '11', label: 'November' },
+  { value: '12', label: 'December' }
 ];
 
 const surface_options = [
-  { value: "suho", label: "Suho" },
-  { value: "M", label: "Mokro" },
-  { value: "SL", label: "Sneženo" },
+  { value: 'suho', label: 'Suho' },
+  { value: 'M', label: 'Mokro' },
+  { value: 'SL', label: 'Sneženo' }
 ];
 export default class CustomFilter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedDay: "-1",
-      selectedMonth: "-1",
-      selectedTime: "-1",
-      selectedWeather: "N",
-      surface: { general: "ne_suho", type: "SU" },
-      visible: "hidden",
+      selectedDay: '-1',
+      selectedMonth: '-1',
+      selectedTime: '-1',
+      selectedWeather: 'N',
+      surface: { general: 'ne_suho', type: 'SU' },
+      visible: 'hidden'
     };
     this.handleDayChange = this.handleDayChange.bind(this);
     this.handleTimeChange = this.handleTimeChange.bind(this);
@@ -63,46 +63,46 @@ export default class CustomFilter extends React.Component {
     this.changeVisibility = this.changeVisibility.bind(this);
   }
 
-  changeVisibility = (visibility) => {
+  changeVisibility = visibility => {
     this.setState({ visible: visibility });
   };
-  handleDayChange = (selected) => {
+  handleDayChange = selected => {
     !selected
       ? this.setState({ selectedDay: -1 })
       : this.setState({ selectedDay: selected.value });
   };
-  handleMonthChange = (selected) => {
+  handleMonthChange = selected => {
     !selected
       ? this.setState({ selectedMonth: -1 })
       : this.setState({ selectedMonth: selected.value });
   };
-  handleWeatherChange = (selected) => {
+  handleWeatherChange = selected => {
     !selected
       ? this.setState({ selectedWeather: -1 })
       : this.setState({ selectedWeather: selected.value });
   };
   handleTimeChange(event) {
     event
-      ? this.setState({ selectedTime: event.format("HH") + ".0" })
+      ? this.setState({ selectedTime: event.format('HH') + '.0' })
       : this.setState({ selectedTime: -1 });
   }
   handleSurfaceChange(selected) {
-    let surfaceChoice = "";
+    let surfaceChoice = '';
     if (selected) {
-      if (selected.value !== "suho") {
+      if (selected.value !== 'suho') {
         surfaceChoice = {
-          general: "ne_suho",
-          type: selected.value,
+          general: 'ne_suho',
+          type: selected.value
         };
       } else {
         surfaceChoice = {
-          general: "suho",
-          type: "suho",
+          general: 'suho',
+          type: 'suho'
         };
       }
     }
     !selected
-      ? this.setState({ surface: "ne_suho" })
+      ? this.setState({ surface: 'ne_suho' })
       : this.setState({ surface: surfaceChoice });
   }
   handleSubmit(event) {
@@ -111,7 +111,7 @@ export default class CustomFilter extends React.Component {
       Cas_Nesrece: this.state.selectedTime,
       dan_v_tednu: this.state.selectedDay,
       mesec: this.state.selectedMonth,
-      PRPV_Povrsje: this.state.surface,
+      PRPV_Povrsje: this.state.surface
     };
 
     this.props.change(state, this.state.surface);
@@ -155,7 +155,7 @@ export default class CustomFilter extends React.Component {
 
           <br />
           <TimePicker
-            placeholder={"Čas..."}
+            placeholder={'Čas...'}
             showSecond={false}
             onChange={this.handleTimeChange}
           />
@@ -164,7 +164,7 @@ export default class CustomFilter extends React.Component {
           <Row>
             <Col>
               <Button variant="outlined" type="submit">
-                Prikaži{" "}
+                Prikaži{' '}
               </Button>
             </Col>
           </Row>

@@ -1,3 +1,3 @@
 module.exports = {
-  server: process.env.REACT_APP_SERVER,
+  server: process.env.REACT_APP_SERVER
 };

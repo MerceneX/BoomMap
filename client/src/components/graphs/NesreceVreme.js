@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent } from 'react';
 import {
   AreaChart,
   Area,
@@ -6,21 +6,21 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
-} from "recharts";
+  Legend
+} from 'recharts';
 
-import axios from "axios";
+import axios from 'axios';
 
 var data = [];
-const serverLocation = require("../../config/keys.js").server;
+const serverLocation = require('../../config/keys.js').server;
 
 export default class NesreceVreme extends PureComponent {
   state = {
-    datag: [],
+    datag: []
   };
 
   componentDidMount() {
-    axios.get(`${serverLocation}/api/graph/25`).then((res) => {
+    axios.get(`${serverLocation}/api/graph/25`).then(res => {
       this.setState({ datag: res.data });
       for (var key in this.state) {
         data.push(this.state[key]);
@@ -38,9 +38,8 @@ export default class NesreceVreme extends PureComponent {
           top: 10,
           right: 30,
           left: 0,
-          bottom: 0,
-        }}
-      >
+          bottom: 0
+        }}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="vreme" interval={0} fontSize={10} />
         <YAxis />
@@ -51,7 +50,7 @@ export default class NesreceVreme extends PureComponent {
           dataKey="nesrece"
           stroke="#0091b0"
           fill="#0091b0"
-          dot={{ fill: "#008080", strokeWidth: 1 }}
+          dot={{ fill: '#008080', strokeWidth: 1 }}
         />
       </AreaChart>
     );

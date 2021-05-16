@@ -1,8 +1,8 @@
-import React from "react";
-import News from "../components/rss/News";
-import NewsBannerImgLeft from "../components/design/NewsBanner_left.svg";
-import NewsBannerImgRight from "../components/design/NewsBanner_right.svg";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import News from '../components/rss/News';
+import NewsBannerImgLeft from '../components/design/NewsBanner_left.svg';
+import NewsBannerImgRight from '../components/design/NewsBanner_right.svg';
+import { Helmet } from 'react-helmet';
 
 class Novice extends React.Component {
   render() {

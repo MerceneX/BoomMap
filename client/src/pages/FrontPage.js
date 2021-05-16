@@ -1,14 +1,14 @@
-import React from "react";
-import "../components/design/App.css";
-import { Container, Row, Col } from "reactstrap";
-import NewsIcon from "../components/design/NewsIcon.svg";
-import EventsIcon from "../components/design/EventsIcon.svg";
-import ForecastIcon from "../components/design/ForecastIcon.svg";
-import MapIcon from "../components/design/MapIcon.svg";
-import GraphIcon from "../components/design/GraphIcon.svg";
-import AboutIcon from "../components/design/AboutIcon.svg";
-import { FaAngleRight } from "react-icons/fa";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import '../components/design/App.css';
+import { Container, Row, Col } from 'reactstrap';
+import NewsIcon from '../components/design/NewsIcon.svg';
+import EventsIcon from '../components/design/EventsIcon.svg';
+import ForecastIcon from '../components/design/ForecastIcon.svg';
+import MapIcon from '../components/design/MapIcon.svg';
+import GraphIcon from '../components/design/GraphIcon.svg';
+import AboutIcon from '../components/design/AboutIcon.svg';
+import { FaAngleRight } from 'react-icons/fa';
+import { Helmet } from 'react-helmet';
 
 function FrontPage(props) {
   return (
@@ -62,7 +62,7 @@ function FrontPage(props) {
             </h5>
             <p>
               Prikaz kritičnih odsekov na slovenskih cestah, z možnostjo
-              prilagoditve parametrov na trenutne razmere cest.{" "}
+              prilagoditve parametrov na trenutne razmere cest.{' '}
             </p>
             <a href="/zemljevid">
               Preberi več <FaAngleRight />
@@ -97,7 +97,7 @@ function FrontPage(props) {
               <b>O projektu</b>
             </h5>
             <p>
-              {" "}
+              {' '}
               Zgodba o ideji, viziji, razvoju projekta in kdo stoji za njim.
             </p>
             <a href="/onas">
@@ -131,7 +131,7 @@ function FrontPage(props) {
             </h5>
             <p>
               Prometna poročila, stanja na mejnihi prehodih in aktualni dogodki
-              na cestah.{" "}
+              na cestah.{' '}
             </p>
             <a href="/stanjenacestah">
               Preberi več <FaAngleRight />
@@ -149,7 +149,7 @@ function FrontPage(props) {
             </h5>
             <p>
               Napovedi prometa za prihajajoče dni, posebnosti na cesti, dogodki
-              in ostale pomembne informacije.{" "}
+              in ostale pomembne informacije.{' '}
             </p>
             <a href="/napovedi">
               Preberi več <FaAngleRight />

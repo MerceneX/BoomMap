@@ -1,6 +1,6 @@
-import React from "react";
-import Checkbox from "react-simple-checkbox";
-import { Row, Col } from "reactstrap";
+import React from 'react';
+import Checkbox from 'react-simple-checkbox';
+import { Row, Col } from 'reactstrap';
 
 class Legend extends React.Component {
   constructor(props) {
@@ -9,7 +9,7 @@ class Legend extends React.Component {
       checkboxHighChecked: false,
       checkboxMediumChecked: false,
       checkboxLowChecked: false,
-      selectedCheckboxes: { 4: false, 3: false, 2: false },
+      selectedCheckboxes: { 4: false, 3: false, 2: false }
     };
   }
   checkboxHighChanged = () => {
@@ -21,8 +21,8 @@ class Legend extends React.Component {
             selectedCheckboxes: {
               4: this.state.checkboxHighChecked,
               3: this.state.checkboxMediumChecked,
-              2: this.state.checkboxLowChecked,
-            },
+              2: this.state.checkboxLowChecked
+            }
           },
           () => {
             this.props.change(this.state.selectedCheckboxes);
@@ -40,8 +40,8 @@ class Legend extends React.Component {
             selectedCheckboxes: {
               4: this.state.checkboxHighChecked,
               3: this.state.checkboxMediumChecked,
-              2: this.state.checkboxLowChecked,
-            },
+              2: this.state.checkboxLowChecked
+            }
           },
           () => {
             this.props.change(this.state.selectedCheckboxes);
@@ -59,8 +59,8 @@ class Legend extends React.Component {
             selectedCheckboxes: {
               4: this.state.checkboxHighChecked,
               3: this.state.checkboxMediumChecked,
-              2: this.state.checkboxLowChecked,
-            },
+              2: this.state.checkboxLowChecked
+            }
           },
           () => {
             this.props.change(this.state.selectedCheckboxes);
@@ -87,7 +87,7 @@ class Legend extends React.Component {
               checked={this.state.checkboxHighChecked}
             />
           </Col>
-          <Col md={"6"} />
+          <Col md={'6'} />
         </Row>
         <Row>
           <Col>
@@ -102,7 +102,7 @@ class Legend extends React.Component {
               checked={this.state.checkboxMediumChecked}
             />
           </Col>
-          <Col md={"6"} />
+          <Col md={'6'} />
         </Row>
         <Row>
           <Col>
@@ -117,7 +117,7 @@ class Legend extends React.Component {
               checked={this.state.checkboxLowChecked}
             />
           </Col>
-          <Col md={"6"} />
+          <Col md={'6'} />
         </Row>
       </div>
     );

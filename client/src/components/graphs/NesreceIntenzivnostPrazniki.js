@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import { PieChart, Pie, Sector } from "recharts";
+import React, { Component } from 'react';
+import { PieChart, Pie, Sector } from 'recharts';
 
-import axios from "axios";
+import axios from 'axios';
 
 var data = [];
 
-const renderActiveShape = (props) => {
+const renderActiveShape = props => {
   const RADIAN = Math.PI / 180;
   const {
     cx,
@@ -18,7 +18,7 @@ const renderActiveShape = (props) => {
     fill,
     payload,
     percent,
-    value,
+    value
   } = props;
   const sin = Math.sin(-RADIAN * midAngle);
   const cos = Math.cos(-RADIAN * midAngle);
@@ -28,7 +28,7 @@ const renderActiveShape = (props) => {
   const my = cy + (outerRadius + 30) * sin;
   const ex = mx + (cos >= 0 ? 1 : -1) * 22;
   const ey = my;
-  const textAnchor = cos >= 0 ? "start" : "end";
+  const textAnchor = cos >= 0 ? 'start' : 'end';
 
   return (
     <g>
@@ -63,30 +63,28 @@ const renderActiveShape = (props) => {
         x={ex + (cos >= 0 ? 1 : -1) * 12}
         y={ey}
         textAnchor={textAnchor}
-        fill="#333"
-      >{`${value}`}</text>
+        fill="#333">{`${value}`}</text>
       <text
         x={ex + (cos >= 0 ? 1 : -1) * 12}
         y={ey}
         dy={18}
         textAnchor={textAnchor}
-        fill="#999"
-      >
+        fill="#999">
         {`(Rate ${(percent * 100).toFixed(2)}%)`}
       </text>
     </g>
   );
 };
 
-const serverLocation = require("../../config/keys.js").server;
+const serverLocation = require('../../config/keys.js').server;
 export default class NesreceIntenzivnostPrazniki extends Component {
   state = {
     datag: [],
-    activeIndex: 0,
+    activeIndex: 0
   };
 
   componentDidMount() {
-    axios.get(`${serverLocation}/api/graph/36`).then((res) => {
+    axios.get(`${serverLocation}/api/graph/36`).then(res => {
       this.setState({ datag: res.data });
       for (var key in this.state) {
         data.push(this.state[key]);
@@ -96,7 +94,7 @@ export default class NesreceIntenzivnostPrazniki extends Component {
 
   onPieEnter = (data, index) => {
     this.setState({
-      activeIndex: index,
+      activeIndex: index
     });
   };
 

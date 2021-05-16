@@ -1,12 +1,12 @@
-import React from "react";
-import Typography from "@material-ui/core/Typography";
-import PropTypes from "prop-types";
-import "../design/App.css";
-import { withStyles } from "@material-ui/core";
+import React from 'react';
+import Typography from '@material-ui/core/Typography';
+import PropTypes from 'prop-types';
+import '../design/App.css';
+import { withStyles } from '@material-ui/core';
 
-import Domovanje from "../design/structure_domovanje_logo_360x65.png";
-import UM from "../design/UMLogo.png";
-import FERI from "../design/FERILogo.png";
+import Domovanje from '../design/structure_domovanje_logo_360x65.png';
+import UM from '../design/UMLogo.png';
+import FERI from '../design/FERILogo.png';
 
 function Footer(props) {
   return (
@@ -28,8 +28,7 @@ function Footer(props) {
         variant="subtitle1"
         align="center"
         color="textSecondary"
-        component="p"
-      >
+        component="p">
         Kontakt: info@varno-domov.si
       </Typography>
     </footer>
@@ -37,13 +36,13 @@ function Footer(props) {
 }
 
 Footer.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
-const styles = (theme) => ({
+const styles = theme => ({
   footer: {
-    backgroundColor: "#E1DDDB",
-    padding: theme.spacing.unit * 6,
-  },
+    backgroundColor: '#E1DDDB',
+    padding: theme.spacing.unit * 6
+  }
 });
 export default withStyles(styles)(Footer);

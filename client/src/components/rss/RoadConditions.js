@@ -1,20 +1,20 @@
-import React from "react";
-import axios from "axios";
-import parse from "html-react-parser";
-const serverLocation = require("../../config/keys.js").server;
+import React from 'react';
+import axios from 'axios';
+import parse from 'html-react-parser';
+const serverLocation = require('../../config/keys.js').server;
 
 var data = [];
 var parsed;
 class RoadConditions extends React.Component {
   state = {
-    datag: [],
+    datag: []
   };
 
   componentDidMount() {
     axios
       .get(`${serverLocation}/api/content/road-conditions?limit=1`)
-      .then((res) => {
-        this.setState({ datag: res.data }, () => console.log("Updated state"));
+      .then(res => {
+        this.setState({ datag: res.data }, () => console.log('Updated state'));
         for (var key in this.state) {
           data.push(this.state[key]);
         }
@@ -24,8 +24,8 @@ class RoadConditions extends React.Component {
   render() {
     let numbers;
     if (this.state.datag.items) {
-      numbers = this.state.datag.items[0].map((item) => {
-        parsed = parse("" + item.description + "");
+      numbers = this.state.datag.items[0].map(item => {
+        parsed = parse('' + item.description + '');
         const datePublished = new Date(item.datePublished);
         return (
           <div className="ContentStyle">
@@ -34,7 +34,7 @@ class RoadConditions extends React.Component {
                 <b>{item.title}</b>
               </h5>
               <p className="date">
-                {datePublished.getDay()}. {datePublished.getMonth()}.&nbsp;{" "}
+                {datePublished.getDay()}. {datePublished.getMonth()}.&nbsp;{' '}
                 {datePublished.getFullYear()}
               </p>
             </div>

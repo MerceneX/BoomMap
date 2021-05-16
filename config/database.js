@@ -1,13 +1,13 @@
-const configKeys = require("./keys");
-const MongoClient = require("mongodb").MongoClient;
-const ObjectID = require("mongodb").ObjectID;
+const configKeys = require('./keys');
+const MongoClient = require('mongodb').MongoClient;
+const ObjectID = require('mongodb').ObjectID;
 const mongoOptions = { useNewUrlParser: true, useUnifiedTopology: true };
 
 const state = {
-  db: null,
+  db: null
 };
 
-const connect = (cb) => {
+const connect = cb => {
   if (state.db) cb();
   else {
     MongoClient.connect(configKeys.mongoURI, mongoOptions, (err, client) => {
@@ -19,7 +19,7 @@ const connect = (cb) => {
     });
   }
 };
-const getPrimaryKey = (_id) => {
+const getPrimaryKey = _id => {
   return ObjectID(_id);
 };
 

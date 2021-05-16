@@ -1,14 +1,14 @@
-import React from "react";
-import Borders from "../components/rss/Borders";
-import RoadConditions from "../components/rss/RoadConditions";
-import RoadEvents from "../components/rss/RoadEvents";
-import ReportBannerLeft from "../components/design/ReportBanner_left.svg";
-import ReportBannerRight from "../components/design/ReportBanner_right.svg";
-import BorderBannerLeft from "../components/design/BorderBanner_left.svg";
-import BorderBannerRight from "../components/design/BorderBanner_right.svg";
-import EventsBannerLeft from "../components/design/EventsBanner_left.svg";
-import EventsBannerRight from "../components/design/EventsBanner_right.svg";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import Borders from '../components/rss/Borders';
+import RoadConditions from '../components/rss/RoadConditions';
+import RoadEvents from '../components/rss/RoadEvents';
+import ReportBannerLeft from '../components/design/ReportBanner_left.svg';
+import ReportBannerRight from '../components/design/ReportBanner_right.svg';
+import BorderBannerLeft from '../components/design/BorderBanner_left.svg';
+import BorderBannerRight from '../components/design/BorderBanner_right.svg';
+import EventsBannerLeft from '../components/design/EventsBanner_left.svg';
+import EventsBannerRight from '../components/design/EventsBanner_right.svg';
+import { Helmet } from 'react-helmet';
 
 class StanjeNaCestah extends React.Component {
   render() {

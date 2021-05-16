@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import "leaflet/dist/leaflet.css";
-import Select from "react-select";
-import Map from "../components/Map";
-import Legend from "../components/Legend";
-import CustomFilter from "../components/CustomFilter";
-import { Helmet } from "react-helmet";
+import React, { Component } from 'react';
+import 'leaflet/dist/leaflet.css';
+import Select from 'react-select';
+import Map from '../components/Map';
+import Legend from '../components/Legend';
+import CustomFilter from '../components/CustomFilter';
+import { Helmet } from 'react-helmet';
 
 const options = [
-  { value: "current", label: "Trenutno stanje" },
-  { value: "all", label: "Kritični odseki" },
+  { value: 'current', label: 'Trenutno stanje' },
+  { value: 'all', label: 'Kritični odseki' }
 ];
 
 class SimpleMap extends Component {
@@ -18,21 +18,21 @@ class SimpleMap extends Component {
     this.legendElement = React.createRef();
     this.customFilter = React.createRef();
     this.state = {
-      selectedOption: "all",
+      selectedOption: 'all'
     };
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange = (selectedOption) => {
+  handleChange = selectedOption => {
     this.mapElement.current.changeOption(selectedOption);
     this.setState({ selectedOption: selectedOption });
-    let visi = selectedOption.value === "all" ? "visible" : "hidden";
+    let visi = selectedOption.value === 'all' ? 'visible' : 'hidden';
     console.log(selectedOption);
     console.log(visi);
     this.customFilter.current.changeVisibility(visi);
   };
 
-  handleLegendChange = (newLegend) => {
+  handleLegendChange = newLegend => {
     this.mapElement.current.changeCriticalLevel(newLegend);
   };
 

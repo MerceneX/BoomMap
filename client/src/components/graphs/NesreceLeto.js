@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent } from 'react';
 import {
   AreaChart,
   Area,
@@ -6,24 +6,24 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
-} from "recharts";
-import axios from "axios";
+  Legend
+} from 'recharts';
+import axios from 'axios';
 
 var data = [];
-const serverLocation = require("../../config/keys.js").server;
+const serverLocation = require('../../config/keys.js').server;
 
 export default class NesreceLeto extends PureComponent {
   state = {
-    dataLeto: [],
+    dataLeto: []
   };
 
   state = {
-    dataLeto: [],
+    dataLeto: []
   };
 
   componentDidMount() {
-    axios.get(`${serverLocation}/api/graph/23`).then((res) => {
+    axios.get(`${serverLocation}/api/graph/23`).then(res => {
       this.setState({ dataLeto: res.data });
       console.log(res.data);
       for (var key in this.state) {
@@ -42,9 +42,8 @@ export default class NesreceLeto extends PureComponent {
           top: 10,
           right: 30,
           left: 0,
-          bottom: 0,
-        }}
-      >
+          bottom: 0
+        }}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="leto" />
         <YAxis />

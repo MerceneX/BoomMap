@@ -1,5 +1,5 @@
-import React, { PureComponent } from "react";
-import axios from "axios";
+import React, { PureComponent } from 'react';
+import axios from 'axios';
 import {
   BarChart,
   Bar,
@@ -7,19 +7,19 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
-} from "recharts";
-const serverLocation = require("../../config/keys.js").server;
+  Legend
+} from 'recharts';
+const serverLocation = require('../../config/keys.js').server;
 
 var data = [];
 
 export default class IntenzivnostPoskodbe extends PureComponent {
   state = {
-    dataLeto: [],
+    dataLeto: []
   };
 
   componentDidMount() {
-    axios.get(`${serverLocation}/api/graph/34`).then((res) => {
+    axios.get(`${serverLocation}/api/graph/34`).then(res => {
       this.setState({ dataLeto: res.data });
       console.log(res.data);
       for (var key in this.state) {
@@ -38,9 +38,8 @@ export default class IntenzivnostPoskodbe extends PureComponent {
           top: 5,
           right: 30,
           left: 20,
-          bottom: 5,
-        }}
-      >
+          bottom: 5
+        }}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="intenzivnost" interval={0} fontSize={6.5} />
         <YAxis domain={[0, 25000]} />
@@ -51,7 +50,7 @@ export default class IntenzivnostPoskodbe extends PureComponent {
           dataKey="nesrece"
           fill="#037253"
           fillOpacity="0.7"
-          label={{ fill: "black", fontSize: 10 }}
+          label={{ fill: 'black', fontSize: 10 }}
         />
       </BarChart>
     );

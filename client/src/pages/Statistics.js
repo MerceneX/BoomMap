@@ -1,27 +1,27 @@
-import React from "react";
-import NesreceLeto from "../components/graphs/NesreceLeto";
-import DneviChart from "../components/graphs/NesreceDnevi";
-import NesreceSpol from "../components/graphs/NesreceSpol";
-import NesreceVzrok from "../components/graphs/NesreceVzrok";
-import NesrecePraznik from "../components/graphs/NesrecePraznik";
-import NesreceVreme from "../components/graphs/NesreceVreme";
-import NesreceCeste from "../components/graphs/NesreceCeste";
-import NesreceStanjePrometa from "../components/graphs/NesreceStanjePrometa";
-import { Container, Row } from "reactstrap";
-import NesreceVozilo from "../components/graphs/NesreceVozilo";
+import React from 'react';
+import NesreceLeto from '../components/graphs/NesreceLeto';
+import DneviChart from '../components/graphs/NesreceDnevi';
+import NesreceSpol from '../components/graphs/NesreceSpol';
+import NesreceVzrok from '../components/graphs/NesreceVzrok';
+import NesrecePraznik from '../components/graphs/NesrecePraznik';
+import NesreceVreme from '../components/graphs/NesreceVreme';
+import NesreceCeste from '../components/graphs/NesreceCeste';
+import NesreceStanjePrometa from '../components/graphs/NesreceStanjePrometa';
+import { Container, Row } from 'reactstrap';
+import NesreceVozilo from '../components/graphs/NesreceVozilo';
 import {
   ButtonDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem,
-} from "reactstrap";
-import Chip from "@material-ui/core/Chip";
-import NesreceIntenzivnostPrazniki from "../components/graphs/NesreceIntenzivnostPrazniki";
-import IntenzivnostPoskodbe from "../components/graphs/IntenzivnostPoskodbe";
-import PoskodbeNedelja from "../components/graphs/PoskodbeNedelja";
-import NesreceTip from "../components/graphs/NesreceTip";
-import TipTrcenja from "../components/graphs/TipTrcenja";
-import { Helmet } from "react-helmet";
+  DropdownItem
+} from 'reactstrap';
+import Chip from '@material-ui/core/Chip';
+import NesreceIntenzivnostPrazniki from '../components/graphs/NesreceIntenzivnostPrazniki';
+import IntenzivnostPoskodbe from '../components/graphs/IntenzivnostPoskodbe';
+import PoskodbeNedelja from '../components/graphs/PoskodbeNedelja';
+import NesreceTip from '../components/graphs/NesreceTip';
+import TipTrcenja from '../components/graphs/TipTrcenja';
+import { Helmet } from 'react-helmet';
 
 class Statistics extends React.Component {
   constructor(props) {
@@ -43,19 +43,19 @@ class Statistics extends React.Component {
         false,
         false,
         false,
-        false,
-      ],
+        false
+      ]
     };
   }
 
   toggle() {
     this.setState({
-      dropdownOpen: !this.state.dropdownOpen,
+      dropdownOpen: !this.state.dropdownOpen
     });
   }
 
   showHide(num) {
-    this.setState((prevState) => {
+    this.setState(prevState => {
       const newItems = [...prevState.show];
       newItems[num] = !newItems[num];
       return { show: newItems };

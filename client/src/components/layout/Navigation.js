@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import { Collapse, Navbar, NavbarToggler, Nav, NavLink } from "reactstrap";
-import { IoIosStats } from "react-icons/io";
-import { IoIosHome } from "react-icons/io";
-import { MdPerson } from "react-icons/md";
-import { FaNewspaper } from "react-icons/fa";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { FaRoad } from "react-icons/fa";
-import { FaCar } from "react-icons/fa";
-import "../design/App.css";
+import React, { useState } from 'react';
+import { Collapse, Navbar, NavbarToggler, Nav, NavLink } from 'reactstrap';
+import { IoIosStats } from 'react-icons/io';
+import { IoIosHome } from 'react-icons/io';
+import { MdPerson } from 'react-icons/md';
+import { FaNewspaper } from 'react-icons/fa';
+import { FaMapMarkerAlt } from 'react-icons/fa';
+import { FaRoad } from 'react-icons/fa';
+import { FaCar } from 'react-icons/fa';
+import '../design/App.css';
 
-const Navigation = (props) => {
+const Navigation = props => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);

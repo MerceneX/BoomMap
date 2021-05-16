@@ -1,6 +1,6 @@
-import React from "react";
-import logo from "../design/VarnoDomovLogo.svg";
-import "../design/App.css";
+import React from 'react';
+import logo from '../design/VarnoDomovLogo.svg';
+import '../design/App.css';
 
 function Header(props) {
   return (
