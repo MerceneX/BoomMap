@@ -21,7 +21,7 @@
   },
   "scripts": {
     "c-install": "cd client & npm install",
-    "dev": "cross-env NODE_ENV=development node server.js",
+    "dev": "cross-env NODE_ENV=development npx nodemon",
     "prod": "NODE_ENV=production node server.js",
     "client": "cd client & npm start",
     "i-dep": "npm install & npm run c-install",
