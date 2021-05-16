@@ -15,23 +15,23 @@ import StanjeNaCestah from "./pages/StanjeNaCestah";
 import Napovedi from "./pages/Napovedi";
 
 function App() {
-	return (
-		<Router>
-			<div className="App">
-				<Header />
-				<Navigation />
+  return (
+    <Router>
+      <div className="App">
+        <Header />
+        <Navigation />
 
-				<Route exact path="/" component={FrontPage} />
-				<Container></Container>
-				<Route path="/statistika" component={Statistics} />
-				<Route path="/onas" component={About} />
-				<Route path="/zemljevid" component={Home} />
-				<Route path="/prometnenovice" component={Novice} />
-				<Route path="/stanjenacestah" component={StanjeNaCestah} />
-				<Route path="/napovedi" component={Napovedi} />
-			</div>
-			<Footer />
-		</Router>
-	);
+        <Route exact path="/" component={FrontPage} />
+        <Container></Container>
+        <Route path="/statistika" component={Statistics} />
+        <Route path="/onas" component={About} />
+        <Route path="/zemljevid" component={Home} />
+        <Route path="/prometnenovice" component={Novice} />
+        <Route path="/stanjenacestah" component={StanjeNaCestah} />
+        <Route path="/napovedi" component={Napovedi} />
+      </div>
+      <Footer />
+    </Router>
+  );
 }
 export default App;
