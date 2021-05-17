@@ -5,7 +5,7 @@ const express = require('express'),
   NewsOptions = require('../lib/content/news/NewsQueryOptions'),
   RoadConditionsOptions = require('../lib/content/road-conditions/RoadConditionsQueryOptions'),
   TrafficForecastOptions = require('../lib/content/traffic-forecast/TrafficForecastQueryOptions'),
-  BordersQueryOptions = require('../lib/content/borders/BordersQueryOptions');
+  BordersQueryOptions = require('../lib/content/borders/DAO/BordersQueryOptions');
 
 router.get('/news', async (req, res) => {
   cGuy = ContentGuy.getInstance();
