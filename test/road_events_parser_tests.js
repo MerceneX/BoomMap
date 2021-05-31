@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 describe('RoadEventsParser', () => {
   describe('Testing road-events parser when parsing data string provided by RoadEventsGuy', () => {
-    const RoadEventsParser = require('../lib/content/road-events/RoadEventsParser');
+    const RoadEventsParser = require('../lib/content/general/infrastructure/parsers/RoadEventsParser');
     it('should provide parsed road events, when string is in the predicted format', async () => {
       /*const expectedResult = {  // TO BE
 				title: 'Stanje na cestah - Dogodki, 10. 02. 2021 16:11:28',
@@ -33,9 +33,9 @@ describe('RoadEventsParser', () => {
         dateUpdated: '2021-02-10T15:10:36.287Z',
         items: [
           {
-            title: 'Zastoj v E59',
-            roadSection: 'A1-E57',
-            location: 'E59',
+            title: 'Zastoj v Maribor - Šentilj',
+            roadSection: 'A1-E57, E59',
+            location: 'Maribor - Šentilj',
             category: 'Zastoj',
             description:
               'A1, Maribor - Šentilj, krožišče Pesnica - priključek Šentilj v smeri Šentilja, Avstrije, zastoj tovornih vozil, dolžina: 2 km.',
@@ -53,7 +53,7 @@ describe('RoadEventsParser', () => {
         ]
       };
 
-      const actualResult = await new RoadEventsParser().parseFeed(data);
+      const actualResult = await RoadEventsParser(data);
 
       expect(actualResult).to.deep.equal(expectedResult);
     });
@@ -64,7 +64,7 @@ describe('RoadEventsParser', () => {
         error: 'Parsing error; No result from parsing.'
       };
 
-      const actualResult = await new RoadEventsParser().parseFeed(data);
+      const actualResult = await RoadEventsParser(data);
 
       expect(actualResult).to.contain(expectedResult);
     });
@@ -74,7 +74,7 @@ describe('RoadEventsParser', () => {
         '<feed xmlns:kazipot="http://www.promet.si" xmlns="http://www.w3.org/2005/Atom">  	<subtitle>Dogodki</subtitle>  	<updated>2021-02-10T15:10:36.287Z</updated>  	<link href="http://www.promet.si" />  	<author>    		<name>DARS d.d.</name>    		<email>info@promet.si</email>  	</author>  	<id>urn:uuid:da7e75e1-05fc-4b93-b27d-8688547dc13a</id>  	<entry>    		<title>A1-E57, E59, Maribor - Šentilj: Zastoj</title>    		<id>tag:promet.si,2000:/_archives/dogodki/493170</id>    		<updated>2021-02-10T15:01:12.59Z</updated>    		<content>A1, Maribor - Šentilj, krožišče Pesnica - priključek Šentilj v smeri Šentilja, Avstrije, zastoj tovornih vozil, dolžina: 2 km.</content>    		<category term="Zastoj" />  	</entry>  	<entry>    		<title>A1-E57, Ljubljana - Maribor: Zastoj</title>    		<id>tag:promet.si,2000:/_archives/dogodki/493169</id>    		<updated>2021-02-10T15:10:36.287Z</updated>    		<content>A1, Ljubljana - Maribor, uvoz Ljubljana Šentjakob - priključek Domžale v smeri Celja, območje zastojev, zamuda: 5 min, dolžina: 4 km.</content>    		<category term="Zastoj" />  	</entry></feed>';
       const expectedResult = { error: 'Parsing error; Attributes not found.' };
 
-      const actualResult = await new RoadEventsParser().parseFeed(data);
+      const actualResult = await RoadEventsParser(data);
 
       expect(actualResult).to.contain(expectedResult);
     });
@@ -84,7 +84,7 @@ describe('RoadEventsParser', () => {
         '<feed xmlns:kazipot="http://www.promet.si" xmlns="http://www.w3.org/2005/Atom">  	<title>Stanje na cestah - Dogodki, 10. 02. 2021 16:11:28</title>  	<subtitle>Dogodki</subtitle>  	<updated>2021-02-10T15:10:36.287Z</updated>  	<link href="http://www.promet.si" />  	<author>    		<name>DARS d.d.</name>    		<email>info@promet.si</email>  	</author>  	<id>urn:uuid:da7e75e1-05fc-4b93-b27d-8688547dc13a</id>  </feed>';
       const expectedResult = { providedInput: data };
 
-      const actualResult = await new RoadEventsParser().parseFeed(data);
+      const actualResult = await RoadEventsParser(data);
 
       expect(actualResult).to.contain(expectedResult);
     });
@@ -109,7 +109,7 @@ describe('RoadEventsParser', () => {
         ]
       };
 
-      const actualResult = await new RoadEventsParser().parseFeed(data);
+      const actualResult = await RoadEventsParser(data);
 
       expect(actualResult).to.deep.equal(expectedResult);
     });

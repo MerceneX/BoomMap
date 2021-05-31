@@ -16,6 +16,14 @@ module.exports = {
         tabWidth: 4,
         singleQuote: true
       }
+    },
+    {
+      files: 'Makefile',
+      options: {
+        tabWidth: 8,
+        singleQuote: true,
+		useTabs: true
+      }
     }
   ]
 };

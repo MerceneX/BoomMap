@@ -7,8 +7,8 @@ const Parsers = require('../lib/content/general/infrastructure/parsers');
 const expect = chai.expect;
 chai.use(require('chai-as-promised'));
 
-describe('ContentService ', () => {
-  describe('Testing ContentService for various branching paths', () => {
+describe('ContentRepository ', () => {
+  describe('Testing ContentRepository for various branching paths', () => {
     it('should instantiate itself.', async () => {
       const Dummy = {};
       const actualResult = await new ContentRepository(Dummy);
