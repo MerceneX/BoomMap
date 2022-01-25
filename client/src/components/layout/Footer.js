@@ -18,9 +18,15 @@ function Footer(props) {
       <div className="sponsorsContainer">
         <h6>Naš izdelek so podprli:</h6>
         <div className="sponsorLogos">
-          <img className="sponsorLogo" src={UM} alt="DomovanjeLogo" />
-          <img className="sponsorLogo" src={FERI} alt="DomovanjeLogo" />
-          <img className="sponsorLogo" src={Domovanje} alt="DomovanjeLogo" />
+          <a href="https://www.um.si">
+            <img className="sponsorLogo" src={UM} alt="UM Logo" />
+          </a>
+          <a href="https://feri.um.si/">
+            <img className="sponsorLogo" src={FERI} alt="FERI Logo" />
+          </a>
+          <a href="https://www.domovanje.com/">
+            <img className="sponsorLogo" src={Domovanje} alt="DomovanjeLogo" />
+          </a>
         </div>
       </div>
       <hr />
