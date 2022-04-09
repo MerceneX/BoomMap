@@ -32,6 +32,7 @@ database.connect(err => {
 });
 
 function setupEnv(env) {
+  //comment for commiit
   if (env) {
     require('dotenv').config({
       path: `${__dirname}/.env.${process.env.NODE_ENV}`

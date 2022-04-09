@@ -15,7 +15,7 @@ router.get('/news', async (req, res) => {
     req.query.dEnd,
     req.query.sort,
     req.query.sortAscDesc,
-    req.query.limit,
+    req.query.limit, //Pattern: Lazy Load
     req.query.skip
   );
   const response = await cGuy.getNews(options);
