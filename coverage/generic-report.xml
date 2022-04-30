@@ -1,0 +1,38 @@
+<testExecutions version="1">
+<file path="test\borders_parser_tests.js">
+<testCase name="Testing BordersParser parser when parsing data string provided by BordersGuy: should provide parsed borders report, when string is in the predicted format" duration="5"/>
+<testCase name="Testing BordersParser parser when parsing data string provided by BordersGuy: should provide a corresponding error message, when data string is empty or otherwise incorrect." duration="1"/>
+<testCase name="Testing BordersParser parser when parsing data string provided by BordersGuy: should provide a corresponding error message, when data string does not contain main attributes" duration="1"/>
+<testCase name="Testing BordersParser parser when parsing data string provided by BordersGuy: should provide only main attributes, when data string is does not include any road event entries." duration="1"/>
+<testCase name="Testing BordersParser parser when parsing data string provided by BordersGuy: should provide a corresponding error message for each entry failing to parse, along with the entry itself in its raw form" duration="1"/>
+</file>
+<file path="test\border_service_tests.js">
+<testCase name="Testing BordersService for various branching paths: should instantiate itself." duration="0"/>
+<testCase name="Testing BordersService for various branching paths: should be able to run its primary method, regardless of input." duration="375"/>
+<testCase name="Testing BordersService for various branching paths: should run updateDB DAO method" duration="178"/>
+<testCase name="Testing BordersService for various branching paths: should run getFromDB DAO method" duration="247"/>
+<testCase name="Testing BordersService for various branching paths: should provide a parsed string to UpdateDB DAO method." duration="208"/>
+</file>
+<file path="test\content_repository_test.js">
+<testCase name="Testing ContentRepository for various branching paths: should instantiate itself." duration="0"/>
+<testCase name="Testing ContentRepository for various branching paths: should be able to run its primary method, regardless of input." duration="0"/>
+<testCase name="Testing ContentRepository for various branching paths: should run updateDB DAO method once per call" duration="1"/>
+<testCase name="Testing ContentRepository for various branching paths: should run getFromDB DAO method once per call" duration="0"/>
+<testCase name="Testing ContentRepository for various branching paths: should provide a parsed string to UpdateDB DAO method." duration="0"/>
+<testCase name="Testing ContentRepository for various branching paths: should provide a json object with an array of items provided by the DAO when called" duration="0"/>
+</file>
+<file path="test\road_conditions_parser_tests.js">
+<testCase name="Testing RoadConditionsParser parser when parsing data string provided by RoadConditionsGuy: should provide parsed road conditions report, when string is in the predicted format" duration="2"/>
+<testCase name="Testing RoadConditionsParser parser when parsing data string provided by RoadConditionsGuy: should provide a corresponding error message, when data string is empty or otherwise incorrect." duration="0"/>
+<testCase name="Testing RoadConditionsParser parser when parsing data string provided by RoadConditionsGuy: should provide a corresponding error message, when data string does not contain main attributes" duration="2"/>
+<testCase name="Testing RoadConditionsParser parser when parsing data string provided by RoadConditionsGuy: should provide parsed road conditions report with only main attributes, when string is in the predicted format, but no entries are contained" duration="2"/>
+<testCase name="Testing RoadConditionsParser parser when parsing data string provided by RoadConditionsGuy: should throw error on recieving an empty string." duration="6"/>
+</file>
+<file path="test\road_events_parser_tests.js">
+<testCase name="Testing road-events parser when parsing data string provided by RoadEventsGuy: should provide parsed road events, when string is in the predicted format" duration="2"/>
+<testCase name="Testing road-events parser when parsing data string provided by RoadEventsGuy: should provide a corresponding error message, when data string is empty or otherwise incorrect." duration="1"/>
+<testCase name="Testing road-events parser when parsing data string provided by RoadEventsGuy: should provide a corresponding error message, when data string does not contain main attributes" duration="2"/>
+<testCase name="Testing road-events parser when parsing data string provided by RoadEventsGuy: should provide only main attributes, when data string is does not include any road event entries." duration="1"/>
+<testCase name="Testing road-events parser when parsing data string provided by RoadEventsGuy: should provide a corresponding error message for each entry failing to parse, along with the entry itself in its raw form" duration="3"/>
+</file>
+</testExecutions>
