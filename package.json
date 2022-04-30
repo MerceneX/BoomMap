@@ -29,7 +29,7 @@
     "test": "mocha",
     "test-with-coverage": "nyc --reporter=text mocha",
     "test-with-coverage-html-report": "nyc --reporter=html mocha",
-    "test-sonar": "mocha --reporter mocha-sonarqube-reporter test --reporter-options output=coverage/test-report.xml"
+    "test-sonar": "mocha --reporter mocha-sonarqube-reporter test --reporter-options output=reporting/test-report.xml"
   },
   "config": {
     "mocha-sonar-reporter": {
