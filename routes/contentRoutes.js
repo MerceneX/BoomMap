@@ -19,7 +19,6 @@ router.get('/news', async (req, res) => {
     req.query.skip
   );
   const response = await cGuy.getNews(options);
-  console.log(options);
   res.json(response);
 });
 
