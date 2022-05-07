@@ -49,6 +49,11 @@ describe('ContentQueryOptions ', () => {
         skip: 0
       };
 
+      let term = '';
+      let dStart = '2022-05-07T14:15:22.062Z';
+      let dEnd = '2022-04-09T14:15:22.062Z';
+      let sort = '';
+
       const actualResult = new ContentQueryOptions(
         (term = ''),
         (dStart = '2022-05-07T14:15:22.062Z'),
