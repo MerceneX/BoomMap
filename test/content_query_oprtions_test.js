@@ -34,8 +34,8 @@ describe('ContentQueryOptions ', () => {
     it('should provide a query options object when constructed without data.', async () => {
       const expectedResult = {
         term: '',
-        dStart: '',
-        dEnd: '',
+        dStart: '2022-05-07T14:15:22.062Z',
+        dEnd: '2022-04-09T14:15:22.062Z',
         sort: '',
         sortAscDesc: -1,
         limit: 10,
@@ -44,8 +44,8 @@ describe('ContentQueryOptions ', () => {
 
       const actualResult = new ContentQueryOptions(
         (term = ''),
-        (dStart = ''),
-        (dEnd = ''),
+        (dStart = '2022-05-07T14:15:22.062Z'),
+        (dEnd = '2022-04-09T14:15:22.062Z'),
         (sort = ''),
         sortAscDesc,
         limit,
