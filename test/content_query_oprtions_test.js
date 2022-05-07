@@ -8,7 +8,7 @@ describe('ContentQueryOptions ', () => {
 
     it('should provide a query options object when constructed.', async () => {
       const expectedResult = {
-        term: new RegExp('term'),
+        term: '',
         dStart: '2022-05-07T14:15:22.062Z',
         dEnd: '2022-04-09T14:15:22.062Z',
         sort: 'datePublished',
@@ -18,7 +18,7 @@ describe('ContentQueryOptions ', () => {
       };
 
       const actualResult = new ContentQueryOptions(
-        (term = 'term'),
+        (term = ''),
         (dStart = '2022-05-07T14:15:22.062Z'),
         (dEnd = '2022-04-09T14:15:22.062Z'),
         (sort = 'datePublished'),
