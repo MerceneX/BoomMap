@@ -54,12 +54,7 @@ describe('ContentQueryOptions ', () => {
       let dEnd = '2022-04-09T14:15:22.062Z';
       let sort = '';
 
-      const actualResult = new ContentQueryOptions(
-        (term = ''),
-        (dStart = '2022-05-07T14:15:22.062Z'),
-        (dEnd = '2022-04-09T14:15:22.062Z'),
-        (sort = '')
-      );
+      const actualResult = new ContentQueryOptions(term, dStart, dEnd, sort);
       console.log(actualResult);
 
       expect(actualResult).to.contain(expectedResult);
